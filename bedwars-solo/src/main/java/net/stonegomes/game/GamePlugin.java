@@ -9,7 +9,7 @@ public class GamePlugin extends AbstractModulePlugin {
     @Override
     public Module[] getModules() {
         return new Module[] {
-            new GameModule()
+            new GameModule(this)
         };
     }
 

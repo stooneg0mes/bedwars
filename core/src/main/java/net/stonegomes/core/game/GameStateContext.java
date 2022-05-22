@@ -18,9 +18,13 @@ public class GameStateContext {
     public void advanceState() {
         GameState nextState = gameState.getNextState();
 
-        /*
-        TODO
-         */
+        for (Player onlinePlayer : Bukkit.getOnlinePlayers()) {
+            GameStateContext currentStateContext = new GameStateContext(gameState, onlinePlayer);
+            gameState.onExit(currentStateContext);
+
+            GameStateContext nextStateContext = new GameStateContext(nextState, onlinePlayer);
+            gameState.onEnter(nextStateContext);
+        }
     }
 
     public Set<Player> getOnlinePlayers() {

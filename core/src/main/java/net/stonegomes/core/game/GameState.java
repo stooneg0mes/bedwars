@@ -4,16 +4,18 @@ package net.stonegomes.core.game;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
-public interface GameState {
+public abstract class GameState {
 
-    GameState getNextState();
+    public abstract GameState getNextState();
 
-    GameStateType getStateType();
+    public abstract GameStateType getStateType();
 
-    void onUpdate(GameStateContext context);
+    public void onUpdate(GameStateContext context) {}
 
-    void onEnter(GameStateContext context);
+    public void onEnter(GameStateContext context) {}
 
-    void onExit(GameStateContext context);
+    public void onExit(GameStateContext context) {}
+
+    public void onQuit(GameStateContext context) {}
 
 }

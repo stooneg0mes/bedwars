@@ -14,7 +14,7 @@ import java.time.Duration;
 
 import static net.kyori.adventure.title.Title.*;
 
-public class WaitingPlayersStateImpl implements GameState {
+public class WaitingPlayersStateImpl extends GameState {
 
     private static final int REQUIRED_PLAYERS = 8;
 
@@ -66,7 +66,7 @@ public class WaitingPlayersStateImpl implements GameState {
     }
 
     @Override
-    public void onExit(GameStateContext context) {
+    public void onQuit(GameStateContext context) {
         final Player player = context.getPlayer();
         final TextComponent messageComponent = Component.text(player.getName() + " has left the game. ", NamedTextColor.GRAY)
             .append(Component.text("(" + context.getOnlinePlayersSize() + "/" + REQUIRED_PLAYERS + ")", NamedTextColor.WHITE));
