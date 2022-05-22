@@ -1,0 +1,6 @@
+group 'net.stonegomes.bedwars.core'
+version '1.0-SNAPSHOT'
+
+dependencies {
+    compileOnly project(":commons")
+}
