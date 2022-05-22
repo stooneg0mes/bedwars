@@ -40,6 +40,7 @@ public class WaitingPlayersStateImpl implements GameState {
         final int playersLeft = (REQUIRED_PLAYERS - context.getOnlinePlayersSize());
 
         final TextColor textColor = TextColor.color(0x3cba5d);
+
         final TextComponent titleComponent = Component.text("WELCOME", textColor);
         final TextComponent subTitleComponent = Component.text("The game will start with more ", NamedTextColor.WHITE)
             .append(Component.text(playersLeft, textColor))
