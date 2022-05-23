@@ -1,0 +1,4 @@
+main: net.stonegomes.bedwars.core.CorePlugin
+name: BedwarsCore
+version: 1.0-SNAPSHOT
+api-version: 1.17

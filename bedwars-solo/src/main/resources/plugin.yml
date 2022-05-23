@@ -1,0 +1,4 @@
+main: net.stonegomes.bedwars.solo.GamePlugin
+name: BedwarsPlugin
+version: 1.0-SNAPSHOT
+api-version: 1.17
