@@ -14,9 +14,9 @@ import java.time.Duration;
 
 import static net.kyori.adventure.title.Title.*;
 
-public class WaitingPlayersStateImpl extends GameState {
+public class WaitingPlayersState extends GameState {
 
-    private static final int REQUIRED_PLAYERS = 8;
+    private static final int REQUIRED_PLAYERS = 6;
 
     @Override
     public GameState getNextState() {

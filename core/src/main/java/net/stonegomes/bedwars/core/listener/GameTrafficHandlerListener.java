@@ -11,7 +11,7 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 
 @AllArgsConstructor
-public class TrafficListener implements Listener {
+public class GameTrafficHandlerListener implements Listener {
 
     private final GameManager gameManager;
 
