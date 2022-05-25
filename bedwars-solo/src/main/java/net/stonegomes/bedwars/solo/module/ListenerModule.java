@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import net.stonegomes.bedwars.commons.Module;
 import net.stonegomes.bedwars.commons.ModuleId;
 import net.stonegomes.bedwars.solo.GamePlugin;
-import net.stonegomes.bedwars.solo.listener.TrafficListener;
+import net.stonegomes.bedwars.solo.listener.TrafficMessageListener;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 
@@ -14,11 +14,10 @@ public class ListenerModule extends Module {
 
     private final GamePlugin gamePlugin;
 
-    private final PluginManager pluginManager = Bukkit.getPluginManager();
-
     @Override
     public void handleEnable() {
-        pluginManager.registerEvents(new TrafficListener(), gamePlugin);
+        final PluginManager pluginManager = Bukkit.getPluginManager();
+        pluginManager.registerEvents(new TrafficMessageListener(), gamePlugin);
     }
 
 }

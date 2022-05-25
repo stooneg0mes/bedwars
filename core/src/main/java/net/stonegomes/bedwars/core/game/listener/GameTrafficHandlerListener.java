@@ -1,10 +1,9 @@
-package net.stonegomes.bedwars.core.listener;
+package net.stonegomes.bedwars.core.game.listener;
 
 import lombok.AllArgsConstructor;
 import net.stonegomes.bedwars.core.game.GameManager;
 import net.stonegomes.bedwars.core.game.GameStateContext;
 import net.stonegomes.bedwars.core.game.GameState;
-import net.stonegomes.bedwars.core.game.GameStateType;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
@@ -18,7 +17,7 @@ public class GameTrafficHandlerListener implements Listener {
     @EventHandler
     public void handleJoin(PlayerJoinEvent event) {
         GameState gameState = gameManager.getGameState();
-        if (gameState == null || gameState.getStateType() != GameStateType.JOIN_SERVER) return;
+        if (gameState == null || !gameState.isFirstState()) return;
 
         GameStateContext gameStateContext = new GameStateContext(gameState, event.getPlayer());
         gameState.onEnter(gameStateContext);

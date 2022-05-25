@@ -7,32 +7,31 @@ import net.kyori.adventure.text.format.TextColor;
 import net.kyori.adventure.title.Title;
 import net.stonegomes.bedwars.core.game.GameState;
 import net.stonegomes.bedwars.core.game.GameStateContext;
-import net.stonegomes.bedwars.core.game.GameStateType;
 import org.bukkit.entity.Player;
 
 import java.time.Duration;
 
 import static net.kyori.adventure.title.Title.*;
 
-public class WaitingPlayersState extends GameState {
+public class WaitingGameState extends GameState {
 
     private static final int REQUIRED_PLAYERS = 6;
 
     @Override
     public GameState getNextState() {
-        return null;
+        return new StartingGameState();
     }
 
     @Override
-    public GameStateType getStateType() {
-        return GameStateType.JOIN_SERVER;
+    public boolean isFirstState() {
+        return true;
     }
 
     @Override
     public void onUpdate(GameStateContext context) {
-        if (context.getOnlinePlayersSize() < REQUIRED_PLAYERS) return;
-
-        context.advanceState();
+        if (context.getOnlinePlayersSize() >= REQUIRED_PLAYERS) {
+            context.advanceState();
+        }
     }
 
     @Override
@@ -59,17 +58,7 @@ public class WaitingPlayersState extends GameState {
         ));
 
         final Player player = context.getPlayer();
-        final TextComponent messageComponent = Component.text(player.getName(), NamedTextColor.WHITE)
-            .append(Component.text(" has joined the game.", NamedTextColor.GRAY));
-
-        context.getOnlinePlayers().forEach(onlinePlayer -> onlinePlayer.sendMessage(messageComponent));
-    }
-
-    @Override
-    public void onQuit(GameStateContext context) {
-        final Player player = context.getPlayer();
-        final TextComponent messageComponent = Component.text(player.getName() + " has left the game. ", NamedTextColor.GRAY)
-            .append(Component.text("(" + context.getOnlinePlayersSize() + "/" + REQUIRED_PLAYERS + ")", NamedTextColor.WHITE));
+        final TextComponent messageComponent = Component.text(player.getName() + " has left the game.", NamedTextColor.YELLOW);
 
         context.getOnlinePlayers().forEach(onlinePlayer -> onlinePlayer.sendMessage(messageComponent));
     }

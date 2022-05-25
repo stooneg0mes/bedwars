@@ -1,11 +1,12 @@
 package net.stonegomes.bedwars.core.game;
 
-
 public abstract class GameState {
 
     public abstract GameState getNextState();
 
-    public abstract GameStateType getStateType();
+    public boolean isFirstState() {
+        return false;
+    }
 
     public void onUpdate(GameStateContext context) {}
 

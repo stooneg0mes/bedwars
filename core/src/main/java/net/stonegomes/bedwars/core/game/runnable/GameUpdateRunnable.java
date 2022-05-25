@@ -1,4 +1,4 @@
-package net.stonegomes.bedwars.core.runnable;
+package net.stonegomes.bedwars.core.game.runnable;
 
 import lombok.AllArgsConstructor;
 import net.stonegomes.bedwars.core.game.GameManager;
@@ -9,7 +9,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 
 @AllArgsConstructor
-public class GameRunnable extends BukkitRunnable {
+public class GameUpdateRunnable extends BukkitRunnable {
 
     private final GameManager gameManager;
 

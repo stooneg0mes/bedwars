@@ -16,14 +16,15 @@ public class GameStateContext {
     private Player player;
 
     public void advanceState() {
-        GameState nextState = gameState.getNextState();
-
         for (Player onlinePlayer : Bukkit.getOnlinePlayers()) {
             GameStateContext currentStateContext = new GameStateContext(gameState, onlinePlayer);
             gameState.onExit(currentStateContext);
 
-            GameStateContext nextStateContext = new GameStateContext(nextState, onlinePlayer);
-            gameState.onEnter(nextStateContext);
+            GameState nextState = gameState.getNextState();
+            if (nextState != null) {
+                GameStateContext nextStateContext = new GameStateContext(nextState, onlinePlayer);
+                if (!nextState.isFirstState()) nextState.onEnter(nextStateContext);
+            }
         }
     }
 

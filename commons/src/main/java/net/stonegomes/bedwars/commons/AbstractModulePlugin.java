@@ -1,14 +1,16 @@
 package net.stonegomes.bedwars.commons;
 
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class AbstractModulePlugin extends JavaPlugin {
 
-    private final Map<String, Module> elements = new HashMap<>();
+    private final Map<String, Object> elements = new HashMap<>();
 
     /*
     Modules
@@ -22,9 +24,9 @@ public class AbstractModulePlugin extends JavaPlugin {
     Load
      */
 
-    public void handleLoad() {}
-
-    public void handlePostLoad() {}
+    public void handleLoad() {
+        Bukkit.getLogger().info("Commons loading.");
+    }
 
     @Override
     public void onLoad() {
@@ -38,55 +40,49 @@ public class AbstractModulePlugin extends JavaPlugin {
                 module.handleLoad();
             }
         }
-
-        handlePostLoad();
     }
 
     /*
     Enable
      */
 
-    public void handleEnable() {}
-
-    public void handlePostEnable() {}
+    public void handleEnable() {
+        Bukkit.getLogger().info("Commons enabling.");
+    }
 
     @Override
     public void onEnable() {
         handleEnable();
 
-        if (!elements.isEmpty()) {
-            elements.values().forEach(Module::handleEnable);
+        if (getModules() != null) {
+            Arrays.stream(getModules()).forEach(Module::handleEnable);
         }
-
-        handlePostEnable();
     }
 
     /*
     Disable
      */
 
-    public void handleDisable() {}
-
-    public void handlePostDisable() {}
+    public void handleDisable() {
+        Bukkit.getLogger().info("Commons disabling.");
+    }
 
     @Override
     public void onDisable() {
         handleDisable();
 
-       if (!elements.isEmpty()) {
-           elements.values().forEach(Module::handleDisable);
-       }
-
-        handlePostDisable();
+        if (getModules() != null) {
+            Arrays.stream(getModules()).forEach(Module::handleDisable);
+        }
     }
 
     /*
     Module methods
      */
 
-    public Module getModule(Class<? extends Module> clazz) {
+    public <T> T getModule(Class<? extends Module> clazz) {
         ModuleId moduleId = clazz.getDeclaredAnnotation(ModuleId.class);
-        return elements.get(moduleId.id());
+        return (T) elements.get(moduleId.id());
     }
 
     /*
