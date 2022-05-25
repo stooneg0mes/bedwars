@@ -25,4 +25,11 @@ public class StartingGameState extends GameState {
         }
     }
 
+    @Override
+    public void onEnter(GameStateContext context) {
+        /*
+        TODO
+         */
+    }
+
 }

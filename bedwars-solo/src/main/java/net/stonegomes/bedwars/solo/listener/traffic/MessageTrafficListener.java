@@ -1,4 +1,4 @@
-package net.stonegomes.bedwars.solo.listener;
+package net.stonegomes.bedwars.solo.listener.traffic;
 
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.TextComponent;
@@ -9,7 +9,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 
-public class TrafficMessageListener implements Listener {
+public class MessageTrafficListener implements Listener {
 
     @EventHandler
     public void handleJoin(PlayerJoinEvent event) {

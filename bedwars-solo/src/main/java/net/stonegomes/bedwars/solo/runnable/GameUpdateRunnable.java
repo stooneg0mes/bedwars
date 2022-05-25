@@ -1,4 +1,4 @@
-package net.stonegomes.bedwars.core.game.runnable;
+package net.stonegomes.bedwars.solo.runnable;
 
 import lombok.AllArgsConstructor;
 import net.stonegomes.bedwars.core.game.GameManager;

@@ -1,4 +1,4 @@
-package net.stonegomes.bedwars.core.game.listener;
+package net.stonegomes.bedwars.solo.listener.traffic;
 
 import lombok.AllArgsConstructor;
 import net.stonegomes.bedwars.core.game.GameManager;
@@ -10,7 +10,7 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 
 @AllArgsConstructor
-public class GameTrafficHandlerListener implements Listener {
+public class GameStateTrafficListener implements Listener {
 
     private final GameManager gameManager;
 

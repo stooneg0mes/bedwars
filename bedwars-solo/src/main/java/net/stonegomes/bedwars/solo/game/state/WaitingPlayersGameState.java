@@ -13,7 +13,7 @@ import java.time.Duration;
 
 import static net.kyori.adventure.title.Title.*;
 
-public class WaitingGameState extends GameState {
+public class WaitingPlayersGameState extends GameState {
 
     private static final int REQUIRED_PLAYERS = 6;
 
@@ -56,11 +56,6 @@ public class WaitingGameState extends GameState {
             subTitleComponent,
             times
         ));
-
-        final Player player = context.getPlayer();
-        final TextComponent messageComponent = Component.text(player.getName() + " has left the game.", NamedTextColor.YELLOW);
-
-        context.getOnlinePlayers().forEach(onlinePlayer -> onlinePlayer.sendMessage(messageComponent));
     }
 
 }

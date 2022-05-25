@@ -1,4 +1,4 @@
-package net.stonegomes.bedwars.core.build.listener;
+package net.stonegomes.bedwars.solo.listener;
 
 import lombok.AllArgsConstructor;
 import net.stonegomes.bedwars.core.build.GameBuildCache;
