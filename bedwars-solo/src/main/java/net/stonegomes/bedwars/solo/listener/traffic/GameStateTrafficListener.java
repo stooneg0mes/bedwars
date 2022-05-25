@@ -19,7 +19,7 @@ public class GameStateTrafficListener implements Listener {
         GameState gameState = gameManager.getGameState();
         if (gameState == null || !gameState.isFirstState()) return;
 
-        GameStateContext gameStateContext = new GameStateContext(gameState, event.getPlayer());
+        GameStateContext gameStateContext = gameManager.buildContext(event.getPlayer());
         gameState.onEnter(gameStateContext);
     }
 
@@ -28,7 +28,7 @@ public class GameStateTrafficListener implements Listener {
         GameState gameState = gameManager.getGameState();
         if (gameState == null) return;
 
-        GameStateContext gameStateContext = new GameStateContext(gameState, event.getPlayer());
+        GameStateContext gameStateContext = gameManager.buildContext(event.getPlayer());
         gameState.onQuit(gameStateContext);
     }
 
