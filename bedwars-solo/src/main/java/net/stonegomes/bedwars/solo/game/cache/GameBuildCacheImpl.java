@@ -1,4 +1,4 @@
-package net.stonegomes.bedwars.solo.game.build;
+package net.stonegomes.bedwars.solo.game.cache;
 
 import net.stonegomes.bedwars.core.build.GameBuildCache;
 import org.bukkit.block.Block;

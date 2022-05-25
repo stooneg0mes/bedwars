@@ -1,4 +1,4 @@
-package net.stonegomes.bedwars.solo.game.player;
+package net.stonegomes.bedwars.solo.game.cache;
 
 import net.stonegomes.bedwars.core.player.GamePlayer;
 import net.stonegomes.bedwars.core.player.GamePlayerCache;

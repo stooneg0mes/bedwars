@@ -10,4 +10,6 @@ public interface GameManager {
 
     GameStateContext buildContext(Player player);
 
+    GameStateContext buildContext(Player player, GameState gameState);
+
 }

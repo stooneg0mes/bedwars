@@ -17,7 +17,7 @@ public class GameManagerImpl implements GameManager {
     private GameState gameState;
 
     @Override
-    public GameStateContext buildContext(Player player) {
+    public GameStateContext buildContext(Player player, GameState gameState) {
         GamePlayer gamePlayer = gamePlugin.getPlayerCache().getGamePlayer(player.getUniqueId());
         if (gamePlayer == null) return null;
 
@@ -26,6 +26,11 @@ public class GameManagerImpl implements GameManager {
             .gameState(gameState)
             .gameManager(this)
             .build();
+    }
+
+    @Override
+    public GameStateContext buildContext(Player player) {
+        return buildContext(player, gameState);
     }
 
 }
