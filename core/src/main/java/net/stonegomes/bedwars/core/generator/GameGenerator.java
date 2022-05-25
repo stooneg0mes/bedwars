@@ -2,17 +2,20 @@ package net.stonegomes.bedwars.core.generator;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Getter;
+import lombok.Data;
 import org.bukkit.Location;
 import org.bukkit.Material;
 
 @AllArgsConstructor
 @Builder
-@Getter
+@Data
 public class GameGenerator {
 
-    private Location location;
-    private Material type;
+    private final Location location;
+    private final Material type;
+
+    private int amountOfItems;
     private long timeToGenerate;
+    private long delay;
 
 }

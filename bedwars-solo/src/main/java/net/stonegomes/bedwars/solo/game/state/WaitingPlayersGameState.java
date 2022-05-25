@@ -1,25 +1,28 @@
 package net.stonegomes.bedwars.solo.game.state;
 
+import lombok.AllArgsConstructor;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.TextComponent;
 import net.kyori.adventure.text.format.NamedTextColor;
 import net.kyori.adventure.text.format.TextColor;
 import net.kyori.adventure.title.Title;
+import net.stonegomes.bedwars.core.constants.NumberConstants;
 import net.stonegomes.bedwars.core.game.GameState;
 import net.stonegomes.bedwars.core.game.GameStateContext;
-import org.bukkit.entity.Player;
+import net.stonegomes.bedwars.solo.GamePlugin;
 
 import java.time.Duration;
 
-import static net.kyori.adventure.title.Title.*;
+import static net.kyori.adventure.title.Title.Times;
 
+@AllArgsConstructor
 public class WaitingPlayersGameState extends GameState {
 
-    private static final int REQUIRED_PLAYERS = 6;
+    private final GamePlugin gamePlugin;
 
     @Override
     public GameState getNextState() {
-        return new StartingGameState();
+        return new StartingGameState(gamePlugin);
     }
 
     @Override
@@ -29,14 +32,14 @@ public class WaitingPlayersGameState extends GameState {
 
     @Override
     public void onUpdate(GameStateContext context) {
-        if (context.getOnlinePlayersSize() >= REQUIRED_PLAYERS) {
+        if (context.getOnlinePlayersSize() >= NumberConstants.REQUIRED_PLAYERS) {
             context.advanceState();
         }
     }
 
     @Override
     public void onEnter(GameStateContext context) {
-        final int playersLeft = (REQUIRED_PLAYERS - context.getOnlinePlayersSize());
+        final int playersLeft = (NumberConstants.REQUIRED_PLAYERS - context.getOnlinePlayersSize());
 
         final TextColor textColor = TextColor.color(0x3cba5d);
 

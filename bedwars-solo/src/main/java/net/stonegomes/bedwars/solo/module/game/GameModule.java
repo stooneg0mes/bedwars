@@ -21,7 +21,7 @@ public class GameModule extends Module {
     @Override
     public void handleEnable() {
         gameManager = new GameManagerImpl(gamePlugin);
-        gameManager.setGameState(new WaitingPlayersGameState());
+        gameManager.setGameState(new WaitingPlayersGameState(gamePlugin));
     }
 
 }

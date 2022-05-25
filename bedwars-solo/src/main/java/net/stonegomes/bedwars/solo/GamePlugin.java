@@ -5,12 +5,14 @@ import net.stonegomes.bedwars.commons.AbstractModulePlugin;
 import net.stonegomes.bedwars.commons.Module;
 import net.stonegomes.bedwars.core.build.GameBuildCache;
 import net.stonegomes.bedwars.core.game.GameManager;
+import net.stonegomes.bedwars.core.generator.GameGeneratorCache;
 import net.stonegomes.bedwars.core.player.GamePlayerCache;
+import net.stonegomes.bedwars.solo.module.ListenerModule;
 import net.stonegomes.bedwars.solo.module.RunnableModule;
 import net.stonegomes.bedwars.solo.module.game.GameBuildModule;
+import net.stonegomes.bedwars.solo.module.game.GameGeneratorModule;
 import net.stonegomes.bedwars.solo.module.game.GameModule;
 import net.stonegomes.bedwars.solo.module.game.GamePlayerModule;
-import net.stonegomes.bedwars.solo.module.ListenerModule;
 import org.bukkit.Bukkit;
 
 @AllArgsConstructor
@@ -35,9 +37,10 @@ public class GamePlugin extends AbstractModulePlugin {
     public Module[] getModules() {
         return new Module[] {
             // Game
-            new GameModule(),
+            new GameModule(this),
             new GameBuildModule(),
             new GamePlayerModule(),
+            new GameGeneratorModule(),
             // Other
             new ListenerModule(this),
             new RunnableModule(this)
@@ -54,6 +57,10 @@ public class GamePlugin extends AbstractModulePlugin {
 
     public GamePlayerCache getPlayerCache() {
         return ((GamePlayerModule) getModule(GamePlayerModule.class)).getGamePlayerCache();
+    }
+
+    public GameGeneratorCache getGeneratorCache() {
+        return ((GameGeneratorModule) getModule(GamePlayerModule.class)).getGameGeneratorCache();
     }
 
 }

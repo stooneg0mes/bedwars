@@ -9,9 +9,9 @@ public interface GameGeneratorCache {
 
     void putGameGenerator(Location location, GameGenerator gameGenerator);
 
-    void removeGameGenerator(UUID uuid, GameGenerator gameGenerator);
+    void removeGameGenerator(Location uuid, GameGenerator gameGenerator);
 
-    GameGenerator getGameGenerator(UUID uuid);
+    GameGenerator getGameGenerator(Location uuid);
 
     Collection<GameGenerator> getGameGenerators();
 

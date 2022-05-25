@@ -1,8 +1,7 @@
 package net.stonegomes.bedwars.solo.listener;
 
 import lombok.AllArgsConstructor;
-import net.stonegomes.bedwars.core.build.GameBuildCache;
-import net.stonegomes.bedwars.core.game.GameManager;
+import net.stonegomes.bedwars.solo.GamePlugin;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -13,12 +12,12 @@ import org.bukkit.event.block.BlockPlaceEvent;
 @AllArgsConstructor
 public class GameBuildListener implements Listener {
 
-    private final GameBuildCache gameBuildCache;
+    private final GamePlugin gamePlugin;
 
     @EventHandler
     public void handlePlace(BlockPlaceEvent event) {
         final Block block = event.getBlock();
-        gameBuildCache.addBlock(block);
+        gamePlugin.getBuildCache().addBlock(block);
     }
 
     @EventHandler
@@ -26,10 +25,10 @@ public class GameBuildListener implements Listener {
         final Player player = event.getPlayer();
         final Block block = event.getBlock();
 
-        if (!gameBuildCache.hasBlock(block)) {
+        if (!gamePlugin.getBuildCache().hasBlock(block)) {
             event.setCancelled(!player.hasPermission("bedwars.admin"));
         } else {
-            gameBuildCache.removeBlock(block);
+            gamePlugin.getBuildCache().removeBlock(block);
         }
     }
 

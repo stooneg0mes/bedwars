@@ -1,6 +1,7 @@
 package net.stonegomes.bedwars.solo.game;
 
-import lombok.*;
+import lombok.Data;
+import lombok.RequiredArgsConstructor;
 import net.stonegomes.bedwars.core.game.GameManager;
 import net.stonegomes.bedwars.core.game.GameState;
 import net.stonegomes.bedwars.core.game.GameStateContext;
@@ -8,8 +9,8 @@ import net.stonegomes.bedwars.core.player.GamePlayer;
 import net.stonegomes.bedwars.solo.GamePlugin;
 import org.bukkit.entity.Player;
 
-@Data
 @RequiredArgsConstructor
+@Data
 public class GameManagerImpl implements GameManager {
 
     private final GamePlugin gamePlugin;
@@ -18,7 +19,7 @@ public class GameManagerImpl implements GameManager {
 
     @Override
     public GameStateContext buildContext(Player player, GameState gameState) {
-        GamePlayer gamePlayer = gamePlugin.getPlayerCache().getGamePlayer(player.getUniqueId());
+        final GamePlayer gamePlayer = gamePlugin.getPlayerCache().getGamePlayer(player.getUniqueId());
         if (gamePlayer == null) return null;
 
         return GameStateContext.builder()
