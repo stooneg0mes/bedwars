@@ -8,8 +8,12 @@ import net.stonegomes.bedwars.solo.GamePlugin;
 import org.bukkit.Location;
 import org.bukkit.inventory.ItemStack;
 
+import java.util.Random;
+
 @AllArgsConstructor
 public class InGameState extends GameState {
+
+    private static final Random RANDOM = new Random();
 
     private GamePlugin gamePlugin;
 
@@ -23,7 +27,8 @@ public class InGameState extends GameState {
         for (GameGenerator gameGenerator : gamePlugin.getGeneratorCache().getGameGenerators()) {
             if (gameGenerator.getTimeToGenerate() > System.currentTimeMillis()) continue;
 
-            final ItemStack itemStack = new ItemStack(gameGenerator.getType(), gameGenerator.getAmountOfItems());
+            final int randomAmount = RANDOM.nextInt(gameGenerator.getAmountOfItems());
+            final ItemStack itemStack = new ItemStack(gameGenerator.getType(), randomAmount);
             final Location location = gameGenerator.getLocation();
             location.getWorld().dropItemNaturally(location, itemStack);
 

@@ -7,6 +7,7 @@ import net.stonegomes.bedwars.core.game.GameState;
 import net.stonegomes.bedwars.core.game.GameStateContext;
 import net.stonegomes.bedwars.core.player.GamePlayer;
 import net.stonegomes.bedwars.solo.GamePlugin;
+import net.stonegomes.bedwars.solo.game.upgrade.BuffGeneratorsUpgrade;
 import org.bukkit.entity.Player;
 
 @RequiredArgsConstructor
