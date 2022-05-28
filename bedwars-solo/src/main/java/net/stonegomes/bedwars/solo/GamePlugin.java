@@ -63,4 +63,8 @@ public class GamePlugin extends AbstractModulePlugin {
         return ((GameGeneratorModule) getModule(GamePlayerModule.class)).getGameGeneratorCache();
     }
 
+    public static GamePlugin getInstance() {
+        return GamePlugin.getPlugin(GamePlugin.class);
+    }
+
 }
