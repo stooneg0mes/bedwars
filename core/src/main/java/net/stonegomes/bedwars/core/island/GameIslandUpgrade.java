@@ -4,16 +4,26 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
-public interface GameIslandUpgrade {
+public abstract class GameIslandUpgrade {
 
-    default void onUpgrade(GameIsland gameIsland, int level) {}
+    private int level;
 
-    GameIslandUpgradeType getUpgradeType();
+    public GameIslandUpgrade() {
+        this.level = getInitialLevel();
+    }
 
-    void setLevel(int level);
+    public abstract GameIslandUpgradeType getUpgradeType();
 
-    int getLevel();
+    public abstract int getInitialLevel();
 
-    int getInitialLevel();
+    public void onUpgrade(GameIsland gameIsland, int level) {}
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
+
+    public int getLevel() {
+        return level;
+    }
 
 }

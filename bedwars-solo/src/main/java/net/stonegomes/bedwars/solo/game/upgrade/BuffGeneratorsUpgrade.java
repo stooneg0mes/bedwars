@@ -1,24 +1,19 @@
 package net.stonegomes.bedwars.solo.game.upgrade;
 
 import net.stonegomes.bedwars.core.generator.GameGenerator;
+import net.stonegomes.bedwars.core.generator.GameGeneratorCache;
 import net.stonegomes.bedwars.core.island.GameIsland;
 import net.stonegomes.bedwars.core.island.GameIslandUpgrade;
 import net.stonegomes.bedwars.core.island.GameIslandUpgradeType;
 import net.stonegomes.bedwars.solo.GamePlugin;
 
-public class BuffGeneratorsUpgrade implements GameIslandUpgrade {
+public class BuffGeneratorsUpgrade extends GameIslandUpgrade {
 
-    private final GamePlugin gamePlugin;
-    private int level;
-
-    public BuffGeneratorsUpgrade() {
-        this.gamePlugin = GamePlugin.getInstance();
-        this.level = getInitialLevel();
-    }
+    private final GameGeneratorCache generatorCache = GamePlugin.getInstance().getGeneratorCache();
 
     @Override
     public void onUpgrade(GameIsland gameIsland, int level) {
-        for (GameGenerator gameGenerator : gamePlugin.getGeneratorCache().getGameGenerators()) {
+        for (GameGenerator gameGenerator : generatorCache.getGameGenerators()) {
             if (!gameIsland.getCuboid().contains(gameGenerator.getLocation())) continue;
 
             switch (level) {
@@ -33,16 +28,6 @@ public class BuffGeneratorsUpgrade implements GameIslandUpgrade {
     @Override
     public GameIslandUpgradeType getUpgradeType() {
         return GameIslandUpgradeType.BUFF_GENERATORS;
-    }
-
-    @Override
-    public void setLevel(int level) {
-        this.level = level;
-    }
-
-    @Override
-    public int getLevel() {
-        return level;
     }
 
     @Override

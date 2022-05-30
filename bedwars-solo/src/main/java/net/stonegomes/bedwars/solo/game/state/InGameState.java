@@ -10,12 +10,16 @@ import org.bukkit.inventory.ItemStack;
 
 import java.util.Random;
 
-@AllArgsConstructor
-public class InGameState extends GameState {
+public class InGameState implements GameState {
 
     private static final Random RANDOM = new Random();
 
-    private GamePlugin gamePlugin;
+    private final GamePlugin gamePlugin = GamePlugin.getInstance();
+
+    @Override
+    public String getName() {
+        return "In Game";
+    }
 
     @Override
     public GameState getNextState() {

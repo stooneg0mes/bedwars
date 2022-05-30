@@ -15,14 +15,16 @@ import java.time.Duration;
 
 import static net.kyori.adventure.title.Title.Times;
 
-@AllArgsConstructor
-public class WaitingPlayersGameState extends GameState {
+public class WaitingPlayersGameState implements GameState {
 
-    private final GamePlugin gamePlugin;
+    @Override
+    public String getName() {
+        return "Waiting for Players";
+    }
 
     @Override
     public GameState getNextState() {
-        return new StartingGameState(gamePlugin);
+        return new StartingGameState();
     }
 
     @Override
