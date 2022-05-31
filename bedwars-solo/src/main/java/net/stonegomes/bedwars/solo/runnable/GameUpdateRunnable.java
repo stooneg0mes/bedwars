@@ -59,6 +59,8 @@ public class GameUpdateRunnable extends BukkitRunnable {
                 if (gamePlayer.getSpectatorTime() <= System.currentTimeMillis()) {
                     player.setGameMode(GameMode.SURVIVAL);
                     player.teleport(gamePlayer.getIsland().getSpawnLocation());
+
+                    gamePlayer.setSpectatorTime(null);
                 }
             }
         }
