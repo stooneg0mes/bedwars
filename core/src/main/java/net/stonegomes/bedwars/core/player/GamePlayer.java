@@ -15,7 +15,9 @@ import java.util.UUID;
 public class GamePlayer {
 
     private final UUID uniqueId;
-    private GameIsland gameIsland;
+    private final GameIsland island;
+
+    private Long spectatorTime;
 
     public Player getBukkitPlayer() {
         return Bukkit.getPlayer(uniqueId);

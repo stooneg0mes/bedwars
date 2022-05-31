@@ -17,7 +17,7 @@ public class GamePlayerTrafficListener implements Listener {
     public void handleJoin(PlayerJoinEvent event) {
         final GamePlayer gamePlayer = GamePlayer.builder()
             .uniqueId(event.getPlayer().getUniqueId())
-            .gameIsland(null)
+            .island(null)
             .build();
 
         gamePlugin.getPlayerCache().putGamePlayer(gamePlayer.getUniqueId(), gamePlayer);

@@ -30,8 +30,8 @@ public class EntityDamageByEntityListener implements Listener {
         final GamePlayer gameAttacker = gamePlugin.getPlayerCache().getGamePlayer(event.getDamager().getUniqueId());
         if (gameAttacker == null) return;
 
-        final GameTeamColor playerTeamColor = gamePlayer.getGameIsland().getTeamColor();
-        final GameTeamColor attackerTeamColor = gameAttacker.getGameIsland().getTeamColor();
+        final GameTeamColor playerTeamColor = gamePlayer.getIsland().getTeamColor();
+        final GameTeamColor attackerTeamColor = gameAttacker.getIsland().getTeamColor();
         event.setCancelled(playerTeamColor == attackerTeamColor);
 
 

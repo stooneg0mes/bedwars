@@ -36,6 +36,7 @@ public class GameModule extends Module {
             new GameIslandCacheImpl(),
             new GamePlayerCacheImpl()
         );
+
         gameManager.setGameState(new WaitingPlayersGameState());
     }
 
