@@ -16,7 +16,7 @@ public class BuffGeneratorsUpgrade extends GameIslandUpgrade {
     }
 
     @Override
-    public void handleUpgrade(GameIsland gameIsland, int level) {
+    public void onUpgrade(GameIsland gameIsland, int level) {
         for (GameGenerator gameGenerator : generatorCache.getGenerators()) {
             if (!gameIsland.getCuboid().contains(gameGenerator.getLocation())) continue;
 

@@ -1,10 +1,9 @@
 package net.stonegomes.bedwars.core.state;
 
-import com.google.common.collect.Sets;
-import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.experimental.Delegate;
 import net.stonegomes.bedwars.core.player.GamePlayer;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -16,7 +15,7 @@ import java.util.Collection;
 @Getter
 public class GameStateContext {
 
-    @Getter(AccessLevel.NONE)
+    @Delegate
     private GameManager gameManager;
 
     private GameState gameState;
@@ -24,11 +23,11 @@ public class GameStateContext {
 
     public void advanceState() {
         for (Player onlinePlayer : Bukkit.getOnlinePlayers()) {
-            gameState.handleExit(gameManager.buildContext(onlinePlayer));
+            gameState.onExit(gameManager.buildContext(onlinePlayer));
 
             final GameState nextState = gameState.getNextState();
             if (nextState != null) {
-                nextState.handleEnter(gameManager.buildContext(onlinePlayer));
+                nextState.onEnter(gameManager.buildContext(onlinePlayer));
             }
         }
     }

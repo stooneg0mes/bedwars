@@ -1,10 +1,10 @@
 package net.stonegomes.bedwars.solo.game.state;
 
 import net.stonegomes.bedwars.core.island.GameIsland;
+import net.stonegomes.bedwars.core.player.GamePlayer;
 import net.stonegomes.bedwars.core.state.GameState;
 import net.stonegomes.bedwars.core.state.GameStateContext;
 import net.stonegomes.bedwars.core.generator.GameGenerator;
-import net.stonegomes.bedwars.solo.GamePlugin;
 import org.bukkit.Location;
 import org.bukkit.inventory.ItemStack;
 
@@ -14,16 +14,9 @@ public class InGameState extends GameState {
 
     private static final Random RANDOM = new Random();
 
-    private final GamePlugin gamePlugin = GamePlugin.getInstance();
-
     @Override
     public String getName() {
         return "In Game";
-    }
-
-    @Override
-    public GameState getNextState() {
-        return null;
     }
 
     @Override
@@ -32,12 +25,17 @@ public class InGameState extends GameState {
     }
 
     @Override
-    public void handleEnter(GameStateContext context) {
+    public void onEnter(GameStateContext context) {
+        final GameIsland lowestIsland = context.getIslandCache().getLowestIsland();
+        final GamePlayer gamePlayer = context.getGamePlayer();
+
+        gamePlayer.setGameIsland(lowestIsland);
+        gamePlayer.getBukkitPlayer().teleport(lowestIsland.getSpawnLocation());
     }
 
     @Override
-    public void handleUpdate(GameStateContext context) {
-        for (GameGenerator gameGenerator : gamePlugin.getGeneratorCache().getGenerators()) {
+    public void onUpdate(GameStateContext context) {
+        for (GameGenerator gameGenerator : context.getGeneratorCache().getGenerators()) {
             if (gameGenerator.getTimeToGenerate() > System.currentTimeMillis()) continue;
 
             final int randomAmount = RANDOM.nextInt(gameGenerator.getAmountOfItems());
@@ -48,10 +46,6 @@ public class InGameState extends GameState {
             final long timeToGenerate = System.currentTimeMillis() + gameGenerator.getDelay();
             gameGenerator.setTimeToGenerate(timeToGenerate);
         }
-
-        /*
-        TODO Victory logic
-         */
     }
 
 }

@@ -8,7 +8,6 @@ import net.kyori.adventure.text.format.TextDecoration;
 import net.kyori.adventure.title.Title;
 import net.stonegomes.bedwars.core.state.GameState;
 import net.stonegomes.bedwars.core.state.GameStateContext;
-import net.stonegomes.bedwars.core.island.team.GameTeamColor;
 import org.bukkit.entity.Player;
 
 import java.time.Duration;
@@ -17,7 +16,7 @@ import static net.kyori.adventure.title.Title.Times;
 
 public class WaitingPlayersGameState extends GameState {
 
-    private final int requiredPlayers = GameTeamColor.values().length;
+    private static final int REQUIRED_PLAYERS = 6;
 
     @Override
     public String getName() {
@@ -30,16 +29,11 @@ public class WaitingPlayersGameState extends GameState {
     }
 
     @Override
-    public GameState getPreviousState() {
-        return null;
-    }
-
-    @Override
-    public void handleEnter(GameStateContext context) {
+    public void onEnter(GameStateContext context) {
         final Player player = context.getPlayer();
         player.teleport(player.getWorld().getSpawnLocation());
 
-        final int playersLeft = (requiredPlayers - context.getOnlinePlayers().size());
+        final int playersLeft = (REQUIRED_PLAYERS - context.getOnlinePlayers().size());
 
         final TextColor textColor = TextColor.color(0x3cba5d);
 
@@ -63,8 +57,8 @@ public class WaitingPlayersGameState extends GameState {
     }
 
     @Override
-    public void handleUpdate(GameStateContext context) {
-        if (context.getOnlinePlayers().size() >= requiredPlayers) {
+    public void onUpdate(GameStateContext context) {
+        if (context.getOnlinePlayers().size() >= REQUIRED_PLAYERS) {
             context.advanceState();
         }
     }

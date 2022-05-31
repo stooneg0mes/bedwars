@@ -37,12 +37,12 @@ public class StartingGameState extends GameState {
     }
 
     @Override
-    public void handleEnter(GameStateContext context) {
+    public void onEnter(GameStateContext context) {
         context.getPlayer().showTitle(buildWarningTitle());
     }
 
     @Override
-    public void handleUpdate(GameStateContext context) {
+    public void onUpdate(GameStateContext context) {
         timeToLeave--;
 
         if (timeToLeave <= 0) {

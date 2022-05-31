@@ -20,7 +20,7 @@ public class GameUpdateRunnable extends BukkitRunnable {
 
         for (Player player : Bukkit.getOnlinePlayers()) {
             GameStateContext gameStateContext = gamePlugin.getGameManager().buildContext(player);
-            gameState.handleUpdate(gameStateContext);
+            gameState.onUpdate(gameStateContext);
         }
     }
 

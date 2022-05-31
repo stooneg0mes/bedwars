@@ -4,7 +4,6 @@ import net.stonegomes.bedwars.core.generator.GameGenerator;
 import net.stonegomes.bedwars.core.island.GameIsland;
 import net.stonegomes.bedwars.core.island.GameIslandCache;
 import net.stonegomes.bedwars.core.island.team.GameTeamColor;
-import org.bukkit.Location;
 
 import java.util.Collection;
 import java.util.Comparator;
