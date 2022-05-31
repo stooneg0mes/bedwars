@@ -13,22 +13,22 @@ public class GameGeneratorCacheImpl implements GameGeneratorCache {
     private final Map<Location, GameGenerator> generatorCache = new HashMap<>();
 
     @Override
-    public void putGameGenerator(Location location, GameGenerator gameGenerator) {
+    public void putGenerator(Location location, GameGenerator gameGenerator) {
         generatorCache.put(location, gameGenerator);
     }
 
     @Override
-    public void removeGameGenerator(Location location, GameGenerator gameGenerator) {
-        generatorCache.remove(location, gameGenerator);
+    public void removeGenerator(Location location) {
+        generatorCache.remove(location);
     }
 
     @Override
-    public GameGenerator getGameGenerator(Location location) {
+    public GameGenerator getGenerator(Location location) {
         return generatorCache.get(location);
     }
 
     @Override
-    public Collection<GameGenerator> getGameGenerators() {
+    public Collection<GameGenerator> getGenerators() {
         return generatorCache.values();
     }
 

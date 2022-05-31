@@ -1,7 +1,7 @@
 package net.stonegomes.bedwars.solo.listener.block;
 
 import lombok.AllArgsConstructor;
-import net.stonegomes.bedwars.core.game.GameState;
+import net.stonegomes.bedwars.core.state.GameState;
 import net.stonegomes.bedwars.solo.GamePlugin;
 import net.stonegomes.bedwars.solo.game.state.StartingGameState;
 import net.stonegomes.bedwars.solo.game.state.WaitingPlayersGameState;

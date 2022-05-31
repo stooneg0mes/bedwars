@@ -3,9 +3,8 @@ package net.stonegomes.bedwars.core.island;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import lombok.Getter;
 import net.stonegomes.bedwars.commons.cuboid.Cuboid;
-import net.stonegomes.bedwars.core.game.GameTeamColor;
+import net.stonegomes.bedwars.core.island.team.GameTeamColor;
 import net.stonegomes.bedwars.core.player.GamePlayer;
 import org.bukkit.Location;
 

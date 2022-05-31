@@ -3,16 +3,15 @@ package net.stonegomes.bedwars.core.generator;
 import org.bukkit.Location;
 
 import java.util.Collection;
-import java.util.UUID;
 
 public interface GameGeneratorCache {
 
-    void putGameGenerator(Location location, GameGenerator gameGenerator);
+    void putGenerator(Location location, GameGenerator gameGenerator);
 
-    void removeGameGenerator(Location uuid, GameGenerator gameGenerator);
+    void removeGenerator(Location location);
 
-    GameGenerator getGameGenerator(Location uuid);
+    GameGenerator getGenerator(Location location);
 
-    Collection<GameGenerator> getGameGenerators();
+    Collection<GameGenerator> getGenerators();
 
 }

@@ -2,12 +2,11 @@ package net.stonegomes.bedwars.solo.game;
 
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
-import net.stonegomes.bedwars.core.game.GameManager;
-import net.stonegomes.bedwars.core.game.GameState;
-import net.stonegomes.bedwars.core.game.GameStateContext;
+import net.stonegomes.bedwars.core.state.GameManager;
+import net.stonegomes.bedwars.core.state.GameState;
+import net.stonegomes.bedwars.core.state.GameStateContext;
 import net.stonegomes.bedwars.core.player.GamePlayer;
 import net.stonegomes.bedwars.solo.GamePlugin;
-import net.stonegomes.bedwars.solo.game.upgrade.BuffGeneratorsUpgrade;
 import org.bukkit.entity.Player;
 
 @RequiredArgsConstructor

@@ -7,8 +7,8 @@ import net.kyori.adventure.text.format.NamedTextColor;
 import net.kyori.adventure.text.format.TextColor;
 import net.kyori.adventure.text.format.TextDecoration;
 import net.kyori.adventure.title.Title;
-import net.stonegomes.bedwars.core.game.GameState;
-import net.stonegomes.bedwars.core.game.GameStateContext;
+import net.stonegomes.bedwars.core.state.GameState;
+import net.stonegomes.bedwars.core.state.GameStateContext;
 
 import java.time.Duration;
 import java.util.Set;
@@ -37,42 +37,41 @@ public class StartingGameState extends GameState {
     }
 
     @Override
-    public void handleUpdate(GameStateContext context) {
-        timeToLeave--;
-
-        if (warningTimes.contains(timeToLeave)) {
-            final TextColor textColor = TextColor.color(0x3cba5d);
-
-            final TextComponent titleComponent = Component.text("STARTING GAME", textColor)
-                .decoration(TextDecoration.BOLD, true);
-            final TextComponent subTitleComponent = Component.text("The game will start in ", NamedTextColor.WHITE)
-                .append(Component.text(timeToLeave, textColor))
-                .append(Component.text(" seconds.", NamedTextColor.WHITE));
-
-            int fadeInOut = (timeToLeave == 10) ? 1 : 0;
-            final Times times = Title.Times.of(
-                Duration.ofSeconds(fadeInOut),
-                Duration.ofSeconds(1),
-                Duration.ofSeconds(fadeInOut)
-            );
-
-            context.getPlayer().showTitle(Title.title(
-                titleComponent,
-                subTitleComponent,
-                times
-            ));
-        }
-
-        if (timeToLeave <= 0) {
-            context.advanceState();
-        }
+    public void handleEnter(GameStateContext context) {
+        context.getPlayer().showTitle(buildWarningTitle());
     }
 
     @Override
-    public void handleEnter(GameStateContext context) {
-        /*
-        TODO
-         */
+    public void handleUpdate(GameStateContext context) {
+        timeToLeave--;
+
+        if (timeToLeave <= 0) {
+            context.advanceState();
+        } else if (warningTimes.contains(timeToLeave)) {
+            context.getPlayer().showTitle(buildWarningTitle());
+        }
+    }
+
+    private Title buildWarningTitle() {
+        final TextColor textColor = TextColor.color(0x3cba5d);
+
+        final TextComponent titleComponent = Component.text("STARTING GAME", textColor)
+            .decoration(TextDecoration.BOLD, true);
+        final TextComponent subTitleComponent = Component.text("The game will start in ", NamedTextColor.WHITE)
+            .append(Component.text(timeToLeave, textColor))
+            .append(Component.text(" seconds.", NamedTextColor.WHITE));
+
+        final Times times = Times.of(
+            Duration.ofSeconds(1),
+            Duration.ofSeconds(1),
+            Duration.ofSeconds(1)
+        );
+
+        return Title.title(
+            titleComponent,
+            subTitleComponent,
+            times
+        );
     }
 
 }

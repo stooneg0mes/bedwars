@@ -1,8 +1,8 @@
 package net.stonegomes.bedwars.solo.game.state;
 
-import lombok.AllArgsConstructor;
-import net.stonegomes.bedwars.core.game.GameState;
-import net.stonegomes.bedwars.core.game.GameStateContext;
+import net.stonegomes.bedwars.core.island.GameIsland;
+import net.stonegomes.bedwars.core.state.GameState;
+import net.stonegomes.bedwars.core.state.GameStateContext;
 import net.stonegomes.bedwars.core.generator.GameGenerator;
 import net.stonegomes.bedwars.solo.GamePlugin;
 import org.bukkit.Location;
@@ -32,8 +32,12 @@ public class InGameState extends GameState {
     }
 
     @Override
+    public void handleEnter(GameStateContext context) {
+    }
+
+    @Override
     public void handleUpdate(GameStateContext context) {
-        for (GameGenerator gameGenerator : gamePlugin.getGeneratorCache().getGameGenerators()) {
+        for (GameGenerator gameGenerator : gamePlugin.getGeneratorCache().getGenerators()) {
             if (gameGenerator.getTimeToGenerate() > System.currentTimeMillis()) continue;
 
             final int randomAmount = RANDOM.nextInt(gameGenerator.getAmountOfItems());

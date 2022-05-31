@@ -7,7 +7,7 @@ public interface GamePlayerCache {
 
     void putGamePlayer(UUID uuid, GamePlayer gamePlayer);
 
-    void removeGamePlayer(UUID uuid, GamePlayer gamePlayer);
+    void removeGamePlayer(UUID uuid);
 
     GamePlayer getGamePlayer(UUID uuid);
 

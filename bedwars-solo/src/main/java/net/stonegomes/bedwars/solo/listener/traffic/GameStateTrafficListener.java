@@ -1,8 +1,8 @@
 package net.stonegomes.bedwars.solo.listener.traffic;
 
 import lombok.AllArgsConstructor;
-import net.stonegomes.bedwars.core.game.GameState;
-import net.stonegomes.bedwars.core.game.GameStateContext;
+import net.stonegomes.bedwars.core.state.GameState;
+import net.stonegomes.bedwars.core.state.GameStateContext;
 import net.stonegomes.bedwars.solo.GamePlugin;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

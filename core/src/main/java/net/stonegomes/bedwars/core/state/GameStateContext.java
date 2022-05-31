@@ -1,4 +1,4 @@
-package net.stonegomes.bedwars.core.game;
+package net.stonegomes.bedwars.core.state;
 
 import com.google.common.collect.Sets;
 import lombok.AccessLevel;

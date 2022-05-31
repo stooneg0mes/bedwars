@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import net.stonegomes.bedwars.commons.AbstractModulePlugin;
 import net.stonegomes.bedwars.commons.Module;
 import net.stonegomes.bedwars.core.build.GameBuildCache;
-import net.stonegomes.bedwars.core.game.GameManager;
+import net.stonegomes.bedwars.core.state.GameManager;
 import net.stonegomes.bedwars.core.generator.GameGeneratorCache;
 import net.stonegomes.bedwars.core.player.GamePlayerCache;
 import net.stonegomes.bedwars.solo.module.ListenerModule;

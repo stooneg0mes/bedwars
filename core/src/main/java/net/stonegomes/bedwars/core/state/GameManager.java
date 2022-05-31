@@ -1,4 +1,4 @@
-package net.stonegomes.bedwars.core.game;
+package net.stonegomes.bedwars.core.state;
 
 import org.bukkit.entity.Player;
 

@@ -6,9 +6,9 @@ import net.kyori.adventure.text.format.NamedTextColor;
 import net.kyori.adventure.text.format.TextColor;
 import net.kyori.adventure.text.format.TextDecoration;
 import net.kyori.adventure.title.Title;
-import net.stonegomes.bedwars.core.game.GameState;
-import net.stonegomes.bedwars.core.game.GameStateContext;
-import net.stonegomes.bedwars.core.game.GameTeamColor;
+import net.stonegomes.bedwars.core.state.GameState;
+import net.stonegomes.bedwars.core.state.GameStateContext;
+import net.stonegomes.bedwars.core.island.team.GameTeamColor;
 import org.bukkit.entity.Player;
 
 import java.time.Duration;
@@ -32,13 +32,6 @@ public class WaitingPlayersGameState extends GameState {
     @Override
     public GameState getPreviousState() {
         return null;
-    }
-
-    @Override
-    public void handleUpdate(GameStateContext context) {
-        if (context.getOnlinePlayersSize() >= requiredPlayers) {
-            context.advanceState();
-        }
     }
 
     @Override
@@ -67,6 +60,13 @@ public class WaitingPlayersGameState extends GameState {
             subTitleComponent,
             times
         ));
+    }
+
+    @Override
+    public void handleUpdate(GameStateContext context) {
+        if (context.getOnlinePlayersSize() >= requiredPlayers) {
+            context.advanceState();
+        }
     }
 
 }

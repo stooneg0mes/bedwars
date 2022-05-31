@@ -1,4 +1,4 @@
-package net.stonegomes.bedwars.core.game;
+package net.stonegomes.bedwars.core.state;
 
 public abstract class GameState {
 
@@ -24,9 +24,9 @@ public abstract class GameState {
     Handle methods
      */
 
-    public void handleUpdate(GameStateContext context) {}
-
     public void handleEnter(GameStateContext context) {}
+
+    public void handleUpdate(GameStateContext context) {}
 
     public void handleExit(GameStateContext context) {}
 

@@ -1,4 +1,4 @@
-package net.stonegomes.bedwars.core.game;
+package net.stonegomes.bedwars.core.island.team;
 
 public enum GameTeamColor {
 

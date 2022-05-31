@@ -18,7 +18,7 @@ public class GamePlayerCacheImpl implements GamePlayerCache {
     }
 
     @Override
-    public void removeGamePlayer(UUID uuid, GamePlayer gamePlayer) {
+    public void removeGamePlayer(UUID uuid) {
         playerCache.remove(uuid);
     }
 
