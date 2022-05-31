@@ -1,21 +1,23 @@
 package net.stonegomes.bedwars.solo.game.state;
 
-import lombok.AllArgsConstructor;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.TextComponent;
 import net.kyori.adventure.text.format.NamedTextColor;
 import net.kyori.adventure.text.format.TextColor;
+import net.kyori.adventure.text.format.TextDecoration;
 import net.kyori.adventure.title.Title;
-import net.stonegomes.bedwars.core.constants.NumberConstants;
 import net.stonegomes.bedwars.core.game.GameState;
 import net.stonegomes.bedwars.core.game.GameStateContext;
-import net.stonegomes.bedwars.solo.GamePlugin;
+import net.stonegomes.bedwars.core.game.GameTeamColor;
+import org.bukkit.entity.Player;
 
 import java.time.Duration;
 
 import static net.kyori.adventure.title.Title.Times;
 
-public class WaitingPlayersGameState implements GameState {
+public class WaitingPlayersGameState extends GameState {
+
+    private final int requiredPlayers = GameTeamColor.values().length;
 
     @Override
     public String getName() {
@@ -28,24 +30,28 @@ public class WaitingPlayersGameState implements GameState {
     }
 
     @Override
-    public boolean isFirstState() {
-        return true;
+    public GameState getPreviousState() {
+        return null;
     }
 
     @Override
-    public void onUpdate(GameStateContext context) {
-        if (context.getOnlinePlayersSize() >= NumberConstants.REQUIRED_PLAYERS) {
+    public void handleUpdate(GameStateContext context) {
+        if (context.getOnlinePlayersSize() >= requiredPlayers) {
             context.advanceState();
         }
     }
 
     @Override
-    public void onEnter(GameStateContext context) {
-        final int playersLeft = (NumberConstants.REQUIRED_PLAYERS - context.getOnlinePlayersSize());
+    public void handleEnter(GameStateContext context) {
+        final Player player = context.getPlayer();
+        player.teleport(player.getWorld().getSpawnLocation());
+
+        final int playersLeft = (requiredPlayers - context.getOnlinePlayersSize());
 
         final TextColor textColor = TextColor.color(0x3cba5d);
 
-        final TextComponent titleComponent = Component.text("WELCOME", textColor);
+        final TextComponent titleComponent = Component.text("WAITING FOR PLAYERS", textColor)
+            .decoration(TextDecoration.BOLD, true);
         final TextComponent subTitleComponent = Component.text("The game will start with more ", NamedTextColor.WHITE)
             .append(Component.text(playersLeft, textColor))
             .append(Component.text(" players.", NamedTextColor.WHITE));
@@ -56,7 +62,7 @@ public class WaitingPlayersGameState implements GameState {
             Duration.ofSeconds(1)
         );
 
-        context.getPlayer().showTitle(Title.title(
+        player.showTitle(Title.title(
             titleComponent,
             subTitleComponent,
             times

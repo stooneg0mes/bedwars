@@ -24,11 +24,11 @@ public class GameStateContext {
 
     public void advanceState() {
         for (Player onlinePlayer : Bukkit.getOnlinePlayers()) {
-            gameState.onExit(gameManager.buildContext(onlinePlayer));
+            gameState.handleExit(gameManager.buildContext(onlinePlayer));
 
             final GameState nextState = gameState.getNextState();
-            if (nextState != null && !nextState.isFirstState()) {
-                nextState.onEnter(gameManager.buildContext(onlinePlayer));
+            if (nextState != null) {
+                nextState.handleEnter(gameManager.buildContext(onlinePlayer));
             }
         }
     }

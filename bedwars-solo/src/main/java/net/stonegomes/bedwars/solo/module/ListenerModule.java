@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import net.stonegomes.bedwars.commons.Module;
 import net.stonegomes.bedwars.commons.ModuleId;
 import net.stonegomes.bedwars.solo.GamePlugin;
-import net.stonegomes.bedwars.solo.listener.GameBuildListener;
+import net.stonegomes.bedwars.solo.listener.block.BlockBuildListener;
 import net.stonegomes.bedwars.solo.listener.traffic.GameStateTrafficListener;
 import net.stonegomes.bedwars.solo.listener.traffic.MessageTrafficListener;
 import org.bukkit.Bukkit;
@@ -23,7 +23,7 @@ public class ListenerModule extends Module {
         pluginManager.registerEvents(new MessageTrafficListener(), gamePlugin);
 
         pluginManager.registerEvents(new GameStateTrafficListener(gamePlugin), gamePlugin);
-        pluginManager.registerEvents(new GameBuildListener(gamePlugin), gamePlugin);
+        pluginManager.registerEvents(new BlockBuildListener(gamePlugin), gamePlugin);
     }
 
 }

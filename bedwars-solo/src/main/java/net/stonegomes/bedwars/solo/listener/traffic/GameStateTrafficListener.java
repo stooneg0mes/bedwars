@@ -20,7 +20,7 @@ public class GameStateTrafficListener implements Listener {
         if (gameState == null || !gameState.isFirstState()) return;
 
         final GameStateContext gameStateContext = gamePlugin.getGameManager().buildContext(event.getPlayer());
-        gameState.onEnter(gameStateContext);
+        gameState.handleEnter(gameStateContext);
     }
 
     @EventHandler
@@ -29,7 +29,7 @@ public class GameStateTrafficListener implements Listener {
         if (gameState == null) return;
 
         final GameStateContext gameStateContext = gamePlugin.getGameManager().buildContext(event.getPlayer());
-        gameState.onQuit(gameStateContext);
+        gameState.handleQuit(gameStateContext);
     }
 
 }

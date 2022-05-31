@@ -10,7 +10,7 @@ import org.bukkit.inventory.ItemStack;
 
 import java.util.Random;
 
-public class InGameState implements GameState {
+public class InGameState extends GameState {
 
     private static final Random RANDOM = new Random();
 
@@ -27,7 +27,12 @@ public class InGameState implements GameState {
     }
 
     @Override
-    public void onUpdate(GameStateContext context) {
+    public GameState getPreviousState() {
+        return new StartingGameState();
+    }
+
+    @Override
+    public void handleUpdate(GameStateContext context) {
         for (GameGenerator gameGenerator : gamePlugin.getGeneratorCache().getGameGenerators()) {
             if (gameGenerator.getTimeToGenerate() > System.currentTimeMillis()) continue;
 

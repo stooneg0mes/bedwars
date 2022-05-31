@@ -1,21 +1,35 @@
 package net.stonegomes.bedwars.core.game;
 
-public interface GameState {
+public abstract class GameState {
 
-    String getName();
+    public abstract String getName();
 
-    GameState getNextState();
+    /*
+    State methods
+     */
 
-    default boolean isFirstState() {
-        return false;
+    public abstract GameState getNextState();
+
+    public abstract GameState getPreviousState();
+
+    public boolean isFirstState() {
+        return getPreviousState() == null;
     }
 
-    default void onUpdate(GameStateContext context) {}
+    public boolean isLastState() {
+        return getNextState() == null;
+    }
 
-    default void onEnter(GameStateContext context) {}
+    /*
+    Handle methods
+     */
 
-    default void onExit(GameStateContext context) {}
+    public void handleUpdate(GameStateContext context) {}
 
-    default void onQuit(GameStateContext context) {}
+    public void handleEnter(GameStateContext context) {}
+
+    public void handleExit(GameStateContext context) {}
+
+    public void handleQuit(GameStateContext context) {}
 
 }
