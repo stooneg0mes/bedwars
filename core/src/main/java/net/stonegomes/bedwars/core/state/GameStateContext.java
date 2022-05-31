@@ -9,7 +9,7 @@ import net.stonegomes.bedwars.core.player.GamePlayer;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
-import java.util.Set;
+import java.util.Collection;
 
 @AllArgsConstructor
 @Builder
@@ -37,12 +37,8 @@ public class GameStateContext {
         return gamePlayer.getBukkitPlayer();
     }
 
-    public Set<Player> getOnlinePlayers() {
-        return Sets.newHashSet(Bukkit.getOnlinePlayers());
-    }
-
-    public int getOnlinePlayersSize() {
-        return Bukkit.getOnlinePlayers().size();
+    public Collection<? extends Player> getOnlinePlayers() {
+        return Bukkit.getOnlinePlayers();
     }
 
 }

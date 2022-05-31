@@ -31,7 +31,7 @@ public class EntityDamageByEntityListener implements Listener {
         if (gameAttacker == null) return;
 
         final GameTeamColor playerTeamColor = gamePlayer.getGameIsland().getTeamColor();
-        final GameTeamColor attackerTeamColor = gameAttacker.getGameIsland().getTeamColor();;
+        final GameTeamColor attackerTeamColor = gameAttacker.getGameIsland().getTeamColor();
         event.setCancelled(playerTeamColor == attackerTeamColor);
 
 

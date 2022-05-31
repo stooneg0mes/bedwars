@@ -39,7 +39,7 @@ public class WaitingPlayersGameState extends GameState {
         final Player player = context.getPlayer();
         player.teleport(player.getWorld().getSpawnLocation());
 
-        final int playersLeft = (requiredPlayers - context.getOnlinePlayersSize());
+        final int playersLeft = (requiredPlayers - context.getOnlinePlayers().size());
 
         final TextColor textColor = TextColor.color(0x3cba5d);
 
@@ -64,7 +64,7 @@ public class WaitingPlayersGameState extends GameState {
 
     @Override
     public void handleUpdate(GameStateContext context) {
-        if (context.getOnlinePlayersSize() >= requiredPlayers) {
+        if (context.getOnlinePlayers().size() >= requiredPlayers) {
             context.advanceState();
         }
     }

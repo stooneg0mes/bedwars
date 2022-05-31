@@ -11,8 +11,12 @@ public class BuffGeneratorsUpgrade extends GameIslandUpgrade {
 
     private final GameGeneratorCache generatorCache = GamePlugin.getInstance().getGeneratorCache();
 
+    public BuffGeneratorsUpgrade() {
+        super(1);
+    }
+
     @Override
-    public void onUpgrade(GameIsland gameIsland, int level) {
+    public void handleUpgrade(GameIsland gameIsland, int level) {
         for (GameGenerator gameGenerator : generatorCache.getGenerators()) {
             if (!gameIsland.getCuboid().contains(gameGenerator.getLocation())) continue;
 
@@ -28,11 +32,6 @@ public class BuffGeneratorsUpgrade extends GameIslandUpgrade {
     @Override
     public GameIslandUpgradeType getUpgradeType() {
         return GameIslandUpgradeType.BUFF_GENERATORS;
-    }
-
-    @Override
-    public int getInitialLevel() {
-        return 1;
     }
 
 }

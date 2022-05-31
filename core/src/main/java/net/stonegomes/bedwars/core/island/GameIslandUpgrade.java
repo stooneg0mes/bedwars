@@ -1,29 +1,30 @@
 package net.stonegomes.bedwars.core.island;
 
-import lombok.Builder;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
+@Data
 public abstract class GameIslandUpgrade {
 
+    private final int initialLevel;
     private int level;
 
-    public GameIslandUpgrade() {
-        this.level = getInitialLevel();
+    public GameIslandUpgrade(int initialLevel) {
+        this.initialLevel = initialLevel;
+        this.level = initialLevel;
     }
 
+    /**
+     * The type of this upgrade.
+     * @return the upgrade type.
+     */
     public abstract GameIslandUpgradeType getUpgradeType();
 
-    public abstract int getInitialLevel();
-
-    public void onUpgrade(GameIsland gameIsland, int level) {}
-
-    public void setLevel(int level) {
-        this.level = level;
-    }
-
-    public int getLevel() {
-        return level;
-    }
+    /**
+     * Called when running the upgrade.
+     * @param gameIsland the island that is being upgraded.
+     * @param level the level of the upgrade.
+     */
+    public void handleUpgrade(GameIsland gameIsland, int level) {}
 
 }
