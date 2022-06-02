@@ -1,6 +1,5 @@
 package net.stonegomes.bedwars.solo.game.state;
 
-import com.google.common.collect.Sets;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.TextComponent;
 import net.kyori.adventure.text.format.NamedTextColor;
@@ -13,11 +12,11 @@ import net.stonegomes.bedwars.core.state.GameStateContext;
 import java.time.Duration;
 import java.util.Set;
 
-import static net.kyori.adventure.title.Title.*;
+import static net.kyori.adventure.title.Title.Times;
 
 public class StartingGameState extends GameState {
 
-    private final Set<Integer> warningTimes = Sets.newHashSet(10, 5, 4, 3, 2, 1);
+    private final Set<Integer> warningTimes = Set.of(10, 5, 4, 3, 2, 1);
 
     private int timeToLeave = 30;
 

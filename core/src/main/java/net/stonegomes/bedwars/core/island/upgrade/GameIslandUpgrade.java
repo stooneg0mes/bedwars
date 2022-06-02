@@ -1,6 +1,7 @@
-package net.stonegomes.bedwars.core.island;
+package net.stonegomes.bedwars.core.island.upgrade;
 
 import lombok.Data;
+import net.stonegomes.bedwars.core.island.GameIsland;
 
 @Data
 public abstract class GameIslandUpgrade {

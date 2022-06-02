@@ -2,7 +2,6 @@ package net.stonegomes.bedwars.solo.module;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import lombok.experimental.Delegate;
 import net.stonegomes.bedwars.commons.Module;
 import net.stonegomes.bedwars.commons.ModuleId;
 import net.stonegomes.bedwars.core.build.GameBuildCache;

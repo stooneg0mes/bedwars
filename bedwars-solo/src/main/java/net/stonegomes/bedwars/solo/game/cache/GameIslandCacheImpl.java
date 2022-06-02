@@ -1,6 +1,5 @@
 package net.stonegomes.bedwars.solo.game.cache;
 
-import net.stonegomes.bedwars.core.generator.GameGenerator;
 import net.stonegomes.bedwars.core.island.GameIsland;
 import net.stonegomes.bedwars.core.island.GameIslandCache;
 import net.stonegomes.bedwars.core.island.team.GameTeamColor;

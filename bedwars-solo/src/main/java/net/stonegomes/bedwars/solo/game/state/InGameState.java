@@ -1,10 +1,10 @@
 package net.stonegomes.bedwars.solo.game.state;
 
+import net.stonegomes.bedwars.core.generator.GameGenerator;
 import net.stonegomes.bedwars.core.island.GameIsland;
 import net.stonegomes.bedwars.core.player.GamePlayer;
 import net.stonegomes.bedwars.core.state.GameState;
 import net.stonegomes.bedwars.core.state.GameStateContext;
-import net.stonegomes.bedwars.core.generator.GameGenerator;
 import org.bukkit.Location;
 import org.bukkit.inventory.ItemStack;
 

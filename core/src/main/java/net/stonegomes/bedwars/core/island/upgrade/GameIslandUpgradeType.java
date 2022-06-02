@@ -1,4 +1,4 @@
-package net.stonegomes.bedwars.core.island;
+package net.stonegomes.bedwars.core.island.upgrade;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

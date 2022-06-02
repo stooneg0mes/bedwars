@@ -5,6 +5,8 @@ import lombok.Builder;
 import lombok.Data;
 import net.stonegomes.bedwars.commons.cuboid.Cuboid;
 import net.stonegomes.bedwars.core.island.team.GameTeamColor;
+import net.stonegomes.bedwars.core.island.upgrade.GameIslandUpgrade;
+import net.stonegomes.bedwars.core.island.upgrade.GameIslandUpgradeType;
 import net.stonegomes.bedwars.core.player.GamePlayer;
 import org.bukkit.Location;
 

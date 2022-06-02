@@ -2,10 +2,7 @@ package net.stonegomes.bedwars.solo.listener.player;
 
 import lombok.AllArgsConstructor;
 import net.kyori.adventure.text.Component;
-import net.kyori.adventure.text.TextComponent;
 import net.kyori.adventure.text.format.NamedTextColor;
-import net.kyori.adventure.text.format.TextColor;
-import net.stonegomes.bedwars.core.island.team.GameTeamColor;
 import net.stonegomes.bedwars.core.player.GamePlayer;
 import net.stonegomes.bedwars.solo.GamePlugin;
 import org.bukkit.GameMode;

@@ -5,11 +5,11 @@ import lombok.RequiredArgsConstructor;
 import net.stonegomes.bedwars.core.build.GameBuildCache;
 import net.stonegomes.bedwars.core.generator.GameGeneratorCache;
 import net.stonegomes.bedwars.core.island.GameIslandCache;
+import net.stonegomes.bedwars.core.player.GamePlayer;
 import net.stonegomes.bedwars.core.player.GamePlayerCache;
 import net.stonegomes.bedwars.core.state.GameManager;
 import net.stonegomes.bedwars.core.state.GameState;
 import net.stonegomes.bedwars.core.state.GameStateContext;
-import net.stonegomes.bedwars.core.player.GamePlayer;
 import net.stonegomes.bedwars.solo.GamePlugin;
 import org.bukkit.entity.Player;
 

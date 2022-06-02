@@ -18,7 +18,7 @@ import org.bukkit.scheduler.BukkitRunnable;
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
-import static net.kyori.adventure.title.Title.*;
+import static net.kyori.adventure.title.Title.Times;
 
 @AllArgsConstructor
 public class GameUpdateRunnable extends BukkitRunnable {
