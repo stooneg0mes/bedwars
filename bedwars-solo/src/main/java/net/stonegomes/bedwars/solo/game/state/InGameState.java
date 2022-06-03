@@ -29,7 +29,7 @@ public class InGameState extends GameState {
         final GameIsland lowestIsland = context.getIslandCache().getLowestIsland();
         final GamePlayer gamePlayer = context.getGamePlayer();
 
-        gamePlayer.setGameIsland(lowestIsland);
+        gamePlayer.setIsland(lowestIsland);
         gamePlayer.getBukkitPlayer().teleport(lowestIsland.getSpawnLocation());
     }
 
