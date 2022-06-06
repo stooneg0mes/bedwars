@@ -1,9 +1,9 @@
 package net.stonegomes.bedwars.core;
 
-import net.stonegomes.bedwars.commons.AbstractModulePlugin;
+import net.stonegomes.bedwars.commons.ModulePlugin;
 import org.bukkit.Bukkit;
 
-public class CorePlugin extends AbstractModulePlugin {
+public class CorePlugin extends ModulePlugin {
 
     @Override
     public void handleLoad() {

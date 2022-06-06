@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class AbstractModulePlugin extends JavaPlugin {
+public class ModulePlugin extends JavaPlugin {
 
     private final Map<String, Object> elements = new HashMap<>();
 

@@ -1,6 +1,6 @@
 package net.stonegomes.bedwars.solo;
 
-import net.stonegomes.bedwars.commons.AbstractModulePlugin;
+import net.stonegomes.bedwars.commons.ModulePlugin;
 import net.stonegomes.bedwars.commons.Module;
 import net.stonegomes.bedwars.core.build.GameBuildCache;
 import net.stonegomes.bedwars.core.generator.GameGeneratorCache;
@@ -12,7 +12,7 @@ import net.stonegomes.bedwars.solo.module.ListenerModule;
 import net.stonegomes.bedwars.solo.module.RunnableModule;
 import org.bukkit.Bukkit;
 
-public class GamePlugin extends AbstractModulePlugin {
+public class GamePlugin extends ModulePlugin {
 
     @Override
     public void handleLoad() {

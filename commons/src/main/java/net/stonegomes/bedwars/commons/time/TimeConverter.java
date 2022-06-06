@@ -1,6 +1,7 @@
 package net.stonegomes.bedwars.commons.time;
 
-import net.stonegomes.bedwars.commons.time.multiplier.TimeMultiplier;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 
 public class TimeConverter {
 
@@ -25,6 +26,22 @@ public class TimeConverter {
         }
 
         return time;
+    }
+
+    @AllArgsConstructor
+    @Getter
+    public enum TimeMultiplier {
+
+        SECONDS(1000, 's'),
+        MINUTES(60 * 1000, 'm'),
+        HOURS(60 * 60 * 1000, 'h'),
+        DAYS(24 * 60 * 60 * 1000, 'd'),
+        WEEKS(7 * 24 * 60 * 60 * 1000, 'w'),
+        YEARS((long) 365 * 24 * 60 * 60 * 1000, 'y');
+
+        private final long multiplier;
+        private final char diminutive;
+
     }
 
 }
