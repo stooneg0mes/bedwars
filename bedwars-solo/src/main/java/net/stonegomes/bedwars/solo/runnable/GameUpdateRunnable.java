@@ -31,8 +31,12 @@ public class GameUpdateRunnable extends BukkitRunnable {
         if (gameState == null) return;
 
         for (Player player : Bukkit.getOnlinePlayers()) {
+            // State update
+
             final GameStateContext gameStateContext = gamePlugin.getGameManager().buildContext(player);
             gameState.onUpdate(gameStateContext);
+
+            // Spectators update
 
             final GamePlayer gamePlayer = gameStateContext.getGamePlayer();
             if (gamePlayer.getSpectatorTime() != null) {
