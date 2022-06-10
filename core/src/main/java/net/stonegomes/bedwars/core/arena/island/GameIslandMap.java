@@ -47,7 +47,7 @@ public class GameIslandMap {
      */
     public GameIsland getLowestIsland() {
         return islandMap.values().stream()
-            .min(Comparator.comparingInt(island -> island.getPlayerSet().size()))
+            .min(Comparator.comparingInt(island -> island.getMemberSet().size()))
             .orElse(null);
     }
 

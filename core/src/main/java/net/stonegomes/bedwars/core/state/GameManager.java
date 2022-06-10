@@ -26,14 +26,14 @@ public interface GameManager {
      *
      * @return the current arena
      */
-    GameArena getArena();
+    GameArena getGameArena();
 
     /**
      * Set the current game arena
      *
      * @param gameArena the new game arena
      */
-    void setArena(GameArena gameArena);
+    void setGameArena(GameArena gameArena);
 
     /**
      * Get the current game state.

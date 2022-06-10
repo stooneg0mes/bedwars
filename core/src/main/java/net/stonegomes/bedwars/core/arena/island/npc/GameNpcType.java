@@ -1,4 +1,4 @@
-package net.stonegomes.bedwars.core.arena.island.shopkeeper;
+package net.stonegomes.bedwars.core.arena.island.npc;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

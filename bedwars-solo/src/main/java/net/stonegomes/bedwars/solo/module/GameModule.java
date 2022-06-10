@@ -11,8 +11,8 @@ import net.stonegomes.bedwars.core.player.GamePlayerCache;
 import net.stonegomes.bedwars.core.state.GameManager;
 import net.stonegomes.bedwars.solo.GamePlugin;
 import net.stonegomes.bedwars.solo.game.GameManagerImpl;
-import net.stonegomes.bedwars.solo.game.cache.GameBuildCacheImpl;
-import net.stonegomes.bedwars.solo.game.cache.GamePlayerCacheImpl;
+import net.stonegomes.bedwars.solo.game.build.GameBuildCacheImpl;
+import net.stonegomes.bedwars.solo.game.player.GamePlayerCacheImpl;
 import net.stonegomes.bedwars.solo.game.state.WaitingPlayersGameState;
 
 @ModuleId(id = "gameModule")
@@ -29,8 +29,6 @@ public class GameModule extends Module {
         gameManager = new GameManagerImpl(
             gamePlugin,
             new GameBuildCacheImpl(),
-            new GameGeneratorMapImpl(),
-            new GameIslandMapImpl(),
             new GamePlayerCacheImpl()
         );
 
@@ -39,14 +37,6 @@ public class GameModule extends Module {
 
     public GameBuildCache getBuildCache() {
         return gameManager.getBuildCache();
-    }
-
-    public GameGeneratorMap getGeneratorCache() {
-        return gameManager.getGeneratorCache();
-    }
-
-    public GameIslandMap getIslandCache() {
-        return gameManager.getIslandCache();
     }
 
     public GamePlayerCache getPlayerCache() {

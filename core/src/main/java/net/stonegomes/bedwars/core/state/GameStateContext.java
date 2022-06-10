@@ -81,8 +81,8 @@ public class GameStateContext {
      *
      * @return the arena
      */
-    public GameArena getArena() {
-        return gameManager.getArena();
+    public GameArena getGameArena() {
+        return gameManager.getGameArena();
     }
 
     /**

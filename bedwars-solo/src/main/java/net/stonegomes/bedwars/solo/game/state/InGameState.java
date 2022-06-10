@@ -26,7 +26,7 @@ public class InGameState extends GameState {
 
     @Override
     public void onEnter(GameStateContext context) {
-        final GameIsland lowestIsland = context.getArena().getIslandMap().getLowestIsland();
+        final GameIsland lowestIsland = context.getGameArena().getIslandMap().getLowestIsland();
         final GamePlayer gamePlayer = context.getGamePlayer();
 
         gamePlayer.setIsland(lowestIsland);
@@ -35,7 +35,7 @@ public class InGameState extends GameState {
 
     @Override
     public void onUpdate(GameStateContext context) {
-        for (GameGenerator gameGenerator : context.getArena().getGeneratorMap().getGenerators()) {
+        for (GameGenerator gameGenerator : context.getGameArena().getGeneratorMap().getGenerators()) {
             if (gameGenerator.getTimeToGenerate() > System.currentTimeMillis()) continue;
 
             final int randomAmount = RANDOM.nextInt(gameGenerator.getAmountOfItems());

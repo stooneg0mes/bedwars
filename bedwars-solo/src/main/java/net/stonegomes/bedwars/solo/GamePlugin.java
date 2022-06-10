@@ -50,14 +50,6 @@ public class GamePlugin extends ModulePlugin {
         return ((GameModule) getModule(GameModule.class)).getPlayerCache();
     }
 
-    public GameGeneratorMap getGeneratorCache() {
-        return ((GameModule) getModule(GameModule.class)).getGeneratorCache();
-    }
-
-    public GameIslandMap getIslandCache() {
-        return ((GameModule) getModule(GameModule.class)).getIslandCache();
-    }
-
     public static GamePlugin getInstance() {
         return GamePlugin.getPlugin(GamePlugin.class);
     }

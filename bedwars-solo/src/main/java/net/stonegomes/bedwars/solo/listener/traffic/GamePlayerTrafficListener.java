@@ -3,6 +3,7 @@ package net.stonegomes.bedwars.solo.listener.traffic;
 import lombok.AllArgsConstructor;
 import net.stonegomes.bedwars.core.player.GamePlayer;
 import net.stonegomes.bedwars.solo.GamePlugin;
+import net.stonegomes.bedwars.solo.game.player.GamePlayerImpl;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
@@ -15,7 +16,7 @@ public class GamePlayerTrafficListener implements Listener {
 
     @EventHandler
     public void handleJoin(PlayerJoinEvent event) {
-        final GamePlayer gamePlayer = GamePlayer.builder()
+        final GamePlayer gamePlayer = GamePlayerImpl.builder()
             .uniqueId(event.getPlayer().getUniqueId())
             .island(null)
             .build();

@@ -26,22 +26,22 @@ public interface GamePlayer {
     void setIsland(GameIsland island);
 
     /**
-     * Check if the game player is alive
-     * @return if the player is alive
+     * Get the game player spectator time
+     * @return the player spectator time
      */
-    boolean isAlive();
+    Long getSpectatorTime();
+
+    /**
+     * Set the game player spectator time
+     * @param time the spectator time
+     */
+    void setSpectatorTime(Long time);
 
     /**
      * Check if the game player is spectator
      * @return if the player is spectator
      */
     boolean isSpectator();
-
-    /**
-     * Get the game player spectator time
-     * @return the player spectator time
-     */
-    Long getSpectatorTime();
 
     /**
      * Get the bukkit game player

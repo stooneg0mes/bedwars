@@ -10,6 +10,11 @@ public class GameGeneratorMap {
 
     private final Map<Location, GameGenerator> generatorMap = new HashMap<>();
 
+    /**
+     * Put a generator into the map
+     * @param location the
+     * @param gameGenerator
+     */
     public void putGenerator(Location location, GameGenerator gameGenerator) {
         generatorMap.put(location, gameGenerator);
     }

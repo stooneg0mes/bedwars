@@ -2,6 +2,7 @@ package net.stonegomes.bedwars.solo.game;
 
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
+import net.stonegomes.bedwars.core.arena.GameArena;
 import net.stonegomes.bedwars.core.build.GameBuildCache;
 import net.stonegomes.bedwars.core.arena.generator.GameGeneratorMap;
 import net.stonegomes.bedwars.core.arena.island.GameIslandMap;
@@ -20,11 +21,10 @@ public class GameManagerImpl implements GameManager {
     private final GamePlugin gamePlugin;
 
     private final GameBuildCache buildCache;
-    private final GameGeneratorMap generatorCache;
-    private final GameIslandMap islandCache;
     private final GamePlayerCache playerCache;
 
     private GameState gameState;
+    private GameArena gameArena;
 
     @Override
     public GameStateContext buildContext(Player player, GameState gameState) {
@@ -33,7 +33,6 @@ public class GameManagerImpl implements GameManager {
 
         return GameStateContext.builder()
             .gamePlayer(gamePlayer)
-            .gameState(gameState)
             .gameManager(this)
             .build();
     }

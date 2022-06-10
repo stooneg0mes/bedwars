@@ -3,10 +3,19 @@ package net.stonegomes.bedwars.core.arena;
 import net.stonegomes.bedwars.commons.cuboid.Cuboid;
 import net.stonegomes.bedwars.core.arena.generator.GameGeneratorMap;
 import net.stonegomes.bedwars.core.arena.island.GameIslandMap;
+import net.stonegomes.bedwars.core.arena.island.npc.GameNpcMap;
 import org.bukkit.Location;
 import org.bukkit.World;
 
+import java.util.UUID;
+
 public interface GameArena {
+
+    /**
+     * Get the game arena unique id
+     * @return the arena unique id
+     */
+    UUID getUniqueId();
 
     /**
      * Get the game arena world
@@ -31,6 +40,12 @@ public interface GameArena {
      * @return the generator map
      */
     GameGeneratorMap getGeneratorMap();
+
+    /**
+     * Get the game npc map
+     * @return the npc map
+     */
+    GameNpcMap getNpcMap();
 
     /**
      * Get the game arena waiting spawn location
