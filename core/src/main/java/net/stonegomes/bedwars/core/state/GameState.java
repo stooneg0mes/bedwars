@@ -45,31 +45,27 @@ public abstract class GameState {
      *
      * @param context the context
      */
-    public void onEnter(GameStateContext context) {
-    }
+    public void onEnter(GameStateContext context) {}
 
     /**
      * Called every second to update the state
      *
      * @param context the context
      */
-    public void onUpdate(GameStateContext context) {
-    }
+    public void onUpdate(GameStateContext context) {}
 
     /**
      * Called when leaving the state to another state
      *
      * @param context the context
      */
-    public void onExit(GameStateContext context) {
-    }
+    public void onExit(GameStateContext context) {}
 
     /**
      * Called when leaving the game
      *
      * @param context the context
      */
-    public void onQuit(GameStateContext context) {
-    }
+    public void onQuit(GameStateContext context) {}
 
 }

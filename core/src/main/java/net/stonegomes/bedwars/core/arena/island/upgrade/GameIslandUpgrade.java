@@ -1,7 +1,6 @@
 package net.stonegomes.bedwars.core.arena.island.upgrade;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import net.stonegomes.bedwars.core.arena.island.GameIsland;
 

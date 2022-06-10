@@ -61,7 +61,7 @@ public interface GameManager {
     /**
      * Build a new {@link GameStateContext} for the given player and state.
      *
-     * @param player the player to build the context
+     * @param player    the player to build the context
      * @param gameState the state to build the context
      * @return the built context
      */

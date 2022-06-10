@@ -8,7 +8,7 @@ public interface GamePlayerCache {
     /**
      * Put a game player into the cache.
      *
-     * @param uuid the player's unique id
+     * @param uuid       the player's unique id
      * @param gamePlayer the game player
      */
     void putGamePlayer(UUID uuid, GamePlayer gamePlayer);
