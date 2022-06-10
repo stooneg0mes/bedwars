@@ -1,6 +1,6 @@
 package net.stonegomes.bedwars.core.state;
 
-import net.stonegomes.bedwars.core.arena.GameArena;
+import net.stonegomes.bedwars.core.map.GameMap;
 import net.stonegomes.bedwars.core.build.GameBuildCache;
 import net.stonegomes.bedwars.core.player.GamePlayerCache;
 import org.bukkit.entity.Player;
@@ -22,18 +22,18 @@ public interface GameManager {
     GamePlayerCache getPlayerCache();
 
     /**
-     * Get the current game arena
+     * Get the current game map
      *
-     * @return the current arena
+     * @return the current map
      */
-    GameArena getGameArena();
+    GameMap getGameMap();
 
     /**
-     * Set the current game arena
+     * Set the current game map
      *
-     * @param gameArena the new game arena
+     * @param gameMap the new game map
      */
-    void setGameArena(GameArena gameArena);
+    void setGameMap(GameMap gameMap);
 
     /**
      * Get the current game state.
@@ -50,7 +50,7 @@ public interface GameManager {
     void setGameState(GameState gameState);
 
     /**
-     * Build a new {@link GameStateContext} for the given player.
+     * Build a new context {@link GameStateContext} for the given player.
      *
      * @param player the player to build the context for
      * @return the built context

@@ -1,7 +1,7 @@
 package net.stonegomes.bedwars.solo.listener.entity;
 
 import lombok.AllArgsConstructor;
-import net.stonegomes.bedwars.core.arena.island.team.GameTeamColor;
+import net.stonegomes.bedwars.core.map.island.team.GameTeamColor;
 import net.stonegomes.bedwars.core.player.GamePlayer;
 import net.stonegomes.bedwars.core.state.GameState;
 import net.stonegomes.bedwars.solo.GamePlugin;
@@ -33,8 +33,6 @@ public class EntityDamageByEntityListener implements Listener {
         final GameTeamColor playerTeamColor = gamePlayer.getIsland().getTeamColor();
         final GameTeamColor attackerTeamColor = gameAttacker.getIsland().getTeamColor();
         event.setCancelled(playerTeamColor == attackerTeamColor);
-
-
     }
 
 }

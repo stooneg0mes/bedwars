@@ -42,7 +42,7 @@ public class GameUpdateRunnable extends BukkitRunnable {
             if (gamePlayer.getSpectatorTime() != null) {
                 long secondsLeft = TimeUnit.MILLISECONDS.toSeconds(gamePlayer.getSpectatorTime());
 
-                final TextComponent titleComponent = Component.text("SPECTATOR", NamedTextColor.DARK_RED)
+                final TextComponent titleComponent = Component.text("YOU DIED", NamedTextColor.DARK_RED)
                     .decoration(TextDecoration.BOLD, true);
                 final TextComponent subTitleComponent = Component.text("You will respawn in ", NamedTextColor.WHITE)
                     .append(Component.text(secondsLeft, NamedTextColor.RED))
@@ -60,7 +60,7 @@ public class GameUpdateRunnable extends BukkitRunnable {
                     times
                 ));
 
-                if (gamePlayer.getSpectatorTime() <= System.currentTimeMillis()) {
+                if (!gamePlayer.isSpectator()) {
                     player.setGameMode(GameMode.SURVIVAL);
                     player.teleport(gamePlayer.getIsland().getSpawnLocation());
 

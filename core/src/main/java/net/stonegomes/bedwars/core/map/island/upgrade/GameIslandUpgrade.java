@@ -1,8 +1,8 @@
-package net.stonegomes.bedwars.core.arena.island.upgrade;
+package net.stonegomes.bedwars.core.map.island.upgrade;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import net.stonegomes.bedwars.core.arena.island.GameIsland;
+import net.stonegomes.bedwars.core.map.island.GameIsland;
 
 @AllArgsConstructor
 @Data

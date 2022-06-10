@@ -1,4 +1,4 @@
-package net.stonegomes.bedwars.core.arena.island.upgrade;
+package net.stonegomes.bedwars.core.map.island.upgrade;
 
 import java.util.HashMap;
 import java.util.Map;

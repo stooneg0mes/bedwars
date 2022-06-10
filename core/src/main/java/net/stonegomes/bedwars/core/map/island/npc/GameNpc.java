@@ -1,4 +1,4 @@
-package net.stonegomes.bedwars.core.arena.island.npc;
+package net.stonegomes.bedwars.core.map.island.npc;
 
 import org.bukkit.Location;
 

@@ -1,6 +1,6 @@
-package net.stonegomes.bedwars.core.arena.island;
+package net.stonegomes.bedwars.core.map.island;
 
-import net.stonegomes.bedwars.core.arena.island.team.GameTeamColor;
+import net.stonegomes.bedwars.core.map.island.team.GameTeamColor;
 
 import java.util.Collection;
 import java.util.Comparator;

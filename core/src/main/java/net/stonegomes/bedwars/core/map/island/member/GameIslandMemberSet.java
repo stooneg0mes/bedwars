@@ -1,4 +1,4 @@
-package net.stonegomes.bedwars.core.arena.island.member;
+package net.stonegomes.bedwars.core.map.island.member;
 
 import java.util.HashSet;
 import java.util.Set;

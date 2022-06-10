@@ -3,7 +3,7 @@ package net.stonegomes.bedwars.solo.game.player;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import net.stonegomes.bedwars.core.arena.island.GameIsland;
+import net.stonegomes.bedwars.core.map.island.GameIsland;
 import net.stonegomes.bedwars.core.player.GamePlayer;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -23,7 +23,7 @@ public class GamePlayerImpl implements GamePlayer {
 
     @Override
     public boolean isSpectator() {
-        return spectatorTime >= System.currentTimeMillis();
+        return spectatorTime != null && spectatorTime >= System.currentTimeMillis();
     }
 
     @Override

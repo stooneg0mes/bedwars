@@ -1,7 +1,7 @@
 package net.stonegomes.bedwars.solo.game.state;
 
-import net.stonegomes.bedwars.core.arena.generator.GameGenerator;
-import net.stonegomes.bedwars.core.arena.island.GameIsland;
+import net.stonegomes.bedwars.core.map.generator.GameGenerator;
+import net.stonegomes.bedwars.core.map.island.GameIsland;
 import net.stonegomes.bedwars.core.player.GamePlayer;
 import net.stonegomes.bedwars.core.state.GameState;
 import net.stonegomes.bedwars.core.state.GameStateContext;
@@ -26,7 +26,7 @@ public class InGameState extends GameState {
 
     @Override
     public void onEnter(GameStateContext context) {
-        final GameIsland lowestIsland = context.getGameArena().getIslandMap().getLowestIsland();
+        final GameIsland lowestIsland = context.getGameMap().getIslandMap().getLowestIsland();
         final GamePlayer gamePlayer = context.getGamePlayer();
 
         gamePlayer.setIsland(lowestIsland);
@@ -35,7 +35,7 @@ public class InGameState extends GameState {
 
     @Override
     public void onUpdate(GameStateContext context) {
-        for (GameGenerator gameGenerator : context.getGameArena().getGeneratorMap().getGenerators()) {
+        for (GameGenerator gameGenerator : context.getGameMap().getGeneratorMap().getGenerators()) {
             if (gameGenerator.getTimeToGenerate() > System.currentTimeMillis()) continue;
 
             final int randomAmount = RANDOM.nextInt(gameGenerator.getAmountOfItems());

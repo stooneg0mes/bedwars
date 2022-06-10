@@ -5,8 +5,6 @@ import lombok.RequiredArgsConstructor;
 import net.stonegomes.bedwars.commons.Module;
 import net.stonegomes.bedwars.commons.ModuleId;
 import net.stonegomes.bedwars.core.build.GameBuildCache;
-import net.stonegomes.bedwars.core.arena.generator.GameGeneratorMap;
-import net.stonegomes.bedwars.core.arena.island.GameIslandMap;
 import net.stonegomes.bedwars.core.player.GamePlayerCache;
 import net.stonegomes.bedwars.core.state.GameManager;
 import net.stonegomes.bedwars.solo.GamePlugin;

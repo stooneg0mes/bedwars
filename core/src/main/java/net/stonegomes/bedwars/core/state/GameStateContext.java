@@ -3,7 +3,7 @@ package net.stonegomes.bedwars.core.state;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
-import net.stonegomes.bedwars.core.arena.GameArena;
+import net.stonegomes.bedwars.core.map.GameMap;
 import net.stonegomes.bedwars.core.build.GameBuildCache;
 import net.stonegomes.bedwars.core.player.GamePlayer;
 import net.stonegomes.bedwars.core.player.GamePlayerCache;
@@ -77,12 +77,12 @@ public class GameStateContext {
     }
 
     /**
-     * Get the game arena
+     * Get the game map
      *
-     * @return the arena
+     * @return the map
      */
-    public GameArena getGameArena() {
-        return gameManager.getGameArena();
+    public GameMap getGameMap() {
+        return gameManager.getGameMap();
     }
 
     /**

@@ -1,34 +1,34 @@
-package net.stonegomes.bedwars.core.arena;
+package net.stonegomes.bedwars.core.map;
 
 import net.stonegomes.bedwars.commons.cuboid.Cuboid;
-import net.stonegomes.bedwars.core.arena.generator.GameGeneratorMap;
-import net.stonegomes.bedwars.core.arena.island.GameIslandMap;
-import net.stonegomes.bedwars.core.arena.island.npc.GameNpcMap;
+import net.stonegomes.bedwars.core.map.generator.GameGeneratorMap;
+import net.stonegomes.bedwars.core.map.island.GameIslandMap;
+import net.stonegomes.bedwars.core.map.island.npc.GameNpcMap;
 import org.bukkit.Location;
 import org.bukkit.World;
 
 import java.util.UUID;
 
-public interface GameArena {
+public interface GameMap {
 
     /**
-     * Get the game arena unique id
+     * Get the game map unique id
      *
-     * @return the arena unique id
+     * @return the map unique id
      */
     UUID getUniqueId();
 
     /**
-     * Get the game arena world
+     * Get the game map world
      *
-     * @return the arena world
+     * @return the map world
      */
     World getWorld();
 
     /**
-     * Get the game arena name
+     * Get the game map name
      *
-     * @return the arena name
+     * @return the map name
      */
     String getName();
 
@@ -54,14 +54,14 @@ public interface GameArena {
     GameNpcMap getNpcMap();
 
     /**
-     * Get the game arena waiting spawn location
+     * Get the game map waiting spawn location
      *
      * @return the waiting spawn location
      */
     Location getWaitingSpawnLocation();
 
     /**
-     * Get the game arena waiting build cuboid
+     * Get the game map waiting build cuboid
      *
      * @return the waiting cuboid
      */

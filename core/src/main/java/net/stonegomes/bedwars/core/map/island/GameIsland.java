@@ -1,10 +1,10 @@
-package net.stonegomes.bedwars.core.arena.island;
+package net.stonegomes.bedwars.core.map.island;
 
 import net.stonegomes.bedwars.commons.cuboid.Cuboid;
-import net.stonegomes.bedwars.core.arena.generator.GameGeneratorMap;
-import net.stonegomes.bedwars.core.arena.island.member.GameIslandMemberSet;
-import net.stonegomes.bedwars.core.arena.island.team.GameTeamColor;
-import net.stonegomes.bedwars.core.arena.island.upgrade.GameIslandUpgradeMap;
+import net.stonegomes.bedwars.core.map.generator.GameGeneratorMap;
+import net.stonegomes.bedwars.core.map.island.member.GameIslandMemberSet;
+import net.stonegomes.bedwars.core.map.island.team.GameTeamColor;
+import net.stonegomes.bedwars.core.map.island.upgrade.GameIslandUpgradeMap;
 import org.bukkit.Location;
 
 public interface GameIsland {

@@ -1,6 +1,6 @@
 package net.stonegomes.bedwars.core.player;
 
-import net.stonegomes.bedwars.core.arena.island.GameIsland;
+import net.stonegomes.bedwars.core.map.island.GameIsland;
 import org.bukkit.entity.Player;
 
 import java.util.UUID;

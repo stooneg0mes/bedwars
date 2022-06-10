@@ -1,4 +1,4 @@
-package net.stonegomes.bedwars.core.arena.generator;
+package net.stonegomes.bedwars.core.map.generator;
 
 import org.bukkit.Location;
 import org.bukkit.Material;
