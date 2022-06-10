@@ -3,8 +3,8 @@ package net.stonegomes.bedwars.solo.game;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import net.stonegomes.bedwars.core.build.GameBuildCache;
-import net.stonegomes.bedwars.core.generator.GameGeneratorCache;
-import net.stonegomes.bedwars.core.island.GameIslandCache;
+import net.stonegomes.bedwars.core.arena.generator.GameGeneratorMap;
+import net.stonegomes.bedwars.core.arena.island.GameIslandMap;
 import net.stonegomes.bedwars.core.player.GamePlayer;
 import net.stonegomes.bedwars.core.player.GamePlayerCache;
 import net.stonegomes.bedwars.core.state.GameManager;
@@ -20,8 +20,8 @@ public class GameManagerImpl implements GameManager {
     private final GamePlugin gamePlugin;
 
     private final GameBuildCache buildCache;
-    private final GameGeneratorCache generatorCache;
-    private final GameIslandCache islandCache;
+    private final GameGeneratorMap generatorCache;
+    private final GameIslandMap islandCache;
     private final GamePlayerCache playerCache;
 
     private GameState gameState;

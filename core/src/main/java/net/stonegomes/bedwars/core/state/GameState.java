@@ -4,12 +4,9 @@ public abstract class GameState {
 
     public abstract String getName();
 
-    /*
-    State methods
-     */
-
     /**
      * Get the next state
+     *
      * @return the next state or null if there is no next state
      */
     public GameState getNextState() {
@@ -18,6 +15,7 @@ public abstract class GameState {
 
     /**
      * Get the previous state
+     *
      * @return the previous state or null if there is no previous state
      */
     public GameState getPreviousState() {
@@ -26,6 +24,7 @@ public abstract class GameState {
 
     /**
      * Check if this state is the first state
+     *
      * @return if the state doesn't have a previous state
      */
     public boolean isFirstState() {
@@ -34,6 +33,7 @@ public abstract class GameState {
 
     /**
      * Check if this state is the last state
+     *
      * @return if the state doesn't have a next state
      */
     public boolean isLastState() {
@@ -42,26 +42,34 @@ public abstract class GameState {
 
     /**
      * Called when entering the state
+     *
      * @param context the context
      */
-    public void onEnter(GameStateContext context) {}
+    public void onEnter(GameStateContext context) {
+    }
 
     /**
      * Called every second to update the state
+     *
      * @param context the context
      */
-    public void onUpdate(GameStateContext context) {}
+    public void onUpdate(GameStateContext context) {
+    }
 
     /**
      * Called when leaving the state to another state
+     *
      * @param context the context
      */
-    public void onExit(GameStateContext context) {}
+    public void onExit(GameStateContext context) {
+    }
 
     /**
      * Called when leaving the game
+     *
      * @param context the context
      */
-    public void onQuit(GameStateContext context) {}
+    public void onQuit(GameStateContext context) {
+    }
 
 }

@@ -1,7 +1,7 @@
-package net.stonegomes.bedwars.core.island.upgrade;
+package net.stonegomes.bedwars.core.arena.island.upgrade;
 
 import lombok.Data;
-import net.stonegomes.bedwars.core.island.GameIsland;
+import net.stonegomes.bedwars.core.arena.island.GameIsland;
 
 @Data
 public abstract class GameIslandUpgrade {
@@ -16,15 +16,18 @@ public abstract class GameIslandUpgrade {
 
     /**
      * The type of this upgrade.
+     *
      * @return the upgrade type.
      */
     public abstract GameIslandUpgradeType getUpgradeType();
 
     /**
      * Called when running the upgrade.
+     *
      * @param gameIsland the island that is being upgraded.
-     * @param level the level of the upgrade.
+     * @param level      the level of the upgrade.
      */
-    public void onUpgrade(GameIsland gameIsland, int level) {}
+    public void onUpgrade(GameIsland gameIsland, int level) {
+    }
 
 }

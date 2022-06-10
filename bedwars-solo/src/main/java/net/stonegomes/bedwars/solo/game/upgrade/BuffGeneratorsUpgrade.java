@@ -1,15 +1,15 @@
 package net.stonegomes.bedwars.solo.game.upgrade;
 
-import net.stonegomes.bedwars.core.generator.GameGenerator;
-import net.stonegomes.bedwars.core.generator.GameGeneratorCache;
-import net.stonegomes.bedwars.core.island.GameIsland;
-import net.stonegomes.bedwars.core.island.upgrade.GameIslandUpgrade;
-import net.stonegomes.bedwars.core.island.upgrade.GameIslandUpgradeType;
+import net.stonegomes.bedwars.core.arena.generator.GameGenerator;
+import net.stonegomes.bedwars.core.arena.generator.GameGeneratorMap;
+import net.stonegomes.bedwars.core.arena.island.GameIsland;
+import net.stonegomes.bedwars.core.arena.island.upgrade.GameIslandUpgrade;
+import net.stonegomes.bedwars.core.arena.island.upgrade.GameIslandUpgradeType;
 import net.stonegomes.bedwars.solo.GamePlugin;
 
 public class BuffGeneratorsUpgrade extends GameIslandUpgrade {
 
-    private final GameGeneratorCache generatorCache = GamePlugin.getInstance().getGeneratorCache();
+    private final GameGeneratorMap generatorCache = GamePlugin.getInstance().getGeneratorCache();
 
     public BuffGeneratorsUpgrade() {
         super(1);

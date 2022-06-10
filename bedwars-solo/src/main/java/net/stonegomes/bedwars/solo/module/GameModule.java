@@ -5,15 +5,13 @@ import lombok.RequiredArgsConstructor;
 import net.stonegomes.bedwars.commons.Module;
 import net.stonegomes.bedwars.commons.ModuleId;
 import net.stonegomes.bedwars.core.build.GameBuildCache;
-import net.stonegomes.bedwars.core.generator.GameGeneratorCache;
-import net.stonegomes.bedwars.core.island.GameIslandCache;
+import net.stonegomes.bedwars.core.arena.generator.GameGeneratorMap;
+import net.stonegomes.bedwars.core.arena.island.GameIslandMap;
 import net.stonegomes.bedwars.core.player.GamePlayerCache;
 import net.stonegomes.bedwars.core.state.GameManager;
 import net.stonegomes.bedwars.solo.GamePlugin;
 import net.stonegomes.bedwars.solo.game.GameManagerImpl;
 import net.stonegomes.bedwars.solo.game.cache.GameBuildCacheImpl;
-import net.stonegomes.bedwars.solo.game.cache.GameGeneratorCacheImpl;
-import net.stonegomes.bedwars.solo.game.cache.GameIslandCacheImpl;
 import net.stonegomes.bedwars.solo.game.cache.GamePlayerCacheImpl;
 import net.stonegomes.bedwars.solo.game.state.WaitingPlayersGameState;
 
@@ -31,8 +29,8 @@ public class GameModule extends Module {
         gameManager = new GameManagerImpl(
             gamePlugin,
             new GameBuildCacheImpl(),
-            new GameGeneratorCacheImpl(),
-            new GameIslandCacheImpl(),
+            new GameGeneratorMapImpl(),
+            new GameIslandMapImpl(),
             new GamePlayerCacheImpl()
         );
 
@@ -43,11 +41,11 @@ public class GameModule extends Module {
         return gameManager.getBuildCache();
     }
 
-    public GameGeneratorCache getGeneratorCache() {
+    public GameGeneratorMap getGeneratorCache() {
         return gameManager.getGeneratorCache();
     }
 
-    public GameIslandCache getIslandCache() {
+    public GameIslandMap getIslandCache() {
         return gameManager.getIslandCache();
     }
 

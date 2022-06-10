@@ -7,6 +7,7 @@ public interface GamePlayerCache {
 
     /**
      * Put a game player into the cache.
+     *
      * @param uuid the player's unique id
      * @param gamePlayer the game player
      */
@@ -14,12 +15,14 @@ public interface GamePlayerCache {
 
     /**
      * Remove a game player from the cache.
+     *
      * @param uuid the player's unique id
      */
     void removeGamePlayer(UUID uuid);
 
     /**
      * Get a game player from the cache.
+     *
      * @param uuid the player's unique id
      * @return the game player
      */
@@ -27,6 +30,7 @@ public interface GamePlayerCache {
 
     /**
      * Get all game players from the cache.
+     *
      * @return all game players
      */
     Collection<GamePlayer> getGamePlayers();
