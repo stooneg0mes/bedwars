@@ -1,13 +1,13 @@
-package net.stonegomes.bedwars.solo.game.arena;
+package net.stonegomes.bedwars.solo.game.map;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import net.stonegomes.bedwars.commons.cuboid.Cuboid;
-import net.stonegomes.bedwars.core.arena.GameArena;
-import net.stonegomes.bedwars.core.arena.generator.GameGeneratorMap;
-import net.stonegomes.bedwars.core.arena.island.GameIslandMap;
-import net.stonegomes.bedwars.core.arena.island.npc.GameNpcMap;
+import net.stonegomes.bedwars.core.map.GameMap;
+import net.stonegomes.bedwars.core.map.generator.GameGeneratorMap;
+import net.stonegomes.bedwars.core.map.island.GameIslandMap;
+import net.stonegomes.bedwars.core.map.island.npc.GameNpcMap;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.World;
@@ -17,7 +17,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @Data
 @Builder
-public class GameArenaImpl implements GameArena {
+public class GameMapImpl implements GameMap {
 
     private final UUID uniqueId;
 

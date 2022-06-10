@@ -1,8 +1,12 @@
-package net.stonegomes.bedwars.core.state;
+package net.stonegomes.bedwars.core.manager;
 
 import net.stonegomes.bedwars.core.map.GameMap;
 import net.stonegomes.bedwars.core.build.GameBuildCache;
+import net.stonegomes.bedwars.core.map.GameMapCache;
+import net.stonegomes.bedwars.core.map.GameMapDao;
 import net.stonegomes.bedwars.core.player.GamePlayerCache;
+import net.stonegomes.bedwars.core.state.GameState;
+import net.stonegomes.bedwars.core.state.GameStateContext;
 import org.bukkit.entity.Player;
 
 public interface GameManager {
@@ -20,6 +24,20 @@ public interface GameManager {
      * @return the game player cache
      */
     GamePlayerCache getPlayerCache();
+
+    /**
+     * Get the game map cache.
+     *
+     * @return the game map cache
+     */
+    GameMapCache getMapCache();
+
+    /**
+     * Get the game map dao.
+     *
+     * @return the game map dao
+     */
+    GameMapDao getMapDao();
 
     /**
      * Get the current game map
@@ -66,5 +84,12 @@ public interface GameManager {
      * @return the built context
      */
     GameStateContext buildContext(Player player, GameState gameState);
+
+    /**
+     * Check if the game is on setup mode.
+     *
+     * @return if the game is on setup mode
+     */
+    boolean isOnSetup();
 
 }
