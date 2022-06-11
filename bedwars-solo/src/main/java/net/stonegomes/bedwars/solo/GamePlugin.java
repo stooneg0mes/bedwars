@@ -6,7 +6,7 @@ import net.stonegomes.bedwars.core.build.GameBuildCache;
 import net.stonegomes.bedwars.core.map.GameMapCache;
 import net.stonegomes.bedwars.core.map.GameMapDao;
 import net.stonegomes.bedwars.core.player.GamePlayerCache;
-import net.stonegomes.bedwars.core.manager.GameManager;
+import net.stonegomes.bedwars.core.GameManager;
 import net.stonegomes.bedwars.solo.module.GameModule;
 import net.stonegomes.bedwars.solo.module.ListenerModule;
 import net.stonegomes.bedwars.solo.module.RunnableModule;

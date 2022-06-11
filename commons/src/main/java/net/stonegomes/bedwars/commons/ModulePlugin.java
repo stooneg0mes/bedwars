@@ -24,9 +24,7 @@ public class ModulePlugin extends JavaPlugin {
     Load
      */
 
-    public void handleLoad() {
-        Bukkit.getLogger().info("Commons loading.");
-    }
+    public void handleLoad() {}
 
     @Override
     public void onLoad() {
@@ -46,9 +44,7 @@ public class ModulePlugin extends JavaPlugin {
     Enable
      */
 
-    public void handleEnable() {
-        Bukkit.getLogger().info("Commons enabling.");
-    }
+    public void handleEnable() {}
 
     @Override
     public void onEnable() {
@@ -63,9 +59,7 @@ public class ModulePlugin extends JavaPlugin {
     Disable
      */
 
-    public void handleDisable() {
-        Bukkit.getLogger().info("Commons disabling.");
-    }
+    public void handleDisable() {}
 
     @Override
     public void onDisable() {

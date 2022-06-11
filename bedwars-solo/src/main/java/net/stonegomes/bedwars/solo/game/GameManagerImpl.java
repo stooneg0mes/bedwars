@@ -8,10 +8,9 @@ import net.stonegomes.bedwars.core.map.GameMapCache;
 import net.stonegomes.bedwars.core.map.GameMapDao;
 import net.stonegomes.bedwars.core.player.GamePlayer;
 import net.stonegomes.bedwars.core.player.GamePlayerCache;
-import net.stonegomes.bedwars.core.manager.GameManager;
+import net.stonegomes.bedwars.core.GameManager;
 import net.stonegomes.bedwars.core.state.GameState;
 import net.stonegomes.bedwars.core.state.GameStateContext;
-import net.stonegomes.bedwars.solo.GamePlugin;
 import net.stonegomes.bedwars.solo.game.state.setup.SetupGameState;
 import org.bukkit.entity.Player;
 

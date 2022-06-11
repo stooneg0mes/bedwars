@@ -3,7 +3,7 @@ package net.stonegomes.bedwars.core.state;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
-import net.stonegomes.bedwars.core.manager.GameManager;
+import net.stonegomes.bedwars.core.GameManager;
 import net.stonegomes.bedwars.core.map.GameMap;
 import net.stonegomes.bedwars.core.build.GameBuildCache;
 import net.stonegomes.bedwars.core.player.GamePlayer;

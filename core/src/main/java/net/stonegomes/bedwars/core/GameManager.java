@@ -1,4 +1,4 @@
-package net.stonegomes.bedwars.core.manager;
+package net.stonegomes.bedwars.core;
 
 import net.stonegomes.bedwars.core.map.GameMap;
 import net.stonegomes.bedwars.core.build.GameBuildCache;
