@@ -36,7 +36,7 @@ public class GameUpdateRunnable extends BukkitRunnable {
             final GameStateContext gameStateContext = gamePlugin.getGameManager().buildContext(player);
             gameState.onUpdate(gameStateContext);
 
-            // Spectators update
+            // Spectator update
 
             final GamePlayer gamePlayer = gameStateContext.getGamePlayer();
             if (gamePlayer.getSpectatorTime() != null) {
