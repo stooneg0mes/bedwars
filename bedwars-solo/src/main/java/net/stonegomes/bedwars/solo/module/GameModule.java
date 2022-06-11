@@ -5,6 +5,7 @@ import lombok.RequiredArgsConstructor;
 import net.stonegomes.bedwars.commons.Module;
 import net.stonegomes.bedwars.commons.ModuleId;
 import net.stonegomes.bedwars.core.build.GameBuildCache;
+import net.stonegomes.bedwars.core.map.GameMap;
 import net.stonegomes.bedwars.core.map.GameMapCache;
 import net.stonegomes.bedwars.core.map.GameMapDao;
 import net.stonegomes.bedwars.core.player.GamePlayerCache;
@@ -15,6 +16,7 @@ import net.stonegomes.bedwars.solo.game.map.GameMapCacheImpl;
 import net.stonegomes.bedwars.solo.game.map.GameMapDaoImpl;
 import net.stonegomes.bedwars.solo.game.player.GamePlayerCacheImpl;
 import net.stonegomes.bedwars.solo.game.state.WaitingPlayersGameState;
+import net.stonegomes.bedwars.solo.game.state.setup.SetupGameState;
 
 @ModuleId(id = "gameModule")
 @RequiredArgsConstructor
@@ -32,7 +34,16 @@ public class GameModule extends Module {
             new GameMapDaoImpl()
         );
 
-        gameManager.setGameState(new WaitingPlayersGameState());
+        if (gameManager.getMapDao().find().isEmpty()) {
+            gameManager.setGameState(new SetupGameState());
+        } else {
+            final GameMap randomMap = gameManager.getMapDao().find().stream()
+                .findAny()
+                .orElse(null);
+
+            gameManager.setGameMap(randomMap);
+            gameManager.setGameState(new WaitingPlayersGameState());
+        }
     }
 
     public GameBuildCache getBuildCache() {
