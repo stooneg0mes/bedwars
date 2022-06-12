@@ -55,6 +55,13 @@ public abstract class GameState {
     public void onUpdate(GameStateContext context) {}
 
     /**
+     * Called every second to update the scoreboard
+     *
+     * @param context the context
+     */
+    public void onScoreboardUpdate(GameStateContext context) {}
+
+    /**
      * Called when leaving the state to another state
      *
      * @param context the context
