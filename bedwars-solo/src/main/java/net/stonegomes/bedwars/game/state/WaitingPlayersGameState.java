@@ -1,7 +1,8 @@
 package net.stonegomes.bedwars.game.state;
 
-import net.stonegomes.bedwars.core.state.GameState;
-import net.stonegomes.bedwars.core.state.GameStateContext;
+import net.stonegomes.bedwars.core.arena.state.GameState;
+import net.stonegomes.bedwars.core.arena.state.GameStateContext;
+import net.stonegomes.bedwars.core.scoreboard.FastBoard;
 import org.bukkit.entity.Player;
 
 
@@ -31,6 +32,11 @@ public class WaitingPlayersGameState extends GameState {
         if (context.getOnlinePlayers().size() >= REQUIRED_PLAYERS) {
             context.advanceState();
         }
+    }
+
+    @Override
+    public void onScoreboardUpdate(GameStateContext context) {
+
     }
 
 }

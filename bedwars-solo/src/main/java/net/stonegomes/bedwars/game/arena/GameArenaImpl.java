@@ -4,14 +4,14 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import net.stonegomes.bedwars.commons.cuboid.Cuboid;
-import net.stonegomes.bedwars.core.GameArena;
-import net.stonegomes.bedwars.core.build.GameBuildSet;
-import net.stonegomes.bedwars.core.generator.GameGeneratorMap;
-import net.stonegomes.bedwars.core.island.GameIslandMap;
-import net.stonegomes.bedwars.core.island.npc.GameNpcMap;
-import net.stonegomes.bedwars.core.player.GamePlayerMap;
-import net.stonegomes.bedwars.core.state.GameState;
-import net.stonegomes.bedwars.core.state.GameStateContext;
+import net.stonegomes.bedwars.core.arena.GameArena;
+import net.stonegomes.bedwars.core.arena.build.GameBuildSet;
+import net.stonegomes.bedwars.core.arena.generator.GameGeneratorMap;
+import net.stonegomes.bedwars.core.arena.island.GameIslandMap;
+import net.stonegomes.bedwars.core.arena.island.npc.GameNpcMap;
+import net.stonegomes.bedwars.core.arena.player.GamePlayerMap;
+import net.stonegomes.bedwars.core.arena.state.GameState;
+import net.stonegomes.bedwars.core.arena.state.GameStateContext;
 import net.stonegomes.bedwars.game.state.setup.SetupGameState;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
@@ -41,7 +41,8 @@ public class GameArenaImpl implements GameArena {
     private String name;
 
     private Location waitingSpawnLocation;
-    private Location waitingFirstPosition, waitingSecondPosition;
+    private Location waitingFirstPosition;
+    private Location waitingSecondPosition;
 
     @Override
     public World getWorld() {

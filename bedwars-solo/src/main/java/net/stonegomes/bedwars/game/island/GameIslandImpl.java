@@ -4,11 +4,11 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import net.stonegomes.bedwars.commons.cuboid.Cuboid;
-import net.stonegomes.bedwars.core.generator.GameGeneratorMap;
-import net.stonegomes.bedwars.core.island.GameIsland;
-import net.stonegomes.bedwars.core.island.member.GameIslandMemberSet;
-import net.stonegomes.bedwars.core.island.team.GameTeamColor;
-import net.stonegomes.bedwars.core.island.upgrade.GameIslandUpgradeMap;
+import net.stonegomes.bedwars.core.arena.generator.GameGeneratorMap;
+import net.stonegomes.bedwars.core.arena.island.GameIsland;
+import net.stonegomes.bedwars.core.arena.island.member.GameIslandMemberSet;
+import net.stonegomes.bedwars.core.arena.island.team.GameTeamColor;
+import net.stonegomes.bedwars.core.arena.island.upgrade.GameIslandUpgradeMap;
 import org.bukkit.Location;
 
 @AllArgsConstructor

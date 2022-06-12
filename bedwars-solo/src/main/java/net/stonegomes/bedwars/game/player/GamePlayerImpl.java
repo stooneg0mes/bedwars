@@ -3,9 +3,9 @@ package net.stonegomes.bedwars.game.player;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import net.stonegomes.bedwars.core.GameArena;
-import net.stonegomes.bedwars.core.island.GameIsland;
-import net.stonegomes.bedwars.core.player.GamePlayer;
+import net.stonegomes.bedwars.core.arena.GameArena;
+import net.stonegomes.bedwars.core.arena.island.GameIsland;
+import net.stonegomes.bedwars.core.arena.player.GamePlayer;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 

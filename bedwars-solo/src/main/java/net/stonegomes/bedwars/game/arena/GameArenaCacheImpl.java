@@ -1,7 +1,7 @@
 package net.stonegomes.bedwars.game.arena;
 
-import net.stonegomes.bedwars.core.GameArena;
-import net.stonegomes.bedwars.core.GameArenaCache;
+import net.stonegomes.bedwars.core.arena.GameArena;
+import net.stonegomes.bedwars.core.arena.GameArenaCache;
 import org.bukkit.World;
 
 import java.util.Collection;

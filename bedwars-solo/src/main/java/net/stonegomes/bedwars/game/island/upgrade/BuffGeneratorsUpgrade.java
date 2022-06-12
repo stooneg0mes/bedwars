@@ -1,9 +1,9 @@
 package net.stonegomes.bedwars.game.island.upgrade;
 
-import net.stonegomes.bedwars.core.generator.GameGenerator;
-import net.stonegomes.bedwars.core.island.GameIsland;
-import net.stonegomes.bedwars.core.island.upgrade.GameIslandUpgrade;
-import net.stonegomes.bedwars.core.island.upgrade.GameIslandUpgradeType;
+import net.stonegomes.bedwars.core.arena.generator.GameGenerator;
+import net.stonegomes.bedwars.core.arena.island.GameIsland;
+import net.stonegomes.bedwars.core.arena.island.upgrade.GameIslandUpgrade;
+import net.stonegomes.bedwars.core.arena.island.upgrade.GameIslandUpgradeType;
 
 public class BuffGeneratorsUpgrade extends GameIslandUpgrade {
 

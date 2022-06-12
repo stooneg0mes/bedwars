@@ -5,7 +5,7 @@ import me.saiintbrisson.minecraft.command.annotation.Command;
 import me.saiintbrisson.minecraft.command.command.Context;
 import me.saiintbrisson.minecraft.command.target.CommandTarget;
 import net.stonegomes.bedwars.GamePlugin;
-import net.stonegomes.bedwars.core.GameArena;
+import net.stonegomes.bedwars.core.arena.GameArena;
 import org.bukkit.entity.Player;
 
 @AllArgsConstructor

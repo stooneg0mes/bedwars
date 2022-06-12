@@ -1,15 +1,11 @@
 package net.stonegomes.bedwars.game.state;
 
-import net.stonegomes.bedwars.core.island.GameIsland;
-import net.stonegomes.bedwars.core.player.GamePlayer;
-import net.stonegomes.bedwars.core.state.GameState;
-import net.stonegomes.bedwars.core.state.GameStateContext;
-
-import java.util.Random;
+import net.stonegomes.bedwars.core.arena.island.GameIsland;
+import net.stonegomes.bedwars.core.arena.player.GamePlayer;
+import net.stonegomes.bedwars.core.arena.state.GameState;
+import net.stonegomes.bedwars.core.arena.state.GameStateContext;
 
 public class InGameState extends GameState {
-
-    private static final Random RANDOM = new Random();
 
     @Override
     public String getName() {

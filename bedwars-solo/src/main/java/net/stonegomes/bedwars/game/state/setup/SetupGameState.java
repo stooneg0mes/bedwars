@@ -1,6 +1,6 @@
 package net.stonegomes.bedwars.game.state.setup;
 
-import net.stonegomes.bedwars.core.state.GameState;
+import net.stonegomes.bedwars.core.arena.state.GameState;
 
 public class SetupGameState extends GameState {
 

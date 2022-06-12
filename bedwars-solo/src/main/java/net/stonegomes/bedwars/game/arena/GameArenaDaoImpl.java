@@ -1,7 +1,7 @@
 package net.stonegomes.bedwars.game.arena;
 
-import net.stonegomes.bedwars.core.GameArena;
-import net.stonegomes.bedwars.core.GameArenaDao;
+import net.stonegomes.bedwars.core.arena.GameArena;
+import net.stonegomes.bedwars.core.arena.GameArenaDao;
 
 import java.util.Collection;
 import java.util.UUID;

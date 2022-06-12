@@ -3,7 +3,7 @@ package net.stonegomes.bedwars.game.island;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import net.stonegomes.bedwars.core.generator.GameGenerator;
+import net.stonegomes.bedwars.core.arena.generator.GameGenerator;
 import org.bukkit.Location;
 import org.bukkit.Material;
 

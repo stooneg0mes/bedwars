@@ -6,8 +6,8 @@ import net.kyori.adventure.text.format.NamedTextColor;
 import net.kyori.adventure.text.format.TextColor;
 import net.kyori.adventure.text.format.TextDecoration;
 import net.kyori.adventure.title.Title;
-import net.stonegomes.bedwars.core.state.GameState;
-import net.stonegomes.bedwars.core.state.GameStateContext;
+import net.stonegomes.bedwars.core.arena.state.GameState;
+import net.stonegomes.bedwars.core.arena.state.GameStateContext;
 
 import java.time.Duration;
 import java.util.Set;
