@@ -1,10 +1,8 @@
 package net.stonegomes.bedwars.core;
 
-import net.stonegomes.bedwars.core.map.GameMap;
-import net.stonegomes.bedwars.core.build.GameBuildCache;
-import net.stonegomes.bedwars.core.map.GameMapCache;
-import net.stonegomes.bedwars.core.map.GameMapDao;
-import net.stonegomes.bedwars.core.player.GamePlayerCache;
+import net.stonegomes.bedwars.core.arena.GameArena;
+import net.stonegomes.bedwars.core.arena.GameArenaCache;
+import net.stonegomes.bedwars.core.arena.GameArenaDao;
 import net.stonegomes.bedwars.core.state.GameState;
 import net.stonegomes.bedwars.core.state.GameStateContext;
 import org.bukkit.entity.Player;
@@ -12,46 +10,32 @@ import org.bukkit.entity.Player;
 public interface GameManager {
 
     /**
-     * Get the game build cache.
+     * Get the game arena cache.
      *
-     * @return the game build cache
+     * @return the arena cache
      */
-    GameBuildCache getBuildCache();
+    GameArenaCache getArenaCache();
 
     /**
-     * Get the game player cache.
+     * Get the game arena dao.
      *
-     * @return the game player cache
+     * @return the arena dao
      */
-    GamePlayerCache getPlayerCache();
+    GameArenaDao getArenaDao();
 
     /**
-     * Get the game map cache.
+     * Get the current game arena
      *
-     * @return the game map cache
+     * @return the current arena
      */
-    GameMapCache getMapCache();
+    GameArena getGameArena();
 
     /**
-     * Get the game map dao.
+     * Set the current game arena
      *
-     * @return the game map dao
+     * @param gameArena the new game arena
      */
-    GameMapDao getMapDao();
-
-    /**
-     * Get the current game map
-     *
-     * @return the current map
-     */
-    GameMap getGameMap();
-
-    /**
-     * Set the current game map
-     *
-     * @param gameMap the new game map
-     */
-    void setGameMap(GameMap gameMap);
+    void setGameArena(GameArena gameArena);
 
     /**
      * Get the current game state.

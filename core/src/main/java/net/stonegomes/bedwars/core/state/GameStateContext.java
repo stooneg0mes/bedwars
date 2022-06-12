@@ -4,10 +4,10 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import net.stonegomes.bedwars.core.GameManager;
-import net.stonegomes.bedwars.core.map.GameMap;
-import net.stonegomes.bedwars.core.build.GameBuildCache;
-import net.stonegomes.bedwars.core.player.GamePlayer;
-import net.stonegomes.bedwars.core.player.GamePlayerCache;
+import net.stonegomes.bedwars.core.arena.GameArena;
+import net.stonegomes.bedwars.core.arena.build.GameBuildSet;
+import net.stonegomes.bedwars.core.arena.player.GamePlayer;
+import net.stonegomes.bedwars.core.arena.player.GamePlayerMap;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
@@ -78,12 +78,12 @@ public class GameStateContext {
     }
 
     /**
-     * Get the game map
+     * Get the game arena
      *
      * @return the map
      */
-    public GameMap getGameMap() {
-        return gameManager.getGameMap();
+    public GameArena getGameMap() {
+        return gameManager.getGameArena();
     }
 
     /**
@@ -91,7 +91,7 @@ public class GameStateContext {
      *
      * @return the build cache
      */
-    public GameBuildCache getBuildCache() {
+    public GameBuildSet getBuildCache() {
         return gameManager.getBuildCache();
     }
 
@@ -100,7 +100,7 @@ public class GameStateContext {
      *
      * @return the player cache
      */
-    public GamePlayerCache getPlayerCache() {
+    public GamePlayerMap getPlayerCache() {
         return gameManager.getPlayerCache();
     }
 
