@@ -3,6 +3,8 @@ package net.stonegomes.bedwars.core.arena.state;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.experimental.Delegate;
+import net.stonegomes.bedwars.core.GameManager;
 import net.stonegomes.bedwars.core.arena.GameArena;
 import net.stonegomes.bedwars.core.arena.player.GamePlayer;
 import org.bukkit.Bukkit;
@@ -14,6 +16,9 @@ import java.util.Collection;
 @Builder
 @Getter
 public class GameStateContext {
+
+    @Delegate
+    private GameManager gameManager;
 
     private GameArena gameArena;
     private GamePlayer gamePlayer;
@@ -34,10 +39,10 @@ public class GameStateContext {
      */
     public void runStateChange(GameState otherState) {
         for (Player onlinePlayer : Bukkit.getOnlinePlayers()) {
-            gameArena.getGameState().onExit(gameArena.buildContext(onlinePlayer));
+            gameArena.getGameState().onExit(gameManager.buildContext(onlinePlayer));
 
             if (otherState != null) {
-                otherState.onEnter(gameArena.buildContext(onlinePlayer));
+                otherState.onEnter(gameManager.buildContext(onlinePlayer));
             }
         }
     }

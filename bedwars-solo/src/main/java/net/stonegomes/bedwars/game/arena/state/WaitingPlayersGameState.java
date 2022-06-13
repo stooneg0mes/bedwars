@@ -1,4 +1,4 @@
-package net.stonegomes.bedwars.game.state;
+package net.stonegomes.bedwars.game.arena.state;
 
 import net.stonegomes.bedwars.core.arena.state.GameState;
 import net.stonegomes.bedwars.core.arena.state.GameStateContext;
@@ -36,7 +36,15 @@ public class WaitingPlayersGameState extends GameState {
 
     @Override
     public void onScoreboardUpdate(GameStateContext context) {
-
+        final FastBoard fastBoard = context.getScoreboardCache().createOrGetFastBoard(context.getPlayer());
+        fastBoard.updateTitle("§e§lBED WARS");
+        fastBoard.updateLines(
+            "",
+            /*
+            TODO
+             */
+            "§eexample.net"
+        );
     }
 
 }

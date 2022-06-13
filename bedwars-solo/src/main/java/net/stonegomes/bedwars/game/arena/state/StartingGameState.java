@@ -1,4 +1,4 @@
-package net.stonegomes.bedwars.game.state;
+package net.stonegomes.bedwars.game.arena.state;
 
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.TextComponent;

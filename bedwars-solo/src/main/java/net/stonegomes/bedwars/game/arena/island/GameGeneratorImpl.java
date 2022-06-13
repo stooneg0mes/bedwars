@@ -1,4 +1,4 @@
-package net.stonegomes.bedwars.game.island;
+package net.stonegomes.bedwars.game.arena.island;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

@@ -1,5 +1,8 @@
 package net.stonegomes.bedwars.core.scoreboard;
 
+import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
+
 import java.util.Collection;
 import java.util.UUID;
 
@@ -42,5 +45,21 @@ public interface ScoreboardCache {
      * @return all fast boards
      */
     Collection<FastBoard> getFastBoards();
+
+    /**
+     * Create a fast board if not in the cache or get if already on the cache
+     *
+     * @param player the fast board player
+     * @return the fast board
+     */
+    default FastBoard createOrGetFastBoard(Player player) {
+        FastBoard fastBoard = getFastBoard(player.getUniqueId());
+        if (fastBoard == null) {
+            fastBoard = new FastBoard(player);
+            putFastBoard(player.getUniqueId(), fastBoard);
+        }
+
+        return fastBoard;
+    }
 
 }

@@ -1,9 +1,10 @@
-package net.stonegomes.bedwars.game.state;
+package net.stonegomes.bedwars.game.arena.state;
 
 import net.stonegomes.bedwars.core.arena.island.GameIsland;
 import net.stonegomes.bedwars.core.arena.player.GamePlayer;
 import net.stonegomes.bedwars.core.arena.state.GameState;
 import net.stonegomes.bedwars.core.arena.state.GameStateContext;
+import net.stonegomes.bedwars.game.arena.state.StartingGameState;
 
 public class InGameState extends GameState {
 

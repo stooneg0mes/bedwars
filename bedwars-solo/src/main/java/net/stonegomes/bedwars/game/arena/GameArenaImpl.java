@@ -12,7 +12,7 @@ import net.stonegomes.bedwars.core.arena.island.npc.GameNpcMap;
 import net.stonegomes.bedwars.core.arena.player.GamePlayerMap;
 import net.stonegomes.bedwars.core.arena.state.GameState;
 import net.stonegomes.bedwars.core.arena.state.GameStateContext;
-import net.stonegomes.bedwars.game.state.setup.SetupGameState;
+import net.stonegomes.bedwars.game.arena.state.setup.SetupGameState;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.World;
@@ -57,22 +57,6 @@ public class GameArenaImpl implements GameArena {
     @Override
     public boolean isOnSetup() {
         return (gameState instanceof SetupGameState);
-    }
-
-    @Override
-    public GameStateContext buildContext(Player player) {
-        return GameStateContext.builder()
-            .gamePlayer(playerMap.getGamePlayer(player.getUniqueId()))
-            .gameArena(this)
-            .build();
-    }
-
-    @Override
-    public GameStateContext buildContext(Player player, GameArena gameArena) {
-        return GameStateContext.builder()
-            .gamePlayer(gameArena.getPlayerMap().getGamePlayer(player.getUniqueId()))
-            .gameArena(gameArena)
-            .build();
     }
 
 }

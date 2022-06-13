@@ -4,11 +4,11 @@ import net.stonegomes.bedwars.commons.ModulePlugin;
 import net.stonegomes.bedwars.commons.Module;
 import net.stonegomes.bedwars.core.arena.GameArenaCache;
 import net.stonegomes.bedwars.core.arena.GameArenaDao;
+import net.stonegomes.bedwars.core.lobby.GameLobby;
 import net.stonegomes.bedwars.core.scoreboard.ScoreboardCache;
-import net.stonegomes.bedwars.module.GameArenaModule;
+import net.stonegomes.bedwars.module.GameModule;
 import net.stonegomes.bedwars.module.ListenerModule;
 import net.stonegomes.bedwars.module.RunnableModule;
-import net.stonegomes.bedwars.module.ScoreboardModule;
 import org.bukkit.Bukkit;
 
 public class GamePlugin extends ModulePlugin {
@@ -31,23 +31,26 @@ public class GamePlugin extends ModulePlugin {
     @Override
     public Module[] getModules() {
         return new Module[] {
-            new GameArenaModule(),
-            new ScoreboardModule(),
+            new GameModule(),
             new ListenerModule(this),
             new RunnableModule(this)
         };
     }
 
     public GameArenaCache getArenaCache() {
-        return ((GameArenaModule) getModule(GameArenaModule.class)).getArenaCache();
+        return ((GameModule) getModule(GameModule.class)).getArenaCache();
     }
 
     public GameArenaDao getArenaDao() {
-        return ((GameArenaModule) getModule(GameArenaModule.class)).getArenaDao();
+        return ((GameModule) getModule(GameModule.class)).getArenaDao();
     }
 
     public ScoreboardCache getScoreboardCache() {
-        return ((ScoreboardModule) getModule(ScoreboardModule.class)).getScoreboardCache();
+        return ((GameModule) getModule(GameModule.class)).getScoreboardCache();
+    }
+
+    public GameLobby getLobby() {
+        return ((GameModule) getModule(GameModule.class)).getLobby();
     }
 
     public static GamePlugin getInstance() {

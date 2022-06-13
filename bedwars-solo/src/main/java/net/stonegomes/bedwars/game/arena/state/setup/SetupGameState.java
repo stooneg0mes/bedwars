@@ -1,4 +1,4 @@
-package net.stonegomes.bedwars.game.state.setup;
+package net.stonegomes.bedwars.game.arena.state.setup;
 
 import net.stonegomes.bedwars.core.arena.state.GameState;
 

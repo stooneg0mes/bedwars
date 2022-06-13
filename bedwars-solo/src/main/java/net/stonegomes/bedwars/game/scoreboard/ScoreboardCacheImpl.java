@@ -1,4 +1,4 @@
-package net.stonegomes.bedwars.scoreboard;
+package net.stonegomes.bedwars.game.scoreboard;
 
 import net.stonegomes.bedwars.core.scoreboard.FastBoard;
 import net.stonegomes.bedwars.core.scoreboard.ScoreboardCache;

@@ -107,22 +107,4 @@ public interface GameArena {
      */
     boolean isOnSetup();
 
-    /**
-     * Build a new context {@link GameStateContext} for the given player.
-     *
-     * @param player the player to build the context for
-     * @return the built context
-     */
-    GameStateContext buildContext(Player player);
-
-
-    /**
-     * Build a new {@link GameStateContext} for the given player and state.
-     *
-     * @param player    the player to build the context
-     * @param gameArena the arena to build the context
-     * @return the built context
-     */
-    GameStateContext buildContext(Player player, GameArena gameArena);
-
 }
