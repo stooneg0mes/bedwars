@@ -1,4 +1,4 @@
-package net.stonegomes.bedwars.game.player;
+package net.stonegomes.bedwars.game.arena.player;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
