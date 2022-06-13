@@ -1,4 +1,4 @@
-package net.stonegomes.bedwars.game.arena.island.upgrade;
+package net.stonegomes.bedwars.game.island.upgrade;
 
 import net.stonegomes.bedwars.core.arena.generator.GameGenerator;
 import net.stonegomes.bedwars.core.arena.island.GameIsland;
