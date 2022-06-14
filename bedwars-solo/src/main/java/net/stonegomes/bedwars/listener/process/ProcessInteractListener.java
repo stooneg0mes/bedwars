@@ -28,7 +28,7 @@ public class ProcessInteractListener implements Listener {
         final ProcessPhase processPhase = process.getCurrentPhase();
         if (processPhase == null || processPhase.getType() != ProcessPhaseType.INTERACT_BLOCK) return;
 
-        if (!processPhase.handleInput().test(block, player)) return;
+        if (!processPhase.handleInput(process.getProcessContext()).test(block, player)) return;
 
         process.advancePhase(player);
         if (process.isOnLastPhase()) {
