@@ -9,7 +9,7 @@ import net.stonegomes.bedwars.core.arena.GameArena;
 import org.bukkit.entity.Player;
 
 @AllArgsConstructor
-public class DeleteSubCommand {
+public class ArenaDeleteSubCommand {
 
     private final GamePlugin gamePlugin;
 

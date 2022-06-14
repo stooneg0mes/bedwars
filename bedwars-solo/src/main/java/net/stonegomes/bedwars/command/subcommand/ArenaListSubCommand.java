@@ -9,7 +9,7 @@ import net.stonegomes.bedwars.core.arena.GameArena;
 import org.bukkit.entity.Player;
 
 @AllArgsConstructor
-public class ListSubCommand {
+public class ArenaListSubCommand {
 
     private final GamePlugin gamePlugin;
 
