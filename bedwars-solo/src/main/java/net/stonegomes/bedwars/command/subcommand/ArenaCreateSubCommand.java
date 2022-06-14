@@ -1,0 +1,37 @@
+package net.stonegomes.bedwars.command.subcommand;
+
+import lombok.AllArgsConstructor;
+import me.saiintbrisson.minecraft.command.annotation.Command;
+import me.saiintbrisson.minecraft.command.command.Context;
+import me.saiintbrisson.minecraft.command.target.CommandTarget;
+import net.stonegomes.bedwars.GamePlugin;
+import net.stonegomes.bedwars.core.process.Process;
+import net.stonegomes.bedwars.game.process.creation.ArenaCreationProcess;
+import org.bukkit.World;
+import org.bukkit.entity.Player;
+
+@AllArgsConstructor
+public class ArenaCreateSubCommand {
+
+    private final GamePlugin gamePlugin;
+
+    @Command(
+        name = "bedwars.arena.create",
+        description = "BigCats Bedwars - Create arena sub command",
+        permission = "bedwars.admin",
+        target = CommandTarget.PLAYER
+    )
+    public void handleCommand(Context<Player> context, World world) {
+        if (world == null) {
+            context.sendMessage("§cWorld not found.");
+            return;
+        }
+
+        final Player player = context.getSender();
+        final Process arenaCreationProcess = new ArenaCreationProcess(world);
+        arenaCreationProcess.startProcess(player);
+
+        gamePlugin.getProcessCache().putProcess(player.getUniqueId(), arenaCreationProcess);
+    }
+
+}

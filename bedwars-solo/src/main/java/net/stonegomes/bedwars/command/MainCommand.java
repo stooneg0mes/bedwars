@@ -19,9 +19,9 @@ public class MainCommand {
             "§2§lBIG CATS",
             "§7(Bedwars Solo)",
             "",
-            "§7/bedwars map create §8- §7Start a new map creation process.",
-            "§7/bedwars map delete <name> §8- §7Delete a map.",
-            "§7/bedwars map list §8- §7List all maps.",
+            "§7/bedwars arena create <world> §8- §7Start a new map creation process.",
+            "§7/bedwars arena delete <name> §8- §7Delete a map.",
+            "§7/bedwars arena list §8- §7List all maps.",
         });
     }
 
