@@ -15,6 +15,7 @@ import net.stonegomes.bedwars.game.arena.GameArenaCacheImpl;
 import net.stonegomes.bedwars.game.arena.GameArenaDaoImpl;
 import net.stonegomes.bedwars.game.arena.GameArenaImpl;
 import net.stonegomes.bedwars.game.lobby.GameLobbyImpl;
+import net.stonegomes.bedwars.game.process.ProcessCacheImpl;
 import net.stonegomes.bedwars.game.scoreboard.ScoreboardCacheImpl;
 import net.stonegomes.bedwars.game.arena.state.WaitingPlayersGameState;
 import org.bukkit.Material;
@@ -25,7 +26,7 @@ import org.bukkit.entity.Player;
 @RequiredArgsConstructor
 public class GameModule extends Module {
 
-    @Delegate(excludes = ContextBuilder.class)
+    @Delegate(excludes = DelegateContextBuilder.class)
     @Getter
     private GameManager gameManager;
 
@@ -35,6 +36,7 @@ public class GameModule extends Module {
             new GameArenaCacheImpl(),
             new GameArenaDaoImpl(),
             new ScoreboardCacheImpl(),
+            new ProcessCacheImpl(),
             new GameLobbyImpl()
         );
 
@@ -70,7 +72,7 @@ public class GameModule extends Module {
         }
     }
 
-    private interface ContextBuilder {
+    private interface DelegateContextBuilder {
 
         GameStateContext buildContext(Player player);
 

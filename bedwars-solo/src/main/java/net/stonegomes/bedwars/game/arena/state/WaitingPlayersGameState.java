@@ -2,7 +2,7 @@ package net.stonegomes.bedwars.game.arena.state;
 
 import net.stonegomes.bedwars.core.arena.state.GameState;
 import net.stonegomes.bedwars.core.arena.state.GameStateContext;
-import net.stonegomes.bedwars.core.scoreboard.FastBoard;
+import net.stonegomes.bedwars.core.scoreboard.fast.FastBoard;
 import org.bukkit.entity.Player;
 
 

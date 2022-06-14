@@ -8,6 +8,7 @@ import net.stonegomes.bedwars.core.arena.GameArenaCache;
 import net.stonegomes.bedwars.core.arena.GameArenaDao;
 import net.stonegomes.bedwars.core.arena.state.GameStateContext;
 import net.stonegomes.bedwars.core.lobby.GameLobby;
+import net.stonegomes.bedwars.core.process.ProcessCache;
 import net.stonegomes.bedwars.core.scoreboard.ScoreboardCache;
 import org.bukkit.entity.Player;
 
@@ -19,6 +20,8 @@ public class GameManagerImpl implements GameManager {
     private final GameArenaDao arenaDao;
 
     private final ScoreboardCache scoreboardCache;
+
+    private final ProcessCache processCache;
 
     private final GameLobby lobby;
 

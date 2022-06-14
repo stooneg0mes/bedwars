@@ -5,6 +5,7 @@ import net.stonegomes.bedwars.commons.Module;
 import net.stonegomes.bedwars.core.arena.GameArenaCache;
 import net.stonegomes.bedwars.core.arena.GameArenaDao;
 import net.stonegomes.bedwars.core.lobby.GameLobby;
+import net.stonegomes.bedwars.core.process.ProcessCache;
 import net.stonegomes.bedwars.core.scoreboard.ScoreboardCache;
 import net.stonegomes.bedwars.module.GameModule;
 import net.stonegomes.bedwars.module.ListenerModule;
@@ -47,6 +48,10 @@ public class GamePlugin extends ModulePlugin {
 
     public ScoreboardCache getScoreboardCache() {
         return ((GameModule) getModule(GameModule.class)).getScoreboardCache();
+    }
+
+    public ProcessCache getProcessCache() {
+        return ((GameModule) getModule(GameModule.class)).getProcessCache();
     }
 
     public GameLobby getLobby() {

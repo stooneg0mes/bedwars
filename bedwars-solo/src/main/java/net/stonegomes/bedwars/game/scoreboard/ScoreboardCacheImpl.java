@@ -1,6 +1,6 @@
 package net.stonegomes.bedwars.game.scoreboard;
 
-import net.stonegomes.bedwars.core.scoreboard.FastBoard;
+import net.stonegomes.bedwars.core.scoreboard.fast.FastBoard;
 import net.stonegomes.bedwars.core.scoreboard.ScoreboardCache;
 
 import java.util.Collection;

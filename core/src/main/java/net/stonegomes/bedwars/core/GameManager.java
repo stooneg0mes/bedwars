@@ -5,17 +5,45 @@ import net.stonegomes.bedwars.core.arena.GameArenaCache;
 import net.stonegomes.bedwars.core.arena.GameArenaDao;
 import net.stonegomes.bedwars.core.arena.state.GameStateContext;
 import net.stonegomes.bedwars.core.lobby.GameLobby;
+import net.stonegomes.bedwars.core.process.ProcessCache;
 import net.stonegomes.bedwars.core.scoreboard.ScoreboardCache;
 import org.bukkit.entity.Player;
 
 public interface GameManager {
 
+    /**
+     * Get the game arena cache
+     *
+     * @return the arena cache
+     */
     GameArenaCache getArenaCache();
 
+    /**
+     * Get the game arena dao
+     *
+     * @return the arena dao
+     */
     GameArenaDao getArenaDao();
 
+    /**
+     * Get the scoreboard cache
+     *
+     * @return the scoreboard cache
+     */
     ScoreboardCache getScoreboardCache();
 
+    /**
+     * Get the process cache
+     *
+     * @return the process cache
+     */
+    ProcessCache getProcessCache();
+
+    /**
+     * Get the game lobby
+     *
+     * @return the lobby
+     */
     GameLobby getLobby();
 
     /**
