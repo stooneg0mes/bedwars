@@ -1,9 +1,17 @@
 package net.stonegomes.bedwars.core.arena.generator;
 
+import net.stonegomes.bedwars.core.arena.island.GameIsland;
 import org.bukkit.Location;
 import org.bukkit.Material;
 
 public interface GameGenerator {
+
+    /**
+     * Get the game generator island owner
+     *
+     * @return the island owner
+     */
+    GameIsland getOwner();
 
     /**
      * Get the game generator location

@@ -13,14 +13,18 @@ public class BuffGeneratorsUpgrade extends GameIslandUpgrade {
 
     @Override
     public void onUpgrade(GameIsland gameIsland, int level) {
-        for (GameGenerator gameGenerator : gameIsland.getGeneratorMap().getGenerators()) {
+        for (GameGenerator gameGenerator : gameIsland.getOwner().getGeneratorMap().getGeneratorsByIsland(gameIsland)) {
             if (!gameIsland.getCuboid().contains(gameGenerator.getLocation())) continue;
 
             switch (level) {
-                case 1: gameGenerator.setAmountOfItems(3);
-                case 2: gameGenerator.setAmountOfItems(4);
-                case 3: gameGenerator.setAmountOfItems(5);
-                case 4: gameGenerator.setAmountOfItems(6);
+                case 1:
+                    gameGenerator.setAmountOfItems(3);
+                case 2:
+                    gameGenerator.setAmountOfItems(4);
+                case 3:
+                    gameGenerator.setAmountOfItems(5);
+                case 4:
+                    gameGenerator.setAmountOfItems(6);
             }
         }
     }

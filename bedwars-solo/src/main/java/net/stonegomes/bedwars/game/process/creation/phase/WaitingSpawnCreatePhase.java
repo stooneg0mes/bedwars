@@ -7,13 +7,13 @@ import org.bukkit.entity.Player;
 
 import java.util.function.BiPredicate;
 
-public class NameCreatePhase implements ProcessPhase {
+public class WaitingSpawnCreatePhase implements ProcessPhase {
 
     @Override
     public String[] getStartMessage() {
         return new String[]{
             "",
-            "§aEnter the name of the arena.",
+            "§aGo to the §fwaiting spawn location§a and enter §f'done'§a on chat.",
             "§7(Use 'cancel' to cancel the process)",
             ""
         };
@@ -27,7 +27,10 @@ public class NameCreatePhase implements ProcessPhase {
     @Override
     public BiPredicate<Object, Player> handleInput(ProcessContext context) {
         return (messageObject, player) -> {
-            context.set("arenaName", messageObject.toString());
+            String message = messageObject.toString();
+            if (!message.equalsIgnoreCase("done")) return false;
+
+            context.set("waitingSpawnLocation", player.getLocation());
             return true;
         };
     }

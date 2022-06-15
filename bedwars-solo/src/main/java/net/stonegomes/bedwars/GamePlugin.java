@@ -1,7 +1,7 @@
 package net.stonegomes.bedwars;
 
-import net.stonegomes.bedwars.commons.ModulePlugin;
 import net.stonegomes.bedwars.commons.Module;
+import net.stonegomes.bedwars.commons.ModulePlugin;
 import net.stonegomes.bedwars.core.arena.GameArenaCache;
 import net.stonegomes.bedwars.core.arena.GameArenaDao;
 import net.stonegomes.bedwars.core.lobby.GameLobby;
@@ -31,7 +31,7 @@ public class GamePlugin extends ModulePlugin {
 
     @Override
     public Module[] getModules() {
-        return new Module[] {
+        return new Module[]{
             new GameModule(),
             new ListenerModule(this),
             new RunnableModule(this)

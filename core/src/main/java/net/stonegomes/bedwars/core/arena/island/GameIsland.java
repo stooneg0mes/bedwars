@@ -1,13 +1,28 @@
 package net.stonegomes.bedwars.core.arena.island;
 
 import net.stonegomes.bedwars.commons.cuboid.Cuboid;
-import net.stonegomes.bedwars.core.arena.generator.GameGeneratorMap;
+import net.stonegomes.bedwars.core.arena.GameArena;
 import net.stonegomes.bedwars.core.arena.island.member.GameIslandMemberSet;
 import net.stonegomes.bedwars.core.arena.island.team.GameTeamColor;
 import net.stonegomes.bedwars.core.arena.island.upgrade.GameIslandUpgradeMap;
 import org.bukkit.Location;
 
+import java.util.UUID;
+
 public interface GameIsland {
+
+    /**
+     * Get the game island unique id
+     *
+     * @return the island unique id
+     */
+    UUID getUniqueId();
+
+    /**
+     * Get the game island arena owner
+     * @return the arena owner
+     */
+    GameArena getOwner();
 
     /**
      * Get the island team color
@@ -29,13 +44,6 @@ public interface GameIsland {
      * @return the upgrade map
      */
     GameIslandUpgradeMap getUpgradeMap();
-
-    /**
-     * Get the island generator map
-     *
-     * @return the generator map
-     */
-    GameGeneratorMap getGeneratorMap();
 
     /**
      * Get the island spawn location

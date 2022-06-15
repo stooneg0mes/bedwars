@@ -65,6 +65,7 @@ public abstract class Process {
 
     /**
      * Remove a phase from the process
+     *
      * @param processPhase the phase
      */
     public void removePhase(ProcessPhase processPhase) {
@@ -118,7 +119,7 @@ public abstract class Process {
     /**
      * Finish the process to a player.
      *
-     * @param player the player
+     * @param player  the player
      * @param context the context
      */
     public abstract void onFinish(Player player, ProcessContext context);

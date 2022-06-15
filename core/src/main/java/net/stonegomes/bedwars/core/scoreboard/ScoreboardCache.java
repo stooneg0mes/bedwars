@@ -11,7 +11,7 @@ public interface ScoreboardCache {
     /**
      * Put a fast board into the cache.
      *
-     * @param uuid the player uuid
+     * @param uuid      the player uuid
      * @param fastBoard the fast board
      */
     void putFastBoard(UUID uuid, FastBoard fastBoard);

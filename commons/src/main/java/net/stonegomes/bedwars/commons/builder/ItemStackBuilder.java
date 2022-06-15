@@ -62,7 +62,7 @@ public class ItemStackBuilder {
         List<String> actualLore = itemMeta.getLore();
         if (actualLore == null) {
             itemMeta.setLore(Arrays.asList(lore));
-        }  else {
+        } else {
             actualLore.addAll(Arrays.asList(lore));
             itemMeta.setLore(actualLore);
         }

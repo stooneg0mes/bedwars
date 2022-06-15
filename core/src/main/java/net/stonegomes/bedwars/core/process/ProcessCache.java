@@ -8,7 +8,7 @@ public interface ProcessCache {
     /**
      * Put a process into the cache.
      *
-     * @param uuid the player uuid
+     * @param uuid    the player uuid
      * @param process the process
      */
     void putProcess(UUID uuid, Process process);

@@ -1,5 +1,6 @@
 package net.stonegomes.bedwars.core.arena.generator;
 
+import net.stonegomes.bedwars.core.arena.island.GameIsland;
 import org.bukkit.Location;
 
 import java.util.Collection;
@@ -38,6 +39,18 @@ public class GameGeneratorMap {
      */
     public boolean hasGenerator(Location location) {
         return getGenerator(location) != null;
+    }
+
+    /**
+     * Get all the generators from an island
+     *
+     * @param island the island
+     * @return the generators
+     */
+    public Collection<GameGenerator> getGeneratorsByIsland(GameIsland island) {
+        return generatorMap.values().stream()
+            .filter(generator -> generator.getOwner().getUniqueId().equals(island.getUniqueId()))
+            .toList();
     }
 
     /**

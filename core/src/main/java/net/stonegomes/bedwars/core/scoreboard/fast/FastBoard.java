@@ -33,15 +33,7 @@ import java.lang.reflect.Array;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Optional;
+import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 
 /**
@@ -57,8 +49,8 @@ public class FastBoard {
 
     private static final Map<Class<?>, Field[]> PACKETS = new HashMap<>(8);
     private static final String[] COLOR_CODES = Arrays.stream(ChatColor.values())
-            .map(Object::toString)
-            .toArray(String[]::new);
+        .map(Object::toString)
+        .toArray(String[]::new);
     private static final VersionType VERSION_TYPE;
     // Packets and components
     private static final Class<?> CHAT_COMPONENT_CLASS;
@@ -107,13 +99,13 @@ public class FastBoard {
             Class<?> packetSbScoreClass = FastReflection.nmsClass(gameProtocolPackage, "PacketPlayOutScoreboardScore");
             Class<?> packetSbTeamClass = FastReflection.nmsClass(gameProtocolPackage, "PacketPlayOutScoreboardTeam");
             Class<?> sbTeamClass = VersionType.V1_17.isHigherOrEqual()
-                    ? FastReflection.innerClass(packetSbTeamClass, innerClass -> !innerClass.isEnum()) : null;
+                ? FastReflection.innerClass(packetSbTeamClass, innerClass -> !innerClass.isEnum()) : null;
             Field playerConnectionField = Arrays.stream(entityPlayerClass.getFields())
-                    .filter(field -> field.getType().isAssignableFrom(playerConnectionClass))
-                    .findFirst().orElseThrow(NoSuchFieldException::new);
+                .filter(field -> field.getType().isAssignableFrom(playerConnectionClass))
+                .findFirst().orElseThrow(NoSuchFieldException::new);
             Method sendPacketMethod = Arrays.stream(playerConnectionClass.getMethods())
-                    .filter(m -> m.getParameterCount() == 1 && m.getParameterTypes()[0] == packetClass)
-                    .findFirst().orElseThrow(NoSuchMethodException::new);
+                .filter(m -> m.getParameterCount() == 1 && m.getParameterTypes()[0] == packetClass)
+                .findFirst().orElseThrow(NoSuchMethodException::new);
 
             MESSAGE_FROM_STRING = lookup.unreflect(craftChatMessageClass.getMethod("fromString", String.class));
             CHAT_COMPONENT_CLASS = FastReflection.nmsClass("network.chat", "IChatBaseComponent");
@@ -134,8 +126,8 @@ public class FastBoard {
                     continue;
                 }
                 Field[] fields = Arrays.stream(clazz.getDeclaredFields())
-                        .filter(field -> !Modifier.isStatic(field.getModifiers()))
-                        .toArray(Field[]::new);
+                    .filter(field -> !Modifier.isStatic(field.getModifiers()))
+                    .toArray(Field[]::new);
                 for (Field field : fields) {
                     field.setAccessible(true);
                 }
@@ -144,8 +136,8 @@ public class FastBoard {
 
             if (VersionType.V1_8.isHigherOrEqual()) {
                 String enumSbActionClass = VersionType.V1_13.isHigherOrEqual()
-                        ? "ScoreboardServer$Action"
-                        : "PacketPlayOutScoreboardScore$EnumScoreboardAction";
+                    ? "ScoreboardServer$Action"
+                    : "PacketPlayOutScoreboardScore$EnumScoreboardAction";
                 ENUM_SB_HEALTH_DISPLAY = FastReflection.nmsClass("world.scores.criteria", "IScoreboardCriteria$EnumScoreboardHealthDisplay");
                 ENUM_SB_ACTION = FastReflection.nmsClass("server", enumSbActionClass);
                 ENUM_SB_HEALTH_DISPLAY_INTEGER = FastReflection.enumValueOf(ENUM_SB_HEALTH_DISPLAY, "INTEGER", 0);

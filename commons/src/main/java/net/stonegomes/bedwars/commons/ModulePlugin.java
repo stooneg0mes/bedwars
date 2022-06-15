@@ -1,6 +1,5 @@
 package net.stonegomes.bedwars.commons;
 
-import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.Arrays;
@@ -24,7 +23,8 @@ public class ModulePlugin extends JavaPlugin {
     Load
      */
 
-    public void handleLoad() {}
+    public void handleLoad() {
+    }
 
     @Override
     public void onLoad() {
@@ -44,7 +44,8 @@ public class ModulePlugin extends JavaPlugin {
     Enable
      */
 
-    public void handleEnable() {}
+    public void handleEnable() {
+    }
 
     @Override
     public void onEnable() {
@@ -59,7 +60,8 @@ public class ModulePlugin extends JavaPlugin {
     Disable
      */
 
-    public void handleDisable() {}
+    public void handleDisable() {
+    }
 
     @Override
     public void onDisable() {

@@ -1,6 +1,9 @@
 package net.stonegomes.bedwars.core.arena.player;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
 
 public class GamePlayerMap {
 
@@ -9,7 +12,7 @@ public class GamePlayerMap {
     /**
      * Put a player in the map.
      *
-     * @param uuid the uuid of the player
+     * @param uuid       the uuid of the player
      * @param gamePlayer the player
      */
     public void putGamePlayer(UUID uuid, GamePlayer gamePlayer) {

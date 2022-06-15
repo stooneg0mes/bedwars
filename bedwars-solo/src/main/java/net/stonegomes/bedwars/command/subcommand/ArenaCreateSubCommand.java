@@ -28,7 +28,7 @@ public class ArenaCreateSubCommand {
         }
 
         final Player player = context.getSender();
-        final Process arenaCreationProcess = new ArenaCreationProcess(world);
+        final Process arenaCreationProcess = new ArenaCreationProcess(gamePlugin, world);
         arenaCreationProcess.startProcess(player);
 
         gamePlugin.getProcessCache().putProcess(player.getUniqueId(), arenaCreationProcess);

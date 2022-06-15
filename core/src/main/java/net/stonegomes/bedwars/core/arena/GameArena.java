@@ -7,10 +7,8 @@ import net.stonegomes.bedwars.core.arena.island.GameIslandMap;
 import net.stonegomes.bedwars.core.arena.island.npc.GameNpcMap;
 import net.stonegomes.bedwars.core.arena.player.GamePlayerMap;
 import net.stonegomes.bedwars.core.arena.state.GameState;
-import net.stonegomes.bedwars.core.arena.state.GameStateContext;
 import org.bukkit.Location;
 import org.bukkit.World;
-import org.bukkit.entity.Player;
 
 import java.util.UUID;
 
