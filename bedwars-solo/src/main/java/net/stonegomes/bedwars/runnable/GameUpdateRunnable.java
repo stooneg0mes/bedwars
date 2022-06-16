@@ -37,8 +37,9 @@ public class GameUpdateRunnable extends BukkitRunnable {
 
             // State update
 
-            final GameStateContext gameStateContext = gameArena.buildContext(player);
+            final GameStateContext gameStateContext = gamePlugin.getGameManager().buildContext(player);
             gameState.onUpdate(gameStateContext);
+            gameState.onScoreboardUpdate(gameStateContext);
 
             // Spectator update
 
@@ -64,7 +65,7 @@ public class GameUpdateRunnable extends BukkitRunnable {
                     times
                 ));
 
-                if (!gamePlayer.isSpectator()) {
+                if (gamePlayer.getSpectatorTime() <= System.currentTimeMillis()) {
                     player.setGameMode(GameMode.SURVIVAL);
                     player.teleport(gamePlayer.getIsland().getSpawnLocation());
 

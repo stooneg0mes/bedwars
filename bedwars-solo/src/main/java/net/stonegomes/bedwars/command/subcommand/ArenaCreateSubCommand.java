@@ -19,6 +19,7 @@ public class ArenaCreateSubCommand {
         name = "bedwars.arena.create",
         description = "BigCats Bedwars - Create arena sub command",
         permission = "bedwars.admin",
+        usage = "bedwars arena create <world>",
         target = CommandTarget.PLAYER
     )
     public void handleCommand(Context<Player> context, World world) {

@@ -24,11 +24,6 @@ public class GamePlayerImpl implements GamePlayer {
     private Long spectatorTime;
 
     @Override
-    public boolean isSpectator() {
-        return spectatorTime != null && spectatorTime >= System.currentTimeMillis();
-    }
-
-    @Override
     public Player getBukkitPlayer() {
         return Bukkit.getPlayer(uniqueId);
     }

@@ -2,6 +2,7 @@ package net.stonegomes.bedwars;
 
 import net.stonegomes.bedwars.commons.Module;
 import net.stonegomes.bedwars.commons.ModulePlugin;
+import net.stonegomes.bedwars.core.GameManager;
 import net.stonegomes.bedwars.core.arena.GameArenaCache;
 import net.stonegomes.bedwars.core.arena.GameArenaDao;
 import net.stonegomes.bedwars.core.lobby.GameLobby;
@@ -36,6 +37,10 @@ public class GamePlugin extends ModulePlugin {
             new ListenerModule(this),
             new RunnableModule(this)
         };
+    }
+
+    public GameManager getGameManager() {
+        return ((GameModule) getModule(GameModule.class)).getGameManager();
     }
 
     public GameArenaCache getArenaCache() {

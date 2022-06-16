@@ -58,13 +58,6 @@ public interface GamePlayer {
     void setSpectatorTime(Long time);
 
     /**
-     * Check if the game player is spectator
-     *
-     * @return if the player is spectator
-     */
-    boolean isSpectator();
-
-    /**
      * Get the bukkit game player
      *
      * @return the player

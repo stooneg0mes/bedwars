@@ -17,7 +17,7 @@ public class ArenaDeleteSubCommand {
         name = "bedwars.arena.delete",
         description = "BigCats Bedwars - Delete arena sub command",
         permission = "bedwars.admin",
-        usage = "bedwars arena <map>",
+        usage = "bedwars arena delete <name>",
         target = CommandTarget.PLAYER
     )
     public void handleCommand(Context<Player> context, GameArena gameArena) {
