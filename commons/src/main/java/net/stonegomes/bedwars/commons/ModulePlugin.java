@@ -7,24 +7,26 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class ModulePlugin extends JavaPlugin {
+public abstract class ModulePlugin extends JavaPlugin implements ModuleBootstrap {
 
     private final Map<String, Object> elements = new HashMap<>();
 
     /*
-    Modules
+    Module
      */
 
     public Module[] getModules() {
         return null;
     }
 
-    /*
-    Load
-     */
-
-    public void handleLoad() {
+    public <T> T getModule(Class<? extends Module> clazz) {
+        ModuleId moduleId = clazz.getDeclaredAnnotation(ModuleId.class);
+        return (T) elements.get(moduleId.id());
     }
+
+    /*
+    Bootstrap
+     */
 
     @Override
     public void onLoad() {
@@ -40,13 +42,6 @@ public class ModulePlugin extends JavaPlugin {
         }
     }
 
-    /*
-    Enable
-     */
-
-    public void handleEnable() {
-    }
-
     @Override
     public void onEnable() {
         handleEnable();
@@ -54,13 +49,6 @@ public class ModulePlugin extends JavaPlugin {
         if (getModules() != null) {
             Arrays.stream(getModules()).forEach(Module::handleEnable);
         }
-    }
-
-    /*
-    Disable
-     */
-
-    public void handleDisable() {
     }
 
     @Override
@@ -73,16 +61,7 @@ public class ModulePlugin extends JavaPlugin {
     }
 
     /*
-    Module methods
-     */
-
-    public <T> T getModule(Class<? extends Module> clazz) {
-        ModuleId moduleId = clazz.getDeclaredAnnotation(ModuleId.class);
-        return (T) elements.get(moduleId.id());
-    }
-
-    /*
-    Config methods
+    Config
      */
 
     public String getString(String... values) {

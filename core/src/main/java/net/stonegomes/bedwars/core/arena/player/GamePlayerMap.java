@@ -47,4 +47,13 @@ public class GamePlayerMap {
         return playerMap.values();
     }
 
+    /**
+     * Get the size of the cache.
+     *
+     * @return the size
+     */
+    public int size() {
+        return playerMap.size();
+    }
+
 }

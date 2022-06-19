@@ -1,13 +1,14 @@
 package net.stonegomes.bedwars.module;
 
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import net.stonegomes.bedwars.GamePlugin;
 import net.stonegomes.bedwars.commons.Module;
 import net.stonegomes.bedwars.commons.ModuleId;
 import net.stonegomes.bedwars.runnable.GameUpdateRunnable;
+import org.bukkit.plugin.Plugin;
 
 @ModuleId(id = "listenerModule")
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class RunnableModule extends Module {
 
     private final GamePlugin gamePlugin;

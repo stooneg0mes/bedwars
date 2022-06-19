@@ -60,4 +60,13 @@ public class GameIslandMap {
         return islandMap.values();
     }
 
+    /**
+     * Get the size of the cache.
+     *
+     * @return the size
+     */
+    public int size() {
+        return islandMap.size();
+    }
+
 }

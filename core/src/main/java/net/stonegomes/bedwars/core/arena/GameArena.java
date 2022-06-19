@@ -105,4 +105,13 @@ public interface GameArena {
      */
     boolean isOnSetup();
 
+    /**
+     * Get the max players in the game arena.
+     *
+     * @return the max players
+     */
+    default int getMaxPlayers() {
+        return getIslandMap().size();
+    }
+
 }

@@ -2,14 +2,17 @@ package net.stonegomes.bedwars.module;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import lombok.experimental.Delegate;
 import net.stonegomes.bedwars.commons.Module;
 import net.stonegomes.bedwars.commons.ModuleId;
 import net.stonegomes.bedwars.core.GameManager;
 import net.stonegomes.bedwars.core.arena.GameArena;
+import net.stonegomes.bedwars.core.arena.GameArenaCache;
+import net.stonegomes.bedwars.core.arena.GameArenaDao;
 import net.stonegomes.bedwars.core.arena.build.GameBuildSet;
 import net.stonegomes.bedwars.core.arena.player.GamePlayerMap;
-import net.stonegomes.bedwars.core.arena.state.GameStateContext;
+import net.stonegomes.bedwars.core.lobby.GameLobby;
+import net.stonegomes.bedwars.core.process.ProcessCache;
+import net.stonegomes.bedwars.core.scoreboard.ScoreboardCache;
 import net.stonegomes.bedwars.game.GameManagerImpl;
 import net.stonegomes.bedwars.game.arena.GameArenaCacheImpl;
 import net.stonegomes.bedwars.game.arena.GameArenaDaoImpl;
@@ -20,13 +23,11 @@ import net.stonegomes.bedwars.game.process.ProcessCacheImpl;
 import net.stonegomes.bedwars.game.scoreboard.ScoreboardCacheImpl;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
-import org.bukkit.entity.Player;
 
 @ModuleId(id = "gameArenaModule")
 @RequiredArgsConstructor
 public class GameModule extends Module {
 
-    @Delegate(excludes = DelegateContextBuilder.class)
     @Getter
     private GameManager gameManager;
 
@@ -72,12 +73,24 @@ public class GameModule extends Module {
         }
     }
 
-    private interface DelegateContextBuilder {
+    public GameArenaCache getArenaCache() {
+        return gameManager.getArenaCache();
+    }
 
-        GameStateContext buildContext(Player player);
+    public GameArenaDao getArenaDao() {
+        return gameManager.getArenaDao();
+    }
 
-        GameStateContext buildContext(Player player, GameArena gameArena);
+    public ScoreboardCache getScoreboardCache() {
+        return gameManager.getScoreboardCache();
+    }
 
+    public ProcessCache getProcessCache() {
+        return gameManager.getProcessCache();
+    }
+
+    public GameLobby getLobby() {
+        return gameManager.getLobby();
     }
 
 }
