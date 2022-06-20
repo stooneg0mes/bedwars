@@ -6,18 +6,25 @@ import me.saiintbrisson.minecraft.ViewItem;
 import net.stonegomes.bedwars.commons.builder.ItemStackBuilder;
 import net.stonegomes.bedwars.core.GameManager;
 import net.stonegomes.bedwars.core.arena.GameArena;
+import net.stonegomes.bedwars.core.arena.player.GamePlayer;
+import net.stonegomes.bedwars.game.arena.player.GamePlayerImpl;
 import org.bukkit.Material;
+import org.bukkit.entity.Player;
 
 public class GameArenaPaginatedView extends PaginatedView<GameArena> {
 
+    private final GameManager gameManager;
+
     public GameArenaPaginatedView(GameManager gameManager) {
+        this.gameManager = gameManager;
+
+        setSource(gameManager.getArenaCache().values().stream().toList());
         setLayout(
             "XXXXXXXXX",
             "XOOOOOOOX",
             "XOOOOOOOX",
             "XXXXXXXXX"
         );
-        setSource(gameManager.getArenaCache().getGameArenas().stream().toList());
 
         setCancelOnClick(true);
         setCancelOnClone(true);
@@ -31,6 +38,8 @@ public class GameArenaPaginatedView extends PaginatedView<GameArena> {
 
     @Override
     protected void onItemRender(PaginatedViewSlotContext<GameArena> render, ViewItem item, GameArena value) {
+        final Player player = render.getPlayer();
+
         item.withItem(new ItemStackBuilder(Material.PAPER)
             .name("§e" + value.getName())
             .lore(
@@ -41,11 +50,19 @@ public class GameArenaPaginatedView extends PaginatedView<GameArena> {
             )
             .build()
         ).onClick(handler -> {
-           if (!value.getGameState().isFirstState()) return;
+            if (!value.getGameState().isFirstState()) return;
 
-           /*
-           TODO
-            */
+            GamePlayer gamePlayer = GamePlayerImpl.builder()
+                .uniqueId(player.getUniqueId())
+                .arena(value)
+                .island(null)
+                .spectatorTime(null)
+                .build();
+
+            value.getPlayerMap().putGamePlayer(gamePlayer.getUniqueId(), gamePlayer);
+            value.getGameState().onEnter(gameManager.buildContext(player, value));
+
+            player.teleport(value.getWaitingSpawnLocation());
         });
     }
 

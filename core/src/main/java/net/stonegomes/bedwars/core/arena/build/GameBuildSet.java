@@ -43,7 +43,7 @@ public class GameBuildSet {
      *
      * @return all blocks
      */
-    public Set<Block> getBlocks() {
+    public Set<Block> values() {
         return blockSet;
     }
 

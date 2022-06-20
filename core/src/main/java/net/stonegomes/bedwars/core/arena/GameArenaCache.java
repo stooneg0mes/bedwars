@@ -74,8 +74,8 @@ public interface GameArenaCache {
     /**
      * Get all game arenas from the cache.
      *
-     * @return all maps
+     * @return all arenas
      */
-    Collection<GameArena> getGameArenas();
+    Collection<GameArena> values();
 
 }

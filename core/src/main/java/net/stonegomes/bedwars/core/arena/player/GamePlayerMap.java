@@ -43,7 +43,7 @@ public class GamePlayerMap {
      *
      * @return the players
      */
-    public Collection<GamePlayer> getGamePlayers() {
+    public Collection<GamePlayer> values() {
         return playerMap.values();
     }
 

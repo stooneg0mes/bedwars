@@ -49,8 +49,8 @@ public class GameModule extends Module {
 
     @Override
     public void handleDisable() {
-        for (GameArena gameArena : gameManager.getArenaCache().getGameArenas()) {
-            for (Block block : gameArena.getBuildSet().getBlocks()) {
+        for (GameArena gameArena : gameManager.getArenaCache().values()) {
+            for (Block block : gameArena.getBuildSet().values()) {
                 block.setType(Material.AIR); // TODO: asynchronous removal of blocks
             }
 

@@ -58,7 +58,7 @@ public class GameGeneratorMap {
      *
      * @return all the generators
      */
-    public Collection<GameGenerator> getGenerators() {
+    public Collection<GameGenerator> values() {
         return generatorMap.values();
     }
 

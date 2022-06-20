@@ -37,7 +37,7 @@ public class GameArenaCacheImpl implements GameArenaCache {
     }
 
     @Override
-    public Collection<GameArena> getGameArenas() {
+    public Collection<GameArena> values() {
         return arenaCache.values();
     }
 

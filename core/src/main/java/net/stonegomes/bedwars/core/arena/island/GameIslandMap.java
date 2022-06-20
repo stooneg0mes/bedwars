@@ -56,7 +56,7 @@ public class GameIslandMap {
      *
      * @return the islands
      */
-    public Collection<GameIsland> getIslands() {
+    public Collection<GameIsland> values() {
         return islandMap.values();
     }
 
