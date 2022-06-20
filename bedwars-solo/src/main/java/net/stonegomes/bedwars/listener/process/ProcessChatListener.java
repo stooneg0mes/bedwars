@@ -25,11 +25,12 @@ public class ProcessChatListener implements Listener {
         if (processPhase == null || processPhase.getType() != ProcessPhaseType.CHAT) return;
 
         final String message = event.originalMessage().toString();
-        if (!processPhase.handleInput(process.getProcessContext()).test(message, player)) return;
+        if (!processPhase.handleInput(process.getProcessContext()).test(message, player)) {
+            process.advancePhase(player);
 
-        process.advancePhase(player);
-        if (process.isOnLastPhase()) {
-            process.onFinish(player, process.getProcessContext());
+            if (process.isOnLastPhase()) {
+                process.onFinish(player, process.getProcessContext());
+            }
         }
     }
 
