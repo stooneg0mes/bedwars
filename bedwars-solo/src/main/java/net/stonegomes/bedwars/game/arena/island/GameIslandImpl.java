@@ -33,6 +33,7 @@ public class GameIslandImpl implements GameIsland {
     private final GameIslandUpgradeMap upgradeMap;
     private final GameGeneratorMap generatorMap;
 
+    private final Location bedLocation;
     private final Location spawnLocation;
     private final Location firstPosition, secondPosition;
 

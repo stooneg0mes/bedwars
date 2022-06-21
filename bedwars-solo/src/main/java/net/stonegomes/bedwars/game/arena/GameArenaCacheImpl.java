@@ -3,6 +3,7 @@ package net.stonegomes.bedwars.game.arena;
 import net.stonegomes.bedwars.core.arena.GameArena;
 import net.stonegomes.bedwars.core.arena.GameArenaCache;
 import org.bukkit.World;
+import org.bukkit.entity.Player;
 
 import java.util.Collection;
 import java.util.HashMap;
@@ -32,6 +33,14 @@ public class GameArenaCacheImpl implements GameArenaCache {
     public GameArena getGameArena(World world) {
         return arenaCache.values().stream()
             .filter(gameArena -> gameArena.getWorld().getName().equals(world.getName()))
+            .findFirst()
+            .orElse(null);
+    }
+
+    @Override
+    public GameArena getGameArena(Player player) {
+        return arenaCache.values().stream()
+            .filter(gameArena -> gameArena.getPlayerMap().hasGamePlayer(player.getUniqueId()))
             .findFirst()
             .orElse(null);
     }

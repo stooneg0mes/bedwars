@@ -10,9 +10,9 @@ public class GamePlayerMap {
     private final Map<UUID, GamePlayer> playerMap = new HashMap<>();
 
     /**
-     * Put a player in the map.
+     * Put a game player in the map.
      *
-     * @param uuid       the uuid of the player
+     * @param uuid       the uuid of the game player
      * @param gamePlayer the player
      */
     public void putGamePlayer(UUID uuid, GamePlayer gamePlayer) {
@@ -20,18 +20,28 @@ public class GamePlayerMap {
     }
 
     /**
-     * Remove a player from the cache.
+     * Remove a game player from the cache.
      *
-     * @param uuid the uuid of the player
+     * @param uuid the uuid of the game player
      */
     public void removeGamePlayer(UUID uuid) {
         playerMap.remove(uuid);
     }
 
     /**
-     * Get a player from the cache.
+     * Check if a game player is in the map.
      *
-     * @param uuid the uuid of the player
+     * @param uuid the uuid of the game player
+     * @return if the game player is in the map
+     */
+    public boolean hasGamePlayer(UUID uuid) {
+        return getGamePlayer(uuid) != null;
+    }
+
+    /**
+     * Get a game player from the cache.
+     *
+     * @param uuid the uuid of the game player
      * @return the player
      */
     public GamePlayer getGamePlayer(UUID uuid) {
@@ -39,9 +49,9 @@ public class GamePlayerMap {
     }
 
     /**
-     * Get all players in the cache.
+     * Get all game players in the cache.
      *
-     * @return the players
+     * @return the game players
      */
     public Collection<GamePlayer> values() {
         return playerMap.values();

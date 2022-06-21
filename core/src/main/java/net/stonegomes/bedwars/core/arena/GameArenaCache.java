@@ -4,6 +4,7 @@ import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Entity;
+import org.bukkit.entity.Player;
 
 import java.util.Collection;
 import java.util.UUID;
@@ -44,12 +45,10 @@ public interface GameArenaCache {
     /**
      * Get the game arena of a player.
      *
-     * @param entity the entity
+     * @param player the player
      * @return the game arena
      */
-    default GameArena getGameArena(Entity entity) {
-        return getGameArena(entity.getWorld());
-    }
+    GameArena getGameArena(Player player);
 
     /**
      * Get the game arena of a block.

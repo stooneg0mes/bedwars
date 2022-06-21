@@ -10,7 +10,7 @@ import net.stonegomes.bedwars.core.arena.player.GamePlayerMap;
 import net.stonegomes.bedwars.core.process.Process;
 import net.stonegomes.bedwars.core.process.ProcessContext;
 import net.stonegomes.bedwars.game.arena.GameArenaImpl;
-import net.stonegomes.bedwars.game.arena.state.setup.SetupGameState;
+import net.stonegomes.bedwars.game.arena.state.impl.setup.SetupGameState;
 import net.stonegomes.bedwars.game.process.creation.phase.NameCreatePhase;
 import net.stonegomes.bedwars.game.process.creation.phase.WaitingFirstPositionCreatePhase;
 import net.stonegomes.bedwars.game.process.creation.phase.WaitingSecondPositionCreatePhase;

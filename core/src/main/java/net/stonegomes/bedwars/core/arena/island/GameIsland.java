@@ -53,6 +53,13 @@ public interface GameIsland {
     Location getSpawnLocation();
 
     /**
+     * Get the island bed location
+     *
+     * @return the bed location
+     */
+    Location getBedLocation();
+
+    /**
      * Get the island cuboid
      *
      * @return the cuboid

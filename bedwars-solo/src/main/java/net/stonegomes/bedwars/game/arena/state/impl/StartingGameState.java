@@ -1,4 +1,4 @@
-package net.stonegomes.bedwars.game.arena.state;
+package net.stonegomes.bedwars.game.arena.state.impl;
 
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.TextComponent;
@@ -8,13 +8,14 @@ import net.kyori.adventure.text.format.TextDecoration;
 import net.kyori.adventure.title.Title;
 import net.stonegomes.bedwars.core.arena.state.GameState;
 import net.stonegomes.bedwars.core.arena.state.GameStateContext;
+import net.stonegomes.bedwars.game.arena.state.DefaultGameState;
 
 import java.time.Duration;
 import java.util.Set;
 
 import static net.kyori.adventure.title.Title.Times;
 
-public class StartingGameState implements GameState {
+public class StartingGameState extends DefaultGameState {
 
     private final Set<Integer> warningTimes = Set.of(10, 5, 4, 3, 2, 1);
 

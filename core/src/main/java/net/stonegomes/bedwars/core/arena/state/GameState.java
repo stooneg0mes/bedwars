@@ -23,9 +23,7 @@ public interface GameState {
      *
      * @return if the player can join on this state
      */
-    default boolean canEnter() {
-        return false;
-    }
+    boolean canEnter();
 
     /**
      * Check if this state is the first state
@@ -53,20 +51,6 @@ public interface GameState {
     default void onEnter(GameStateContext context) {}
 
     /**
-     * Called every second to update the state
-     *
-     * @param context the context
-     */
-    default void onUpdate(GameStateContext context) {}
-
-    /**
-     * Called every second to update the scoreboard
-     *
-     * @param context the context
-     */
-    default void onScoreboardUpdate(GameStateContext context) {}
-
-    /**
      * Called when leaving the state to another state
      *
      * @param context the context
@@ -79,5 +63,19 @@ public interface GameState {
      * @param context the context
      */
     default void onQuit(GameStateContext context) {}
+
+    /**
+     * Called every second to update the state
+     *
+     * @param context the context
+     */
+    default void onUpdate(GameStateContext context) {}
+
+    /**
+     * Called every second to update the scoreboard
+     *
+     * @param context the context
+     */
+    default void onScoreboardUpdate(GameStateContext context) {}
 
 }

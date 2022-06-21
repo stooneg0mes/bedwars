@@ -35,11 +35,4 @@ public interface GameLobby {
      */
     void setNpcLocation(Location location);
 
-    /**
-     * Get the players that are on the lobby
-     *
-     * @return the players on the lobby
-     */
-    Collection<Player> getPlayers();
-
 }

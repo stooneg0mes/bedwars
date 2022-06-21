@@ -1,11 +1,12 @@
-package net.stonegomes.bedwars.game.arena.state;
+package net.stonegomes.bedwars.game.arena.state.impl;
 
 import net.stonegomes.bedwars.core.arena.state.GameState;
 import net.stonegomes.bedwars.core.arena.state.GameStateContext;
 import net.stonegomes.bedwars.core.scoreboard.fast.FastBoard;
+import net.stonegomes.bedwars.game.arena.state.DefaultGameState;
 import org.bukkit.entity.Player;
 
-public class WaitingPlayersGameState implements GameState {
+public class WaitingPlayersGameState extends DefaultGameState {
 
     private static final int REQUIRED_PLAYERS = 6;
 
@@ -17,11 +18,6 @@ public class WaitingPlayersGameState implements GameState {
     @Override
     public GameState getNextState() {
         return new StartingGameState();
-    }
-
-    @Override
-    public GameState getPreviousState() {
-        return null;
     }
 
     @Override

@@ -8,7 +8,7 @@ import net.stonegomes.bedwars.core.arena.GameArena;
 import net.stonegomes.bedwars.core.arena.build.GameBuildSet;
 import net.stonegomes.bedwars.core.arena.player.GamePlayerMap;
 import net.stonegomes.bedwars.game.arena.GameArenaImpl;
-import net.stonegomes.bedwars.game.arena.state.WaitingPlayersGameState;
+import net.stonegomes.bedwars.game.arena.state.impl.WaitingPlayersGameState;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 
