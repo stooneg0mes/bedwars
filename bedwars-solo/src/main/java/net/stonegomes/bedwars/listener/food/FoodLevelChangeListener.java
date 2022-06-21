@@ -21,9 +21,9 @@ public class FoodLevelChangeListener implements Listener {
         if (gameArena == null) return;
 
         final GameState gameState = gameArena.getGameState();
-        final boolean isStarterState = (gameState instanceof WaitingPlayersGameState || gameState instanceof StartingGameState);
+        if (!(gameState instanceof WaitingPlayersGameState) && !(gameState instanceof StartingGameState)) return;
 
-        event.setCancelled(isStarterState);
+        event.setCancelled(false);
     }
 
 }

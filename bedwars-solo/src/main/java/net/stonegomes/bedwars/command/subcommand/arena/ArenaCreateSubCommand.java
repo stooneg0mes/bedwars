@@ -1,6 +1,7 @@
-package net.stonegomes.bedwars.command.subcommand;
+package net.stonegomes.bedwars.command.subcommand.arena;
 
 import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import me.saiintbrisson.minecraft.command.annotation.Command;
 import me.saiintbrisson.minecraft.command.command.Context;
 import me.saiintbrisson.minecraft.command.target.CommandTarget;
@@ -10,7 +11,7 @@ import net.stonegomes.bedwars.game.process.creation.ArenaCreationProcess;
 import org.bukkit.World;
 import org.bukkit.entity.Player;
 
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class ArenaCreateSubCommand {
 
     private final GamePlugin gamePlugin;

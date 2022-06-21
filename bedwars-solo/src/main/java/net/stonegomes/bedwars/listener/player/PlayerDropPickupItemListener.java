@@ -22,9 +22,9 @@ public class PlayerDropPickupItemListener {
         if (gameArena == null) return;
 
         final GameState gameState = gameArena.getGameState();
-        final boolean isStarterState = (gameState instanceof WaitingPlayersGameState || gameState instanceof StartingGameState);
+        if (!(gameState instanceof WaitingPlayersGameState) && !(gameState instanceof StartingGameState)) return;
 
-        event.setCancelled(isStarterState);
+        event.setCancelled(false);
     }
 
     @EventHandler
@@ -35,9 +35,9 @@ public class PlayerDropPickupItemListener {
         if (gameArena == null) return;
 
         final GameState gameState = gameArena.getGameState();
-        final boolean isStarterState = (gameState instanceof WaitingPlayersGameState || gameState instanceof StartingGameState);
+        if (!(gameState instanceof WaitingPlayersGameState) && !(gameState instanceof StartingGameState)) return;
 
-        event.setCancelled(isStarterState);
+        event.setCancelled(false);
     }
 
 }

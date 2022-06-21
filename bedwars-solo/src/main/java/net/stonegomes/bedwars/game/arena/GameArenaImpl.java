@@ -29,18 +29,18 @@ public class GameArenaImpl implements GameArena {
 
     private final GameBuildSet buildSet;
 
-    private final GamePlayerMap playerMap;
     private final GameGeneratorMap generatorMap;
+    private final GamePlayerMap playerMap;
     private final GameIslandMap islandMap;
     private final GameNpcMap npcMap;
+
+    private Location waitingSecondPosition;
+    private Location waitingSpawnLocation;
+    private Location waitingFirstPosition;
 
     private GameState gameState;
 
     private String name;
-
-    private Location waitingSpawnLocation;
-    private Location waitingFirstPosition;
-    private Location waitingSecondPosition;
 
     @Override
     public World getWorld() {

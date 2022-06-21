@@ -1,7 +1,8 @@
-package net.stonegomes.bedwars.module;
+package net.stonegomes.bedwars.module.game;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
+import net.stonegomes.bedwars.GamePlugin;
 import net.stonegomes.bedwars.commons.Module;
 import net.stonegomes.bedwars.commons.ModuleId;
 import net.stonegomes.bedwars.core.GameManager;
@@ -26,30 +27,21 @@ import org.bukkit.block.Block;
 
 @ModuleId(id = "gameArenaModule")
 @RequiredArgsConstructor
-public class GameModule extends Module {
+public class GameArenaModule extends Module {
 
-    @Getter
-    private GameManager gameManager;
+    private final GamePlugin gamePlugin;
 
     @Override
     public void handleEnable() {
-        gameManager = new GameManagerImpl(
-            new GameArenaCacheImpl(),
-            new GameArenaDaoImpl(),
-            new ScoreboardCacheImpl(),
-            new ProcessCacheImpl(),
-            new GameLobbyImpl()
-        );
-
-        for (GameArena gameArena : gameManager.getArenaDao().find()) {
+        for (GameArena gameArena : gamePlugin.getArenaDao().find()) {
             gameArena.setGameState(new WaitingPlayersGameState());
-            gameManager.getArenaCache().putGameArena(gameArena.getUniqueId(), gameArena);
+            gamePlugin.getArenaCache().putGameArena(gameArena.getUniqueId(), gameArena);
         }
     }
 
     @Override
     public void handleDisable() {
-        for (GameArena gameArena : gameManager.getArenaCache().values()) {
+        for (GameArena gameArena : gamePlugin.getArenaCache().values()) {
             for (Block block : gameArena.getBuildSet().values()) {
                 block.setType(Material.AIR); // TODO: asynchronous removal of blocks
             }
@@ -69,28 +61,8 @@ public class GameModule extends Module {
                 .waitingSecondPosition(gameArena.getWaitingCuboid().getSecondPos())
                 .build();
 
-            gameManager.getArenaDao().replace(databaseArena);
+            gamePlugin.getArenaDao().replace(databaseArena);
         }
-    }
-
-    public GameArenaCache getArenaCache() {
-        return gameManager.getArenaCache();
-    }
-
-    public GameArenaDao getArenaDao() {
-        return gameManager.getArenaDao();
-    }
-
-    public ScoreboardCache getScoreboardCache() {
-        return gameManager.getScoreboardCache();
-    }
-
-    public ProcessCache getProcessCache() {
-        return gameManager.getProcessCache();
-    }
-
-    public GameLobby getLobby() {
-        return gameManager.getLobby();
     }
 
 }
