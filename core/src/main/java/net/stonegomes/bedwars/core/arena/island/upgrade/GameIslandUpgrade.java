@@ -18,15 +18,6 @@ public abstract class GameIslandUpgrade {
     public abstract GameIslandUpgradeType getUpgradeType();
 
     /**
-     * Called when running the upgrade.
-     *
-     * @param gameIsland the island that is being upgraded.
-     * @param level      the level of the upgrade.
-     */
-    public void onUpgrade(GameIsland gameIsland, int level) {
-    }
-
-    /**
      * Get the game island upgrade initial level
      *
      * @return the upgrade initial level
@@ -34,5 +25,13 @@ public abstract class GameIslandUpgrade {
     public int getInitialLevel() {
         return 1;
     }
+
+    /**
+     * Called when running the upgrade.
+     *
+     * @param gameIsland the island that is being upgraded.
+     * @param level      the level of the upgrade.
+     */
+    public void onUpgrade(GameIsland gameIsland, int level) {}
 
 }

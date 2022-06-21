@@ -5,8 +5,7 @@ import net.stonegomes.bedwars.core.arena.state.GameStateContext;
 import net.stonegomes.bedwars.core.scoreboard.fast.FastBoard;
 import org.bukkit.entity.Player;
 
-
-public class WaitingPlayersGameState extends GameState {
+public class WaitingPlayersGameState implements GameState {
 
     private static final int REQUIRED_PLAYERS = 6;
 
@@ -18,6 +17,16 @@ public class WaitingPlayersGameState extends GameState {
     @Override
     public GameState getNextState() {
         return new StartingGameState();
+    }
+
+    @Override
+    public GameState getPreviousState() {
+        return null;
+    }
+
+    @Override
+    public boolean canEnter() {
+        return true;
     }
 
     @Override

@@ -1,25 +1,30 @@
 package net.stonegomes.bedwars.core.arena.state;
 
-public abstract class GameState {
+public interface GameState {
 
-    public abstract String getName();
+    String getName();
 
     /**
      * Get the next state
      *
      * @return the next state or null if there is no next state
      */
-    public GameState getNextState() {
-        return null;
-    }
+    GameState getNextState();
 
     /**
      * Get the previous state
      *
      * @return the previous state or null if there is no previous state
      */
-    public GameState getPreviousState() {
-        return null;
+    GameState getPreviousState();
+
+    /**
+     * Check if a player can join on this state
+     *
+     * @return if the player can join on this state
+     */
+    default boolean canEnter() {
+        return false;
     }
 
     /**
@@ -27,7 +32,7 @@ public abstract class GameState {
      *
      * @return if the state doesn't have a previous state
      */
-    public boolean isFirstState() {
+    default boolean isFirstState() {
         return getPreviousState() == null;
     }
 
@@ -36,7 +41,7 @@ public abstract class GameState {
      *
      * @return if the state doesn't have a next state
      */
-    public boolean isLastState() {
+    default boolean isLastState() {
         return getNextState() == null;
     }
 
@@ -45,39 +50,34 @@ public abstract class GameState {
      *
      * @param context the context
      */
-    public void onEnter(GameStateContext context) {
-    }
+    default void onEnter(GameStateContext context) {}
 
     /**
      * Called every second to update the state
      *
      * @param context the context
      */
-    public void onUpdate(GameStateContext context) {
-    }
+    default void onUpdate(GameStateContext context) {}
 
     /**
      * Called every second to update the scoreboard
      *
      * @param context the context
      */
-    public void onScoreboardUpdate(GameStateContext context) {
-    }
+    default void onScoreboardUpdate(GameStateContext context) {}
 
     /**
      * Called when leaving the state to another state
      *
      * @param context the context
      */
-    public void onExit(GameStateContext context) {
-    }
+    default void onExit(GameStateContext context) {}
 
     /**
      * Called when leaving the game
      *
      * @param context the context
      */
-    public void onQuit(GameStateContext context) {
-    }
+    default void onQuit(GameStateContext context) {}
 
 }

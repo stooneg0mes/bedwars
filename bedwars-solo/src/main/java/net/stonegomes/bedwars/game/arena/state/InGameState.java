@@ -5,11 +5,16 @@ import net.stonegomes.bedwars.core.arena.player.GamePlayer;
 import net.stonegomes.bedwars.core.arena.state.GameState;
 import net.stonegomes.bedwars.core.arena.state.GameStateContext;
 
-public class InGameState extends GameState {
+public class InGameState implements GameState {
 
     @Override
     public String getName() {
         return "In Game";
+    }
+
+    @Override
+    public GameState getNextState() {
+        return null;
     }
 
     @Override

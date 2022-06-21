@@ -1,6 +1,9 @@
 package net.stonegomes.bedwars.core.lobby;
 
 import org.bukkit.Location;
+import org.bukkit.entity.Player;
+
+import java.util.Collection;
 
 public interface GameLobby {
 
@@ -31,5 +34,12 @@ public interface GameLobby {
      * @param location the npc location
      */
     void setNpcLocation(Location location);
+
+    /**
+     * Get the players that are on the lobby
+     *
+     * @return the players on the lobby
+     */
+    Collection<Player> getPlayers();
 
 }

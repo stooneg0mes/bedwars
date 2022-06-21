@@ -14,7 +14,7 @@ import java.util.Set;
 
 import static net.kyori.adventure.title.Title.Times;
 
-public class StartingGameState extends GameState {
+public class StartingGameState implements GameState {
 
     private final Set<Integer> warningTimes = Set.of(10, 5, 4, 3, 2, 1);
 

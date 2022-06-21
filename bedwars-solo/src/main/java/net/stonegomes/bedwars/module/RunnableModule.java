@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import net.stonegomes.bedwars.GamePlugin;
 import net.stonegomes.bedwars.commons.Module;
 import net.stonegomes.bedwars.commons.ModuleId;
-import net.stonegomes.bedwars.runnable.GameUpdateRunnable;
+import net.stonegomes.bedwars.runnable.GameArenaUpdateRunnable;
 
 @ModuleId(id = "listenerModule")
 @RequiredArgsConstructor
@@ -14,7 +14,7 @@ public class RunnableModule extends Module {
 
     @Override
     public void handleEnable() {
-        new GameUpdateRunnable(gamePlugin).runTaskTimerAsynchronously(gamePlugin, 0L, 20L);
+        new GameArenaUpdateRunnable(gamePlugin).runTaskTimerAsynchronously(gamePlugin, 0L, 20L);
     }
 
 }

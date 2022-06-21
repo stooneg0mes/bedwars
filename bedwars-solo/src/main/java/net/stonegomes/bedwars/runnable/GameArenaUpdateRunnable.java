@@ -1,6 +1,6 @@
 package net.stonegomes.bedwars.runnable;
 
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.TextComponent;
 import net.kyori.adventure.text.format.NamedTextColor;
@@ -21,8 +21,8 @@ import java.util.concurrent.TimeUnit;
 
 import static net.kyori.adventure.title.Title.Times;
 
-@AllArgsConstructor
-public class GameUpdateRunnable extends BukkitRunnable {
+@RequiredArgsConstructor
+public class GameArenaUpdateRunnable extends BukkitRunnable {
 
     private final GamePlugin gamePlugin;
 
