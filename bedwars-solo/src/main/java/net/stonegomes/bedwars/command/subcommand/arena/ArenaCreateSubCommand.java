@@ -1,6 +1,5 @@
 package net.stonegomes.bedwars.command.subcommand.arena;
 
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import me.saiintbrisson.minecraft.command.annotation.Command;
 import me.saiintbrisson.minecraft.command.command.Context;
