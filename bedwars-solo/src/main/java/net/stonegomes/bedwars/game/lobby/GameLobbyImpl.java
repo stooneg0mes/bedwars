@@ -8,5 +8,6 @@ import org.bukkit.Location;
 public class GameLobbyImpl implements GameLobby {
 
     private Location spawnLocation;
+    private Location npcLocation;
 
 }

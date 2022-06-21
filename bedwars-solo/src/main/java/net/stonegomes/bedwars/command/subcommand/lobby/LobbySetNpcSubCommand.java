@@ -19,9 +19,8 @@ public class LobbySetNpcSubCommand {
         target = CommandTarget.PLAYER
     )
     public void handleCommand(Context<Player> context) {
-        /*
-        TODO
-         */
+        gamePlugin.getLobby().setNpcLocation(context.getSender().getLocation());
+        context.sendMessage("§aYou set the arena npc location successfully.");
     }
 
 }

@@ -18,4 +18,18 @@ public interface GameLobby {
      */
     void setSpawnLocation(Location location);
 
+    /**
+     * Get the npc location from the lobby
+     *
+     * @return the npc location
+     */
+    Location getNpcLocation();
+
+    /**
+     * Set the npc location of the lobby
+     *
+     * @param location the npc location
+     */
+    void setNpcLocation(Location location);
+
 }

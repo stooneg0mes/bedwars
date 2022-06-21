@@ -14,7 +14,17 @@ public class GameLobbyModule extends Module {
     @Override
     public void handleEnable() {
         /*
-        TODO
+        TODO Implement this properly
+
+        final Location spawnFromDatabase = database.getSpawnLocation();
+        if (spawnFromDatabase != null) {
+            gamePlugin.getLobby().setSpawnLocation(spawnFromDatabase);
+        }
+
+        final Location npcFromDatabase = database.getNpcLocation();
+        if (npcFromDatabase != null) {
+            gamePlugin.getLobby().setNpcLocation(npcFromDatabase);
+        }
          */
     }
 
