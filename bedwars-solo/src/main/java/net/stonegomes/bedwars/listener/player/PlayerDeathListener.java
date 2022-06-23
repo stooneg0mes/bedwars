@@ -2,6 +2,7 @@ package net.stonegomes.bedwars.listener.player;
 
 import lombok.AllArgsConstructor;
 import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.TextComponent;
 import net.kyori.adventure.text.format.NamedTextColor;
 import net.stonegomes.bedwars.GamePlugin;
 import net.stonegomes.bedwars.core.arena.GameArena;
@@ -21,32 +22,40 @@ public class PlayerDeathListener implements Listener {
 
     @EventHandler
     public void handlePlayerDeath(PlayerDeathEvent event) {
-        final Player player = event.getPlayer();
-        player.spigot().respawn();
+        event.deathMessage(null);
 
+        final Player player = event.getPlayer();
         final GameArena gameArena = gamePlugin.getArenaCache().getGameArena(player);
         if (gameArena == null) return;
 
         final GamePlayer gamePlayer = gameArena.getPlayerMap().getGamePlayer(player.getUniqueId());
         if (gamePlayer != null) {
-            player.setGameMode(GameMode.SPECTATOR);
+            player.spigot().respawn();
+
             gamePlayer.setSpectatorTime(System.currentTimeMillis() + TimeUnit.SECONDS.toMillis(5));
+            player.setGameMode(GameMode.SPECTATOR);
         }
 
-        final Player killer = event.getPlayer().getKiller();
+        final Player killer = player.getKiller();
         if (killer == null) {
-            event.deathMessage(Component.text(player.getName() + " fell into the void.", NamedTextColor.WHITE));
+            broadcastMessageOnArena(gameArena, player.getName() + " fell into the void.");
             return;
+        } else {
+            broadcastMessageOnArena(gameArena, killer.getName() + " has killed " + player.getName() + ".");
         }
-
-        event.deathMessage(Component.text(player.getName() + " was killed by " + killer.getName(), NamedTextColor.WHITE));
 
         final GamePlayer gameKiller = gameArena.getPlayerMap().getGamePlayer(killer.getUniqueId());
-        if (gameKiller != null) {
-            killer.spigot().respawn();
-            killer.setGameMode(GameMode.SPECTATOR);
+        if (gameKiller == null) return;
+        
+        killer.spigot().respawn();
+        
+        killer.setGameMode(GameMode.SPECTATOR);
+        gameKiller.setSpectatorTime(System.currentTimeMillis() + TimeUnit.SECONDS.toMillis(5));
+    }
 
-            gameKiller.setSpectatorTime(System.currentTimeMillis() + TimeUnit.SECONDS.toMillis(5));
+    private void broadcastMessageOnArena(GameArena gameArena, String message) {
+        for (GamePlayer onlinePlayer : gameArena.getPlayerMap().values()) {
+            onlinePlayer.getBukkitPlayer().sendMessage(Component.text(message, NamedTextColor.YELLOW));
         }
     }
 
