@@ -8,7 +8,6 @@ import net.stonegomes.bedwars.GamePlugin;
 import net.stonegomes.bedwars.commons.builder.ItemStackBuilder;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
-import org.bukkit.entity.Entity;
 import org.bukkit.entity.Giant;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;

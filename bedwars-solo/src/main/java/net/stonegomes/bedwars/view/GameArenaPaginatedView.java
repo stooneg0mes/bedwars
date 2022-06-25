@@ -7,7 +7,7 @@ import net.stonegomes.bedwars.commons.builder.ItemStackBuilder;
 import net.stonegomes.bedwars.core.GameManager;
 import net.stonegomes.bedwars.core.arena.GameArena;
 import net.stonegomes.bedwars.core.arena.player.GamePlayer;
-import net.stonegomes.bedwars.game.arena.player.GamePlayerImpl;
+import net.stonegomes.bedwars.arena.player.GamePlayerImpl;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 

@@ -6,7 +6,7 @@ import me.saiintbrisson.minecraft.command.command.Context;
 import me.saiintbrisson.minecraft.command.target.CommandTarget;
 import net.stonegomes.bedwars.GamePlugin;
 import net.stonegomes.bedwars.core.process.Process;
-import net.stonegomes.bedwars.game.process.creation.ArenaCreationProcess;
+import net.stonegomes.bedwars.process.creation.ArenaCreationProcess;
 import org.bukkit.World;
 import org.bukkit.entity.Player;
 

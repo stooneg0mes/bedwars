@@ -10,11 +10,11 @@ import net.stonegomes.bedwars.core.lobby.GameLobby;
 import net.stonegomes.bedwars.core.process.ProcessCache;
 import net.stonegomes.bedwars.core.scoreboard.ScoreboardCache;
 import net.stonegomes.bedwars.game.GameManagerImpl;
-import net.stonegomes.bedwars.game.arena.GameArenaCacheImpl;
-import net.stonegomes.bedwars.game.arena.GameArenaDaoImpl;
-import net.stonegomes.bedwars.game.lobby.GameLobbyImpl;
-import net.stonegomes.bedwars.game.process.ProcessCacheImpl;
-import net.stonegomes.bedwars.game.scoreboard.ScoreboardCacheImpl;
+import net.stonegomes.bedwars.arena.GameArenaCacheImpl;
+import net.stonegomes.bedwars.arena.GameArenaDaoImpl;
+import net.stonegomes.bedwars.lobby.GameLobbyImpl;
+import net.stonegomes.bedwars.process.ProcessCacheImpl;
+import net.stonegomes.bedwars.scoreboard.ScoreboardCacheImpl;
 
 @ModuleId(id = "gameModule")
 public class GameModule extends Module {
