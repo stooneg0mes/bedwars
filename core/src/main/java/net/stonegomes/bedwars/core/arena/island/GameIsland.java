@@ -20,6 +20,7 @@ public interface GameIsland {
 
     /**
      * Get the game island arena owner
+     *
      * @return the arena owner
      */
     GameArena getOwner();

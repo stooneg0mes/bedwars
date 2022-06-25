@@ -2,7 +2,6 @@ package net.stonegomes.bedwars.listener.player;
 
 import lombok.AllArgsConstructor;
 import net.kyori.adventure.text.Component;
-import net.kyori.adventure.text.TextComponent;
 import net.kyori.adventure.text.format.NamedTextColor;
 import net.stonegomes.bedwars.GamePlugin;
 import net.stonegomes.bedwars.core.arena.GameArena;
@@ -46,9 +45,9 @@ public class PlayerDeathListener implements Listener {
 
         final GamePlayer gameKiller = gameArena.getPlayerMap().getGamePlayer(killer.getUniqueId());
         if (gameKiller == null) return;
-        
+
         killer.spigot().respawn();
-        
+
         killer.setGameMode(GameMode.SPECTATOR);
         gameKiller.setSpectatorTime(System.currentTimeMillis() + TimeUnit.SECONDS.toMillis(5));
     }
