@@ -1,6 +1,6 @@
 package net.stonegomes.bedwars.listener.block;
 
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import net.stonegomes.bedwars.GamePlugin;
 import net.stonegomes.bedwars.core.arena.GameArena;
 import net.stonegomes.bedwars.core.arena.state.GameState;
@@ -12,7 +12,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.BlockPlaceEvent;
 
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class BlockBuildListener implements Listener {
 
     private final GamePlugin gamePlugin;

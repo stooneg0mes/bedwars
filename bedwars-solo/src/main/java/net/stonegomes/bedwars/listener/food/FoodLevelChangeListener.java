@@ -1,6 +1,6 @@
 package net.stonegomes.bedwars.listener.food;
 
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import net.stonegomes.bedwars.GamePlugin;
 import net.stonegomes.bedwars.core.arena.GameArena;
 import org.bukkit.entity.Player;
@@ -8,7 +8,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.FoodLevelChangeEvent;
 
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class FoodLevelChangeListener implements Listener {
 
     private final GamePlugin gamePlugin;

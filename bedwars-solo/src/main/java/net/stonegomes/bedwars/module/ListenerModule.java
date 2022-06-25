@@ -5,6 +5,11 @@ import net.stonegomes.bedwars.GamePlugin;
 import net.stonegomes.bedwars.commons.Module;
 import net.stonegomes.bedwars.commons.ModuleId;
 import net.stonegomes.bedwars.listener.block.BlockBuildListener;
+import net.stonegomes.bedwars.listener.entity.EntityDamageByEntityListener;
+import net.stonegomes.bedwars.listener.food.FoodLevelChangeListener;
+import net.stonegomes.bedwars.listener.player.PlayerDeathListener;
+import net.stonegomes.bedwars.listener.player.PlayerDropPickupItemListener;
+import net.stonegomes.bedwars.listener.player.PlayerInteractNpcListener;
 import net.stonegomes.bedwars.listener.traffic.MessageTrafficListener;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
@@ -20,8 +25,17 @@ public class ListenerModule extends Module {
     public void handleEnable() {
         final PluginManager pluginManager = Bukkit.getPluginManager();
 
-        pluginManager.registerEvents(new MessageTrafficListener(), gamePlugin);
         pluginManager.registerEvents(new BlockBuildListener(gamePlugin), gamePlugin);
+
+        pluginManager.registerEvents(new EntityDamageByEntityListener(gamePlugin), gamePlugin);
+
+        pluginManager.registerEvents(new FoodLevelChangeListener(gamePlugin), gamePlugin);
+
+        pluginManager.registerEvents(new PlayerDeathListener(gamePlugin), gamePlugin);
+        pluginManager.registerEvents(new PlayerDropPickupItemListener(gamePlugin), gamePlugin);
+        pluginManager.registerEvents(new PlayerInteractNpcListener(gamePlugin), gamePlugin);
+
+        pluginManager.registerEvents(new MessageTrafficListener(gamePlugin), gamePlugin);
     }
 
 }

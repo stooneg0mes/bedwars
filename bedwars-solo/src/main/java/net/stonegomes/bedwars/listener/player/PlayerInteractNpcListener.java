@@ -12,14 +12,12 @@ import org.bukkit.event.player.PlayerInteractEvent;
 @RequiredArgsConstructor
 public class PlayerInteractNpcListener implements Listener {
 
-    private GamePlugin gamePlugin;
+    private final GamePlugin gamePlugin;
 
     @EventHandler
     public void handlePlayerInteract(PlayerInteractEvent event) {
         final Location location = event.getInteractionPoint();
-        if (location == null) return;
-
-        if (!location.equals(gamePlugin.getLobby().getNpcLocation())) return;
+        if (location == null || !location.equals(gamePlugin.getLobby().getNpcLocation())) return;
 
         final Player player = event.getPlayer();
         gamePlugin.getViewFrame().open(GameArenaPaginatedView.class, player);

@@ -1,6 +1,6 @@
 package net.stonegomes.bedwars.listener.player;
 
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import net.stonegomes.bedwars.GamePlugin;
 import net.stonegomes.bedwars.core.arena.GameArena;
 import net.stonegomes.bedwars.core.arena.player.GamePlayer;
@@ -10,7 +10,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.PlayerDeathEvent;
 
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class PlayerDeathListener implements Listener {
 
     private final GamePlugin gamePlugin;

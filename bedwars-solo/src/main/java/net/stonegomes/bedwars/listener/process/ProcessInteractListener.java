@@ -1,6 +1,6 @@
 package net.stonegomes.bedwars.listener.process;
 
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import net.stonegomes.bedwars.GamePlugin;
 import net.stonegomes.bedwars.core.process.Process;
 import net.stonegomes.bedwars.core.process.ProcessPhase;
@@ -11,7 +11,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerInteractEvent;
 
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class ProcessInteractListener implements Listener {
 
     private final GamePlugin gamePlugin;

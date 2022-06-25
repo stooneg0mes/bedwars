@@ -1,15 +1,16 @@
 package net.stonegomes.bedwars.listener.player;
 
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import net.stonegomes.bedwars.GamePlugin;
 import net.stonegomes.bedwars.core.arena.GameArena;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityPickupItemEvent;
 import org.bukkit.event.player.PlayerDropItemEvent;
 
-@AllArgsConstructor
-public class PlayerDropPickupItemListener {
+@RequiredArgsConstructor
+public class PlayerDropPickupItemListener implements Listener {
 
     private final GamePlugin gamePlugin;
 

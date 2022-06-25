@@ -1,7 +1,7 @@
 package net.stonegomes.bedwars.listener.process;
 
 import io.papermc.paper.event.player.AsyncChatEvent;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import net.stonegomes.bedwars.GamePlugin;
 import net.stonegomes.bedwars.core.process.Process;
 import net.stonegomes.bedwars.core.process.ProcessPhase;
@@ -10,7 +10,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class ProcessChatListener implements Listener {
 
     private final GamePlugin gamePlugin;
