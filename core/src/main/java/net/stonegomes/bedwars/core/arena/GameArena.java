@@ -1,10 +1,12 @@
 package net.stonegomes.bedwars.core.arena;
 
+import net.kyori.adventure.text.Component;
 import net.stonegomes.bedwars.commons.cuboid.Cuboid;
 import net.stonegomes.bedwars.core.arena.build.GameBuildSet;
 import net.stonegomes.bedwars.core.arena.generator.GameGeneratorMap;
 import net.stonegomes.bedwars.core.arena.island.GameIslandMap;
 import net.stonegomes.bedwars.core.arena.island.npc.GameNpcMap;
+import net.stonegomes.bedwars.core.arena.player.GamePlayer;
 import net.stonegomes.bedwars.core.arena.player.GamePlayerMap;
 import net.stonegomes.bedwars.core.arena.state.GameState;
 import org.bukkit.Location;
@@ -112,6 +114,17 @@ public interface GameArena {
      */
     default int getMaxPlayers() {
         return getIslandMap().size();
+    }
+
+    /**
+     * Broadcast a message on the arena
+     *
+     * @param component the component
+     */
+    default void broadcastMessage(Component component) {
+        for (GamePlayer gamePlayer : getPlayerMap().values()) {
+            gamePlayer.getBukkitPlayer().sendMessage(component);
+        }
     }
 
 }

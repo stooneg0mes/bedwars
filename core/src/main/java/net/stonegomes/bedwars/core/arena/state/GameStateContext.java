@@ -9,6 +9,7 @@ import net.stonegomes.bedwars.core.arena.GameArena;
 import net.stonegomes.bedwars.core.arena.player.GamePlayer;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
+import org.bukkit.event.Event;
 
 import java.util.Collection;
 
@@ -19,6 +20,8 @@ public class GameStateContext {
 
     @Delegate
     private GameManager gameManager;
+
+    private Event event;
 
     private GameArena gameArena;
     private GamePlayer gamePlayer;
@@ -77,6 +80,15 @@ public class GameStateContext {
      */
     public Collection<? extends Player> getOnlinePlayers() {
         return Bukkit.getOnlinePlayers();
+    }
+
+    /**
+     * Get the event of this context
+     *
+     * @return the context event
+     */
+    public <T extends Event> T getEvent() {
+        return (T) event;
     }
 
 }
