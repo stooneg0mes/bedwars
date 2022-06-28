@@ -5,6 +5,7 @@ import lombok.experimental.Delegate;
 import net.stonegomes.bedwars.commons.Module;
 import net.stonegomes.bedwars.commons.ModuleBootstrap;
 import net.stonegomes.bedwars.commons.ModulePlugin;
+import net.stonegomes.bedwars.module.CommandModule;
 import net.stonegomes.bedwars.module.ListenerModule;
 import net.stonegomes.bedwars.module.RunnableModule;
 import net.stonegomes.bedwars.module.ViewModule;
@@ -36,6 +37,7 @@ public class GamePlugin extends ModulePlugin {
             new GameArenaModule(this),
             new GameLobbyModule(this),
             new ViewModule(this),
+            new CommandModule(this),
             new ListenerModule(this),
             new RunnableModule(this)
         };
