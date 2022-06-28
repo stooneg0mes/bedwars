@@ -16,16 +16,16 @@ public class GameLobbyScoreboardFactory {
             .filter(gameArena -> gameArena.getGameState().canEnter())
             .toList();
 
+        fastBoard.updateTitle("§e§lLOBBY");
         fastBoard.updateLines(
-            "§e§lLOBBY",
             "",
-            "§fOnline players: " + Bukkit.getOnlinePlayers().size() + "/" + Bukkit.getMaxPlayers(),
-            "§fAvailable games: " + availableGames.size(),
+            "§fOnline Players: §e" + Bukkit.getOnlinePlayers().size() + "/" + Bukkit.getMaxPlayers(),
+            "§fAvailable Games: §e" + availableGames.size(),
             "",
-            "§7Click on the NPC to join a game",
-            "§7and have some fun!",
+            "§7Click on the NPC to join",
+            "§7a game and have fun!",
             "",
-            "§eexample.net"
+            "§eplay.example.net"
         );
     }
 

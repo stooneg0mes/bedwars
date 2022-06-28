@@ -18,7 +18,7 @@ public class GameLobbyUpdateRunnable extends BukkitRunnable {
     public void run() {
         for (Player player : Bukkit.getOnlinePlayers()) {
             final GameArena gameArena = gamePlugin.getArenaCache().getGameArena(player);
-            if (gameArena == null) return;
+            if (gameArena != null) continue;
 
             FastBoard fastBoard = gamePlugin.getScoreboardCache().createOrGetFastBoard(player);
             GameLobbyScoreboardFactory.updateLobbyScoreboard(fastBoard);
