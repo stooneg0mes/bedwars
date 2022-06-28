@@ -40,6 +40,8 @@ public abstract class ModulePlugin extends JavaPlugin implements ModuleBootstrap
                 module.handleLoad();
             }
         }
+
+        handlePostLoad();
     }
 
     @Override
@@ -49,6 +51,8 @@ public abstract class ModulePlugin extends JavaPlugin implements ModuleBootstrap
         if (getModules() != null) {
             Arrays.stream(getModules()).forEach(Module::handleEnable);
         }
+
+        handlePostLoad();
     }
 
     @Override
@@ -58,6 +62,8 @@ public abstract class ModulePlugin extends JavaPlugin implements ModuleBootstrap
         if (getModules() != null) {
             Arrays.stream(getModules()).forEach(Module::handleDisable);
         }
+
+        handlePostDisable();
     }
 
     /*

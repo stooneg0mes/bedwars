@@ -23,7 +23,7 @@ public class GameModule extends Module {
     private GameManager gameManager;
 
     @Override
-    public void handleEnable() {
+    public void handleLoad() {
         gameManager = new GameManagerImpl(
             new GameArenaCacheImpl(),
             new GameArenaDaoImpl(),

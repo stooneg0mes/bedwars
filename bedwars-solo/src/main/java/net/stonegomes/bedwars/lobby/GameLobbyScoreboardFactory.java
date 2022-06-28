@@ -1,4 +1,4 @@
-package net.stonegomes.bedwars.scoreboard;
+package net.stonegomes.bedwars.lobby;
 
 import net.stonegomes.bedwars.GamePlugin;
 import net.stonegomes.bedwars.core.arena.GameArena;
@@ -7,7 +7,7 @@ import org.bukkit.Bukkit;
 
 import java.util.List;
 
-public class ScoreboardFactory {
+public class GameLobbyScoreboardFactory {
 
     private static final GamePlugin gamePlugin = GamePlugin.getInstance();
 

@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import net.stonegomes.bedwars.GamePlugin;
 import net.stonegomes.bedwars.core.arena.GameArena;
 import net.stonegomes.bedwars.core.scoreboard.fast.FastBoard;
-import net.stonegomes.bedwars.scoreboard.ScoreboardFactory;
+import net.stonegomes.bedwars.lobby.GameLobbyScoreboardFactory;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
@@ -21,7 +21,7 @@ public class GameLobbyUpdateRunnable extends BukkitRunnable {
             if (gameArena == null) return;
 
             FastBoard fastBoard = gamePlugin.getScoreboardCache().createOrGetFastBoard(player);
-            ScoreboardFactory.updateLobbyScoreboard(fastBoard);
+            GameLobbyScoreboardFactory.updateLobbyScoreboard(fastBoard);
         }
     }
 

@@ -1,5 +1,6 @@
 package net.stonegomes.bedwars;
 
+import com.google.common.collect.Lists;
 import lombok.experimental.Delegate;
 import net.stonegomes.bedwars.commons.Module;
 import net.stonegomes.bedwars.commons.ModuleBootstrap;
@@ -11,6 +12,9 @@ import net.stonegomes.bedwars.module.game.GameArenaModule;
 import net.stonegomes.bedwars.module.game.GameLobbyModule;
 import net.stonegomes.bedwars.module.game.GameModule;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class GamePlugin extends ModulePlugin {
 
     @Delegate(excludes = ModuleBootstrap.class)
@@ -18,6 +22,12 @@ public class GamePlugin extends ModulePlugin {
 
     @Delegate(excludes = ModuleBootstrap.class)
     private ViewModule viewModule;
+
+    @Override
+    public void handlePostLoad() {
+        gameModule = getModule(GameModule.class);
+        viewModule = getModule(ViewModule.class);
+    }
 
     @Override
     public Module[] getModules() {

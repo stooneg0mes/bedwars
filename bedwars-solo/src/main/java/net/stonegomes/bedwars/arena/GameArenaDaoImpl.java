@@ -4,6 +4,7 @@ import net.stonegomes.bedwars.core.arena.GameArena;
 import net.stonegomes.bedwars.core.arena.GameArenaDao;
 
 import java.util.Collection;
+import java.util.Set;
 import java.util.UUID;
 
 public class GameArenaDaoImpl implements GameArenaDao {
@@ -37,7 +38,7 @@ public class GameArenaDaoImpl implements GameArenaDao {
         TODO
          */
 
-        return null;
+        return Set.of();
     }
 
 }

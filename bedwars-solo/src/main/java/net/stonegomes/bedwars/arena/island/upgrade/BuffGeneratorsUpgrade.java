@@ -7,10 +7,6 @@ import net.stonegomes.bedwars.core.arena.island.upgrade.GameIslandUpgradeType;
 
 public class BuffGeneratorsUpgrade extends GameIslandUpgrade {
 
-    public BuffGeneratorsUpgrade(int level) {
-        super(level);
-    }
-
     @Override
     public void onUpgrade(GameIsland gameIsland, int level) {
         for (GameGenerator gameGenerator : gameIsland.getOwner().getGeneratorMap().getGeneratorsByIsland(gameIsland)) {
