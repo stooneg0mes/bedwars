@@ -1,5 +1,6 @@
 package net.stonegomes.bedwars.core.lobby;
 
+import com.github.juliarn.npc.NPC;
 import org.bukkit.Location;
 
 public interface GameLobby {
@@ -23,13 +24,13 @@ public interface GameLobby {
      *
      * @return the npc location
      */
-    Location getNpcLocation();
+    NPC getNpc();
 
     /**
      * Set the npc location of the lobby
      *
      * @param location the npc location
      */
-    void setNpcLocation(Location location);
+    void setNpc(NPC location);
 
 }

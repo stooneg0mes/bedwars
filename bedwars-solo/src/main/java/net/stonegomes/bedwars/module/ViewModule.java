@@ -18,8 +18,11 @@ public class ViewModule extends Module {
     private ViewFrame viewFrame;
 
     @Override
-    public void handleEnable() {
+    public void handleLoad() {
         viewFrame = new ViewFrame(gamePlugin);
+    }
+
+    public void handleEnable() {
         viewFrame.register(
             new GameArenaPaginatedView(gamePlugin.getGameManager())
         );

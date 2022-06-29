@@ -9,5 +9,10 @@ dependencies {
     implementation project(":core")
     implementation project(":commons")
 
+    implementation 'com.github.eokasta:hologram-framework:1.0.2'
     implementation 'de.tr7zw:item-nbt-api:2.8.0'
+}
+
+shadowJar {
+    libsDirName = "C:\\Users\\stoon\\Desktop\\server\\plugins"
 }

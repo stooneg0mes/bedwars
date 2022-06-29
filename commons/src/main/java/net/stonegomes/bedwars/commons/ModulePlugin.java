@@ -2,7 +2,6 @@ package net.stonegomes.bedwars.commons;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -35,9 +34,11 @@ public abstract class ModulePlugin extends JavaPlugin implements ModuleBootstrap
         if (getModules() != null) {
             for (Module module : getModules()) {
                 ModuleId moduleId = module.getClass().getDeclaredAnnotation(ModuleId.class);
-                if (!elements.containsKey(moduleId.id())) elements.put(moduleId.id(), module);
-
                 module.handleLoad();
+
+                if (!elements.containsKey(moduleId.id())) {
+                    elements.put(moduleId.id(), module);
+                }
             }
         }
 
@@ -48,20 +49,16 @@ public abstract class ModulePlugin extends JavaPlugin implements ModuleBootstrap
     public void onEnable() {
         handleEnable();
 
-        if (getModules() != null) {
-            Arrays.stream(getModules()).forEach(Module::handleEnable);
-        }
+        elements.values().forEach(module -> ((Module) module).handleEnable());
 
-        handlePostLoad();
+        handlePostEnable();
     }
 
     @Override
     public void onDisable() {
         handleDisable();
 
-        if (getModules() != null) {
-            Arrays.stream(getModules()).forEach(Module::handleDisable);
-        }
+        elements.values().forEach(module -> ((Module) module).handleDisable());
 
         handlePostDisable();
     }

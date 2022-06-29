@@ -1,5 +1,6 @@
 package net.stonegomes.bedwars.lobby;
 
+import com.github.juliarn.npc.NPC;
 import lombok.Data;
 import net.stonegomes.bedwars.core.lobby.GameLobby;
 import org.bukkit.Location;
@@ -8,6 +9,6 @@ import org.bukkit.Location;
 public class GameLobbyImpl implements GameLobby {
 
     private Location spawnLocation;
-    private Location npcLocation;
+    private NPC npc;
 
 }
