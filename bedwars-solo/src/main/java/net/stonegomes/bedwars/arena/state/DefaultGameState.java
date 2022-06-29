@@ -3,12 +3,12 @@ package net.stonegomes.bedwars.arena.state;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.TextComponent;
 import net.kyori.adventure.text.format.NamedTextColor;
+import net.stonegomes.bedwars.arena.state.impl.StartingGameState;
+import net.stonegomes.bedwars.arena.state.impl.WaitingPlayersGameState;
 import net.stonegomes.bedwars.core.arena.GameArena;
 import net.stonegomes.bedwars.core.arena.player.GamePlayer;
 import net.stonegomes.bedwars.core.arena.state.GameState;
 import net.stonegomes.bedwars.core.arena.state.GameStateContext;
-import net.stonegomes.bedwars.arena.state.impl.StartingGameState;
-import net.stonegomes.bedwars.arena.state.impl.WaitingPlayersGameState;
 import org.bukkit.GameMode;
 import org.bukkit.entity.Player;
 

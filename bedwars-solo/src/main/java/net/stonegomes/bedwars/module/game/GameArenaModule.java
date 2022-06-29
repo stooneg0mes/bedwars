@@ -2,13 +2,13 @@ package net.stonegomes.bedwars.module.game;
 
 import lombok.RequiredArgsConstructor;
 import net.stonegomes.bedwars.GamePlugin;
+import net.stonegomes.bedwars.arena.GameArenaImpl;
+import net.stonegomes.bedwars.arena.state.impl.WaitingPlayersGameState;
 import net.stonegomes.bedwars.commons.Module;
 import net.stonegomes.bedwars.commons.ModuleId;
 import net.stonegomes.bedwars.core.arena.GameArena;
 import net.stonegomes.bedwars.core.arena.build.GameBuildSet;
 import net.stonegomes.bedwars.core.arena.player.GamePlayerMap;
-import net.stonegomes.bedwars.arena.GameArenaImpl;
-import net.stonegomes.bedwars.arena.state.impl.WaitingPlayersGameState;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 

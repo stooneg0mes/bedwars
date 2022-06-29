@@ -3,11 +3,11 @@ package net.stonegomes.bedwars.view;
 import me.saiintbrisson.minecraft.PaginatedView;
 import me.saiintbrisson.minecraft.PaginatedViewSlotContext;
 import me.saiintbrisson.minecraft.ViewItem;
+import net.stonegomes.bedwars.arena.player.GamePlayerImpl;
 import net.stonegomes.bedwars.commons.builder.ItemStackBuilder;
 import net.stonegomes.bedwars.core.GameManager;
 import net.stonegomes.bedwars.core.arena.GameArena;
 import net.stonegomes.bedwars.core.arena.player.GamePlayer;
-import net.stonegomes.bedwars.arena.player.GamePlayerImpl;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 

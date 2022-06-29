@@ -2,12 +2,12 @@ package net.stonegomes.bedwars.listener.entity;
 
 import lombok.AllArgsConstructor;
 import net.stonegomes.bedwars.GamePlugin;
+import net.stonegomes.bedwars.arena.state.impl.StartingGameState;
+import net.stonegomes.bedwars.arena.state.impl.WaitingPlayersGameState;
 import net.stonegomes.bedwars.core.arena.GameArena;
 import net.stonegomes.bedwars.core.arena.island.team.GameTeamColor;
 import net.stonegomes.bedwars.core.arena.player.GamePlayer;
 import net.stonegomes.bedwars.core.arena.state.GameState;
-import net.stonegomes.bedwars.arena.state.impl.StartingGameState;
-import net.stonegomes.bedwars.arena.state.impl.WaitingPlayersGameState;
 import org.bukkit.entity.Entity;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

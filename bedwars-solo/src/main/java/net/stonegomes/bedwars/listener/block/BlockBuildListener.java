@@ -2,10 +2,10 @@ package net.stonegomes.bedwars.listener.block;
 
 import lombok.RequiredArgsConstructor;
 import net.stonegomes.bedwars.GamePlugin;
-import net.stonegomes.bedwars.core.arena.GameArena;
-import net.stonegomes.bedwars.core.arena.state.GameState;
 import net.stonegomes.bedwars.arena.state.impl.StartingGameState;
 import net.stonegomes.bedwars.arena.state.impl.WaitingPlayersGameState;
+import net.stonegomes.bedwars.core.arena.GameArena;
+import net.stonegomes.bedwars.core.arena.state.GameState;
 import org.bukkit.block.Block;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

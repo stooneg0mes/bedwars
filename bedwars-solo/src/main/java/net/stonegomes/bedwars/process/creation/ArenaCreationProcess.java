@@ -1,10 +1,8 @@
 package net.stonegomes.bedwars.process.creation;
 
 import net.stonegomes.bedwars.GamePlugin;
-import net.stonegomes.bedwars.process.creation.phase.NameCreatePhase;
-import net.stonegomes.bedwars.process.creation.phase.WaitingFirstPositionCreatePhase;
-import net.stonegomes.bedwars.process.creation.phase.WaitingSecondPositionCreatePhase;
-import net.stonegomes.bedwars.process.creation.phase.WaitingSpawnCreatePhase;
+import net.stonegomes.bedwars.arena.GameArenaImpl;
+import net.stonegomes.bedwars.arena.state.impl.setup.SetupGameState;
 import net.stonegomes.bedwars.core.arena.GameArena;
 import net.stonegomes.bedwars.core.arena.build.GameBuildSet;
 import net.stonegomes.bedwars.core.arena.generator.GameGeneratorMap;
@@ -13,8 +11,10 @@ import net.stonegomes.bedwars.core.arena.island.npc.GameNpcMap;
 import net.stonegomes.bedwars.core.arena.player.GamePlayerMap;
 import net.stonegomes.bedwars.core.process.Process;
 import net.stonegomes.bedwars.core.process.ProcessContext;
-import net.stonegomes.bedwars.arena.GameArenaImpl;
-import net.stonegomes.bedwars.arena.state.impl.setup.SetupGameState;
+import net.stonegomes.bedwars.process.creation.phase.NameCreatePhase;
+import net.stonegomes.bedwars.process.creation.phase.WaitingFirstPositionCreatePhase;
+import net.stonegomes.bedwars.process.creation.phase.WaitingSecondPositionCreatePhase;
+import net.stonegomes.bedwars.process.creation.phase.WaitingSpawnCreatePhase;
 import org.bukkit.World;
 import org.bukkit.entity.Player;
 
