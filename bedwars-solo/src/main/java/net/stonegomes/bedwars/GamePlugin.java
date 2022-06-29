@@ -24,6 +24,7 @@ public class GamePlugin extends ModulePlugin {
     @Delegate(excludes = ModuleBootstrap.class)
     private ViewModule viewModule;
 
+    
     @Override
     public void handlePostLoad() {
         gameModule = getModule(GameModule.class);
