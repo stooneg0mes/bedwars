@@ -1,9 +1,6 @@
 package net.stonegomes.bedwars.module;
 
-import com.github.juliarn.npc.NPC;
 import com.github.juliarn.npc.NPCPool;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import net.stonegomes.bedwars.GamePlugin;
@@ -30,7 +27,7 @@ public class NpcModule extends Module {
 
     @Override
     public void handleDisable() {
-        npcPool.getNPCs().forEach(npc -> npcPool.removeNPC(npc.getEntityId()));
+        // npcPool.getNPCs().forEach(npc -> npcPool.removeNPC(npc.getEntityId()));
     }
 
 }

@@ -12,6 +12,7 @@ import net.stonegomes.bedwars.listener.player.PlayerDropPickupItemListener;
 import net.stonegomes.bedwars.listener.player.PlayerInteractNpcListener;
 import net.stonegomes.bedwars.listener.traffic.MessageTrafficListener;
 import net.stonegomes.bedwars.listener.traffic.ScoreboardTrafficListener;
+import net.stonegomes.bedwars.listener.weather.WeatherChangeListener;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 
@@ -38,6 +39,8 @@ public class ListenerModule extends Module {
 
         pluginManager.registerEvents(new MessageTrafficListener(gamePlugin), gamePlugin);
         pluginManager.registerEvents(new ScoreboardTrafficListener(gamePlugin), gamePlugin);
+
+        pluginManager.registerEvents(new WeatherChangeListener(), gamePlugin);
     }
 
 }

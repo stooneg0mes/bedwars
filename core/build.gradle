@@ -3,4 +3,7 @@ version '1.0-SNAPSHOT'
 
 dependencies {
     compileOnly project(":commons")
+
+    compileOnly 'com.github.juliarn:npc-lib:2.6-RELEASE'
+    compileOnly 'com.github.eokasta:hologram-framework:1.0.2'
 }

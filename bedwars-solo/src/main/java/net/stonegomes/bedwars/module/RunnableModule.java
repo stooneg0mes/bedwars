@@ -15,6 +15,7 @@ public class RunnableModule extends Module {
 
     @Override
     public void handleEnable() {
+        System.out.println("runnable registered");
         new GameArenaUpdateRunnable(gamePlugin).runTaskTimerAsynchronously(gamePlugin, 0L, 20L);
         new GameLobbyUpdateRunnable(gamePlugin).runTaskTimerAsynchronously(gamePlugin, 0L, 20L);
     }

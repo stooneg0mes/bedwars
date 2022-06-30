@@ -7,6 +7,7 @@ import net.stonegomes.bedwars.command.MainCommand;
 import net.stonegomes.bedwars.command.subcommand.arena.ArenaCreateSubCommand;
 import net.stonegomes.bedwars.command.subcommand.arena.ArenaDeleteSubCommand;
 import net.stonegomes.bedwars.command.subcommand.arena.ArenaListSubCommand;
+import net.stonegomes.bedwars.command.subcommand.lobby.LobbyRemoveNpcSubCommand;
 import net.stonegomes.bedwars.command.subcommand.lobby.LobbySetNpcSubCommand;
 import net.stonegomes.bedwars.command.subcommand.lobby.LobbySetSpawnSubCommand;
 import net.stonegomes.bedwars.commons.Module;
@@ -27,7 +28,8 @@ public class CommandModule extends Module {
             new ArenaDeleteSubCommand(gamePlugin),
             new ArenaListSubCommand(gamePlugin),
             new LobbySetNpcSubCommand(gamePlugin),
-            new LobbySetSpawnSubCommand(gamePlugin)
+            new LobbySetSpawnSubCommand(gamePlugin),
+            new LobbyRemoveNpcSubCommand(gamePlugin)
         );
     }
 

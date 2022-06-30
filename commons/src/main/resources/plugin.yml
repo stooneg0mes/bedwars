@@ -1,4 +1,0 @@
-main: net.stonegomes.bedwars.commons.AbstractModulePlugin
-name: BedwarsCommons
-version: 1.0-SNAPSHOT
-api-version: 1.17

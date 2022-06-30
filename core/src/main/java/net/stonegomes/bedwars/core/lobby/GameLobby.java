@@ -1,5 +1,6 @@
 package net.stonegomes.bedwars.core.lobby;
 
+import com.github.eokasta.hologram.Hologram;
 import com.github.juliarn.npc.NPC;
 import org.bukkit.Location;
 
@@ -20,17 +21,31 @@ public interface GameLobby {
     void setSpawnLocation(Location location);
 
     /**
-     * Get the npc location from the lobby
+     * Get the npc from the lobby
      *
-     * @return the npc location
+     * @return the npc
      */
     NPC getNpc();
 
     /**
-     * Set the npc location of the lobby
+     * Set the npc of the lobby
      *
-     * @param location the npc location
+     * @param npc the npc
      */
-    void setNpc(NPC location);
+    void setNpc(NPC npc);
+
+    /**
+     * Get the npc hologram from the lobby
+     *
+     * @return the npc hologram
+     */
+    Hologram getNpcHologram();
+
+    /**
+     * Set the npc hologram of the lobby
+     *
+     * @param hologram the npc hologram
+     */
+    void setNpcHologram(Hologram hologram);
 
 }

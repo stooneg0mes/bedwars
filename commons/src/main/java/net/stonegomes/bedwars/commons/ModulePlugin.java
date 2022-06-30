@@ -36,9 +36,7 @@ public abstract class ModulePlugin extends JavaPlugin implements ModuleBootstrap
                 ModuleId moduleId = module.getClass().getDeclaredAnnotation(ModuleId.class);
                 module.handleLoad();
 
-                if (!elements.containsKey(moduleId.id())) {
-                    elements.put(moduleId.id(), module);
-                }
+                elements.put(moduleId.id(), module);
             }
         }
 
