@@ -20,7 +20,7 @@ public class LobbyRemoveNpcSubCommand {
         permission = "bedwars.admin",
         target = CommandTarget.PLAYER
     )
-    public void handleCommand(Context<Player> context, String skin) {
+    public void handleCommand(Context<Player> context) {
         final Player player = context.getSender();
         final NPC lobbyNpc = gamePlugin.getLobby().getNpc();
         if (lobbyNpc == null) {
