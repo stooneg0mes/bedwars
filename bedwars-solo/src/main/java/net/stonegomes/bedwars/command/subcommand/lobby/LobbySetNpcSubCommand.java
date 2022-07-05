@@ -2,6 +2,7 @@ package net.stonegomes.bedwars.command.subcommand.lobby;
 
 import com.github.eokasta.hologram.Hologram;
 import com.github.eokasta.hologram.HologramBuilder;
+import com.github.eokasta.hologram.HologramInteractAction;
 import com.github.juliarn.npc.NPC;
 import com.github.juliarn.npc.profile.Profile;
 import lombok.RequiredArgsConstructor;
@@ -37,18 +38,23 @@ public class LobbySetNpcSubCommand {
             gamePlugin.getNpcPool().removeNPC(lobbyNpc.getEntityId());
         }
 
+        final Profile profile = createProfile(skin);
+        if (profile == null) return;
+
         final NPC npc = NPC.builder()
-            .profile(createProfile(skin))
+            .profile(profile)
             .location(player.getLocation())
             .lookAtPlayer(true)
             .imitatePlayer(false)
             .build(gamePlugin.getNpcPool());
 
+        gamePlugin.getLobby().setNpc(npc);
+
         final Location npcLocation = npc.getLocation();
         final Location hologramLocation = new Location(
             npcLocation.getWorld(),
             npcLocation.getX(),
-            npcLocation.getY(),
+            npcLocation.getY() - 0.4,
             npcLocation.getZ()
         );
 
@@ -57,9 +63,11 @@ public class LobbySetNpcSubCommand {
             .addLine("§favailable matches on the server!")
             .addEmptyLine()
             .addLine("§e§lBEDWARS")
-            .build();
-
-        gamePlugin.getLobby().setNpc(npc);
+            .addAction(HologramInteractAction.RIGHT_CLICK, (handler) -> {
+                System.out.println("sexo do caralho");
+                handler.getPlayer().sendMessage("iai pai");
+            })
+            .build(gamePlugin.getHologramRegistry());
 
         hologram.spawn(hologramLocation);
         gamePlugin.getLobby().setNpcHologram(hologram);
@@ -79,6 +87,5 @@ public class LobbySetNpcSubCommand {
 
         return profile;
     }
-
 
 }

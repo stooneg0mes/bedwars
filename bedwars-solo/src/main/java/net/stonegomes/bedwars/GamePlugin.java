@@ -18,8 +18,10 @@ public class GamePlugin extends ModulePlugin {
     private ViewModule viewModule;
 
     @Delegate(excludes = ModuleBootstrap.class)
-    private NpcModule npcModule;
+    private HologramModule hologramModule;
 
+    @Delegate(excludes = ModuleBootstrap.class)
+    private NpcModule npcModule;
     
     @Override
     public void handlePostLoad() {
@@ -29,6 +31,7 @@ public class GamePlugin extends ModulePlugin {
 
     @Override
     public void handlePostEnable() {
+        hologramModule = getModule(HologramModule.class);
         npcModule = getModule(NpcModule.class);
     }
 
@@ -39,6 +42,7 @@ public class GamePlugin extends ModulePlugin {
             new GameArenaModule(this),
             new GameLobbyModule(this),
             new ViewModule(this),
+            new HologramModule(this),
             new NpcModule(this),
             new CommandModule(this),
             new ListenerModule(this),

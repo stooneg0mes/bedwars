@@ -6,5 +6,5 @@ repositories {
 }
 
 dependencies {
-    implementation 'de.tr7zw:item-nbt-api:2.8.0'
+    compileOnly 'de.tr7zw:item-nbt-api:2.8.0'
 }
