@@ -1,21 +1,17 @@
 package net.stonegomes.bedwars.command.subcommand.lobby;
 
 import com.github.eokasta.hologram.Hologram;
-import com.github.eokasta.hologram.HologramBuilder;
-import com.github.eokasta.hologram.HologramInteractAction;
 import com.github.juliarn.npc.NPC;
-import com.github.juliarn.npc.profile.Profile;
 import lombok.RequiredArgsConstructor;
 import me.saiintbrisson.minecraft.command.annotation.Command;
 import me.saiintbrisson.minecraft.command.command.Context;
 import me.saiintbrisson.minecraft.command.target.CommandTarget;
 import net.stonegomes.bedwars.GamePlugin;
-import net.stonegomes.bedwars.commons.fetcher.UUIDFetcher;
+import net.stonegomes.bedwars.factory.NPCFactory;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 
 import java.util.Random;
-import java.util.UUID;
 
 @RequiredArgsConstructor
 public class LobbySetNpcSubCommand {
@@ -38,16 +34,7 @@ public class LobbySetNpcSubCommand {
             gamePlugin.getNpcPool().removeNPC(lobbyNpc.getEntityId());
         }
 
-        final Profile profile = createProfile(skin);
-        if (profile == null) return;
-
-        final NPC npc = NPC.builder()
-            .profile(profile)
-            .location(player.getLocation())
-            .lookAtPlayer(true)
-            .imitatePlayer(false)
-            .build(gamePlugin.getNpcPool());
-
+        final NPC npc = NPCFactory.buildNPC(player.getLocation(), skin, gamePlugin.getNpcPool());
         gamePlugin.getLobby().setNpc(npc);
 
         final Location npcLocation = npc.getLocation();
@@ -57,35 +44,11 @@ public class LobbySetNpcSubCommand {
             npcLocation.getY() - 0.4,
             npcLocation.getZ()
         );
-
-        final Hologram hologram = new HologramBuilder()
-            .addLine("§fClick here to browse all the")
-            .addLine("§favailable matches on the server!")
-            .addEmptyLine()
-            .addLine("§e§lBEDWARS")
-            .addAction(HologramInteractAction.RIGHT_CLICK, (handler) -> {
-                System.out.println("sexo do caralho");
-                handler.getPlayer().sendMessage("iai pai");
-            })
-            .build(gamePlugin.getHologramRegistry());
-
-        hologram.spawn(hologramLocation);
+        final Hologram hologram = NPCFactory.buildHologramNPC(gamePlugin.getHologramRegistry());
         gamePlugin.getLobby().setNpcHologram(hologram);
+        hologram.spawn(hologramLocation);
 
         player.sendMessage("§aYou set the §fNPC§a location on the lobby successfully.");
-    }
-
-    private Profile createProfile(String skin) {
-        final String skinUuid = UUIDFetcher.getFromName(skin);
-        if (skinUuid == null) return null;
-
-        Profile profile = new Profile(UUID.fromString(skinUuid));
-        profile.complete();
-
-        profile.setName("");
-        profile.setUniqueId(new UUID(RANDOM.nextLong(), 0));
-
-        return profile;
     }
 
 }
