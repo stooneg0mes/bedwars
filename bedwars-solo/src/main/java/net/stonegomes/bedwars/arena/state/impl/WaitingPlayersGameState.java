@@ -3,7 +3,7 @@ package net.stonegomes.bedwars.arena.state.impl;
 import net.stonegomes.bedwars.arena.state.DefaultGameState;
 import net.stonegomes.bedwars.core.arena.state.GameState;
 import net.stonegomes.bedwars.core.arena.state.GameStateContext;
-import net.stonegomes.bedwars.core.scoreboard.fast.FastBoard;
+import net.stonegomes.bedwars.core.scoreboard.lib.FastBoard;
 import org.bukkit.entity.Player;
 
 public class WaitingPlayersGameState extends DefaultGameState {

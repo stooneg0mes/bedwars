@@ -2,7 +2,7 @@ package net.stonegomes.bedwars.lobby;
 
 import net.stonegomes.bedwars.GamePlugin;
 import net.stonegomes.bedwars.core.arena.GameArena;
-import net.stonegomes.bedwars.core.scoreboard.fast.FastBoard;
+import net.stonegomes.bedwars.core.scoreboard.lib.FastBoard;
 import org.bukkit.Bukkit;
 
 import java.util.List;

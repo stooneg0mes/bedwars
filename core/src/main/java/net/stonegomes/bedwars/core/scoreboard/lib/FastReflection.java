@@ -21,7 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package net.stonegomes.bedwars.core.scoreboard.fast;
+package net.stonegomes.bedwars.core.scoreboard.lib;
 
 import org.bukkit.Bukkit;
 

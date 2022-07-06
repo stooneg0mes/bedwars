@@ -2,7 +2,6 @@ package net.stonegomes.bedwars.factory;
 
 import com.github.eokasta.hologram.Hologram;
 import com.github.eokasta.hologram.HologramBuilder;
-import com.github.eokasta.hologram.HologramInteractAction;
 import com.github.eokasta.hologram.HologramRegistry;
 import com.github.juliarn.npc.NPC;
 import com.github.juliarn.npc.NPCPool;

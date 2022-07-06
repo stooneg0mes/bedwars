@@ -3,7 +3,7 @@ package net.stonegomes.bedwars.runnable;
 import lombok.RequiredArgsConstructor;
 import net.stonegomes.bedwars.GamePlugin;
 import net.stonegomes.bedwars.core.arena.GameArena;
-import net.stonegomes.bedwars.core.scoreboard.fast.FastBoard;
+import net.stonegomes.bedwars.core.scoreboard.lib.FastBoard;
 import net.stonegomes.bedwars.lobby.GameLobbyScoreboardFactory;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;

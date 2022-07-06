@@ -1,6 +1,6 @@
 package net.stonegomes.bedwars.core.scoreboard;
 
-import net.stonegomes.bedwars.core.scoreboard.fast.FastBoard;
+import net.stonegomes.bedwars.core.scoreboard.lib.FastBoard;
 import org.bukkit.entity.Player;
 
 import java.util.Collection;
