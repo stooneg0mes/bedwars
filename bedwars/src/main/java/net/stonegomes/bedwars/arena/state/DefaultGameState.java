@@ -69,15 +69,14 @@ public abstract class DefaultGameState implements GameState {
             gameKiller.setSpectatorTime(System.currentTimeMillis() + TimeUnit.SECONDS.toMillis(5));
         }
 
-        Component deathComponent;
+        Component deathMessage;
         if (killer == null) {
-            deathComponent = Component.text(player.getName() + " fell into the void.", NamedTextColor.YELLOW);
+            deathMessage = Component.text(player.getName() + " fell into the void.", NamedTextColor.YELLOW);
         } else {
-            deathComponent = Component.text(player.getName() + " has been killed by " + killer.getName(), NamedTextColor.YELLOW);
+            deathMessage = Component.text(player.getName() + " has been killed by " + killer.getName(), NamedTextColor.YELLOW);
         }
 
-        gameArena.broadcastMessage(deathComponent);
+        gameArena.broadcastMessage(deathMessage);
     }
-
 
 }
