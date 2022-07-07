@@ -14,13 +14,13 @@ public class BuffGeneratorsUpgrade extends GameIslandUpgrade {
 
             switch (level) {
                 case 1:
-                    gameGenerator.setAmountOfItems(3);
+                    gameGenerator.setAmountPool(3);
                 case 2:
-                    gameGenerator.setAmountOfItems(4);
+                    gameGenerator.setAmountPool(4);
                 case 3:
-                    gameGenerator.setAmountOfItems(5);
+                    gameGenerator.setAmountPool(5);
                 case 4:
-                    gameGenerator.setAmountOfItems(6);
+                    gameGenerator.setAmountPool(6);
             }
         }
     }

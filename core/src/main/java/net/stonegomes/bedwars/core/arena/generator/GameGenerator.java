@@ -4,6 +4,8 @@ import net.stonegomes.bedwars.core.arena.island.GameIsland;
 import org.bukkit.Location;
 import org.bukkit.Material;
 
+import java.util.Set;
+
 public interface GameGenerator {
 
     /**
@@ -25,21 +27,21 @@ public interface GameGenerator {
      *
      * @return the generator type
      */
-    Material getType();
+    Set<Material> getMaterialPool();
 
     /**
      * Get the amount of items from the game generator
      *
      * @return the amount of items
      */
-    int getAmountOfItems();
+    int getAmountPool();
 
     /**
      * Set the amount of items of the game generator
      *
      * @param amountOfItems the amount of items
      */
-    void setAmountOfItems(int amountOfItems);
+    void setAmountPool(int amountOfItems);
 
     /**
      * Get the time to generate items from the game generator
