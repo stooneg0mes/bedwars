@@ -34,6 +34,8 @@ public class GameModule extends Module {
             new ProcessCacheImpl(),
             new GameLobbyImpl()
         );
+
+
     }
 
     public GameArenaCache getArenaCache() {

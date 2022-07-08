@@ -8,6 +8,8 @@ import net.stonegomes.bedwars.core.arena.island.GameIsland;
 import org.bukkit.Location;
 import org.bukkit.Material;
 
+import java.util.Set;
+
 @AllArgsConstructor
 @Builder
 @Data
@@ -16,9 +18,9 @@ public class GameGeneratorImpl implements GameGenerator {
     private final GameIsland owner;
 
     private Location location;
-    private Material type;
+    private Set<Material> materialPool;
 
-    private int amountOfItems;
+    private int amountPool;
     private long timeToGenerate, delay;
 
 }

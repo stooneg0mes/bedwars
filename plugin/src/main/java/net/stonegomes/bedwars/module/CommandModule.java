@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import me.saiintbrisson.bukkit.command.BukkitFrame;
 import net.stonegomes.bedwars.GamePlugin;
 import net.stonegomes.bedwars.command.MainCommand;
+import net.stonegomes.bedwars.command.completer.MainCommandCompleter;
 import net.stonegomes.bedwars.command.subcommand.arena.ArenaCreateSubCommand;
 import net.stonegomes.bedwars.command.subcommand.arena.ArenaDeleteSubCommand;
 import net.stonegomes.bedwars.command.subcommand.arena.ArenaListSubCommand;
@@ -31,6 +32,7 @@ public class CommandModule extends Module {
             new LobbySetSpawnSubCommand(gamePlugin),
             new LobbyRemoveNpcSubCommand(gamePlugin)
         );
+        bukkitFrame.registerCompleter("bedwars", new MainCommandCompleter(gamePlugin));
     }
 
 }

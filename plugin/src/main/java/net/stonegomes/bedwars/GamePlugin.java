@@ -39,6 +39,7 @@ public class GamePlugin extends ModulePlugin {
     public Module[] getModules() {
         return new Module[]{
             new GameModule(),
+            new SerializerModule(),
             new HologramModule(this),
             new NpcModule(this),
             new GameArenaModule(this),

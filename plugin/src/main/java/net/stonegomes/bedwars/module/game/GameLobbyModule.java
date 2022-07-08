@@ -50,7 +50,7 @@ public class GameLobbyModule extends Module {
                 return;
             }
 
-            json.setDefault("spawn-location", defaultWorld.getSpawnLocation());
+            json.setSerializable("spawn-location", defaultWorld.getSpawnLocation());
             gameLobby.setSpawnLocation(defaultWorld.getSpawnLocation());
         } else {
             gameLobby.setSpawnLocation(spawnLocation);
@@ -64,12 +64,12 @@ public class GameLobbyModule extends Module {
 
         if (gameLobby.hasNpc()) {
             final NPC npc = gameLobby.getNpc();
-            json.getFileData().insert("npc-location", npc.getLocation());
             json.getFileData().insert("npc-skin", npc.getProfile().getName());
+            json.setSerializable("npc-location", npc.getLocation());
         }
 
         if (gameLobby.hasSpawnLocation()) {
-            json.set("spawn-location", gameLobby.getSpawnLocation());
+            json.setSerializable("spawn-location", gameLobby.getSpawnLocation());
         }
     }
 
