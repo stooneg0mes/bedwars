@@ -1,7 +1,6 @@
 package net.stonegomes.bedwars.module;
 
-import com.github.eokasta.hologram.HologramRegistry;
-import lombok.Getter;
+import eu.decentsoftware.holograms.api.DecentHologramsAPI;
 import lombok.RequiredArgsConstructor;
 import net.stonegomes.bedwars.GamePlugin;
 import net.stonegomes.bedwars.commons.Module;
@@ -13,12 +12,8 @@ public class HologramModule extends Module {
 
     private final GamePlugin gamePlugin;
 
-    @Getter
-    private HologramRegistry hologramRegistry;
-
     @Override
     public void handleEnable() {
-        hologramRegistry = new HologramRegistry(gamePlugin);
+        DecentHologramsAPI.onEnable();
     }
-
 }

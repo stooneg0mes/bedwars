@@ -29,7 +29,7 @@ public class LobbyRemoveNpcSubCommand {
         }
 
         final GameLobby gameLobby = gamePlugin.getLobby();
-        gameLobby.getNpcHologram().destroy();
+        gameLobby.getNpcHologram().delete();
         gameLobby.setNpcHologram(null);
 
         gamePlugin.getNpcPool().removeNPC(lobbyNpc.getEntityId());

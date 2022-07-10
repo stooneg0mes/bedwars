@@ -1,10 +1,14 @@
 group 'net.stonegomes.bedwars.core'
 version '1.0-SNAPSHOT'
 
+repositories {
+    maven { url "https://repo.codemc.io/repository/maven-public/" }
+}
+
 dependencies {
     compileOnly project(":commons")
 
     compileOnly 'com.github.juliarn:npc-lib:2.6-RELEASE'
-    compileOnly 'com.github.eokasta:hologram-framework:1.0.2'
     compileOnly 'com.github.simplix-softworks:simplixstorage:3.2.5'
+    compileOnly 'com.github.decentsoftware-eu:decentholograms:2.4.2'
 }

@@ -1,8 +1,8 @@
 package net.stonegomes.bedwars.module.game;
 
-import com.github.eokasta.hologram.Hologram;
 import com.github.juliarn.npc.NPC;
 import de.leonhard.storage.Json;
+import eu.decentsoftware.holograms.api.holograms.Hologram;
 import lombok.RequiredArgsConstructor;
 import net.stonegomes.bedwars.GamePlugin;
 import net.stonegomes.bedwars.commons.Module;
@@ -21,25 +21,8 @@ public class GameLobbyModule extends Module {
     @Override
     public void handleEnable() {
         final GameLobby gameLobby = gamePlugin.getLobby();
+
         final Json json = new Json("lobby-data", gamePlugin.getDataFolder().getPath());
-
-        final Location npcLocation = json.getSerializable("npc-location", Location.class);
-        if (npcLocation != null) {
-            final String npcSkin = json.getOrSetDefault("npc-skin", "sxsk");
-            final NPC npc = NPCFactory.buildNPC(npcLocation, npcSkin, gamePlugin.getNpcPool());
-            gameLobby.setNpc(npc);
-
-            final Location hologramLocation = new Location(
-                npcLocation.getWorld(),
-                npcLocation.getX(),
-                (npcLocation.getY() - 0.4),
-                npcLocation.getZ()
-            );
-            final Hologram hologram = NPCFactory.buildHologramNPC(gamePlugin.getHologramRegistry());
-            hologram.spawn(hologramLocation);
-            gameLobby.setNpcHologram(hologram);
-        }
-
         final Location spawnLocation = json.getSerializable("spawn-location", Location.class);
         if (spawnLocation == null) {
             final World defaultWorld = gamePlugin.getServer().getWorlds().stream()
@@ -54,6 +37,28 @@ public class GameLobbyModule extends Module {
             gameLobby.setSpawnLocation(defaultWorld.getSpawnLocation());
         } else {
             gameLobby.setSpawnLocation(spawnLocation);
+        }
+    }
+
+    @Override
+    public void handlePostEnable() {
+        final GameLobby gameLobby = gamePlugin.getLobby();
+
+        final Json json = new Json("lobby-data", gamePlugin.getDataFolder().getPath());
+        final Location npcLocation = json.getSerializable("npc-location", Location.class);
+        if (npcLocation != null) {
+            final String npcSkin = json.getOrSetDefault("npc-skin", "sxsk");
+            final NPC npc = NPCFactory.buildNPC(npcLocation, npcSkin, gamePlugin.getNpcPool());
+            gameLobby.setNpc(npc);
+
+            final Location hologramLocation = new Location(
+                npcLocation.getWorld(),
+                npcLocation.getX(),
+                (npcLocation.getY() - 0.4),
+                npcLocation.getZ()
+            );
+            final Hologram hologram = NPCFactory.buildHologramNPC(hologramLocation);
+            gameLobby.setNpcHologram(hologram);
         }
     }
 

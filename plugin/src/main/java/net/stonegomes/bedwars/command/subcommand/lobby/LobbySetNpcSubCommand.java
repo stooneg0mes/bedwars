@@ -1,7 +1,7 @@
 package net.stonegomes.bedwars.command.subcommand.lobby;
 
-import com.github.eokasta.hologram.Hologram;
 import com.github.juliarn.npc.NPC;
+import eu.decentsoftware.holograms.api.holograms.Hologram;
 import lombok.RequiredArgsConstructor;
 import me.saiintbrisson.minecraft.command.annotation.Command;
 import me.saiintbrisson.minecraft.command.command.Context;
@@ -11,12 +11,8 @@ import net.stonegomes.bedwars.factory.NPCFactory;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 
-import java.util.Random;
-
 @RequiredArgsConstructor
 public class LobbySetNpcSubCommand {
-
-    private static final Random RANDOM = new Random();
 
     private final GamePlugin gamePlugin;
 
@@ -44,9 +40,8 @@ public class LobbySetNpcSubCommand {
             npcLocation.getY() - 0.4,
             npcLocation.getZ()
         );
-        final Hologram hologram = NPCFactory.buildHologramNPC(gamePlugin.getHologramRegistry());
+        final Hologram hologram = NPCFactory.buildHologramNPC(hologramLocation);
         gamePlugin.getLobby().setNpcHologram(hologram);
-        hologram.spawn(hologramLocation);
 
         player.sendMessage("§aYou set the §fNPC§a location on the lobby successfully.");
     }

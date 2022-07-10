@@ -1,7 +1,7 @@
 package net.stonegomes.bedwars.core.lobby;
 
-import com.github.eokasta.hologram.Hologram;
 import com.github.juliarn.npc.NPC;
+import eu.decentsoftware.holograms.api.holograms.Hologram;
 import org.bukkit.Location;
 
 public interface GameLobby {

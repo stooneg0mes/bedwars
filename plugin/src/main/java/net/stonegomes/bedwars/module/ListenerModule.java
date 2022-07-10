@@ -7,7 +7,6 @@ import net.stonegomes.bedwars.commons.ModuleId;
 import net.stonegomes.bedwars.listener.block.BlockBuildListener;
 import net.stonegomes.bedwars.listener.entity.EntityDamageByEntityListener;
 import net.stonegomes.bedwars.listener.food.FoodLevelChangeListener;
-import net.stonegomes.bedwars.listener.hologram.HologramClickListener;
 import net.stonegomes.bedwars.listener.player.PlayerDeathListener;
 import net.stonegomes.bedwars.listener.player.PlayerDropPickupItemListener;
 import net.stonegomes.bedwars.listener.player.PlayerInteractNpcListener;
@@ -33,8 +32,6 @@ public class ListenerModule extends Module {
         pluginManager.registerEvents(new EntityDamageByEntityListener(gamePlugin), gamePlugin);
 
         pluginManager.registerEvents(new FoodLevelChangeListener(gamePlugin), gamePlugin);
-
-        pluginManager.registerEvents(new HologramClickListener(gamePlugin), gamePlugin);
 
         pluginManager.registerEvents(new PlayerDeathListener(gamePlugin), gamePlugin);
         pluginManager.registerEvents(new PlayerDropPickupItemListener(gamePlugin), gamePlugin);

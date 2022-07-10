@@ -10,8 +10,7 @@ public class LocationSerializable implements SimplixSerializable<Location> {
 
     @Override
     public Location deserialize(@NonNull Object object) throws ClassCastException {
-        final Map<String, Object> data = (Map<String, Object>) object;
-        return Location.deserialize(data);
+        return Location.deserialize((Map<String, Object>) object);
     }
 
     @Override

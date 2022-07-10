@@ -2,4 +2,4 @@ main: net.stonegomes.bedwars.GamePlugin
 name: BedwarsPlugin
 version: 1.0-SNAPSHOT
 api-version: 1.17
-depend: [ProtocolLib]
+depend: [ProtocolLib, DecentHolograms]
