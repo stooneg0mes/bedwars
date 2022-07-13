@@ -7,7 +7,6 @@ import eu.decentsoftware.holograms.api.DHAPI;
 import eu.decentsoftware.holograms.api.holograms.Hologram;
 import net.stonegomes.bedwars.commons.fetcher.UUIDFetcher;
 import org.bukkit.Location;
-import org.bukkit.plugin.Plugin;
 
 import java.util.List;
 import java.util.Random;
@@ -45,7 +44,6 @@ public class NPCFactory {
 
         Profile profile = new Profile(UUID.fromString(skinUuid));
         profile.complete();
-
         profile.setName("");
         profile.setUniqueId(new UUID(RANDOM.nextLong(), 0));
 

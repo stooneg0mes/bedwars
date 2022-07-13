@@ -60,41 +60,47 @@ public interface GameState {
      *
      * @param context the context
      */
-    default void onEnter(GameStateContext context) {}
+    default void onEnter(GameStateContext context) {
+    }
 
     /**
      * Called when leaving the state to another state
      *
      * @param context the context
      */
-    default void onExit(GameStateContext context) {}
+    default void onExit(GameStateContext context) {
+    }
 
     /**
      * Called when leaving the game
      *
      * @param context the context
      */
-    default void onQuit(GameStateContext context) {}
+    default void onQuit(GameStateContext context) {
+    }
 
     /**
      * Called when player death on the arena
      *
      * @param context the context
      */
-    default void onDeath(GameStateContext context) {}
+    default void onDeath(GameStateContext context) {
+    }
 
     /**
      * Called every second to update the state
      *
      * @param context the context
      */
-    default void onUpdate(GameStateContext context) {}
+    default void onUpdate(GameStateContext context) {
+    }
 
     /**
      * Called every second to update the scoreboard
      *
      * @param context the context
      */
-    default void onScoreboardUpdate(GameStateContext context) {}
+    default void onScoreboardUpdate(GameStateContext context) {
+    }
 
 }

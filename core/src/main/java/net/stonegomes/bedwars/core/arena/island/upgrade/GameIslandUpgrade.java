@@ -36,6 +36,7 @@ public abstract class GameIslandUpgrade {
      * @param gameIsland the island that is being upgraded.
      * @param level      the level of the upgrade.
      */
-    public void onUpgrade(GameIsland gameIsland, int level) {}
+    public void onUpgrade(GameIsland gameIsland, int level) {
+    }
 
 }
