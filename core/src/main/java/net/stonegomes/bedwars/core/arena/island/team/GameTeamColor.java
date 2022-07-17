@@ -31,6 +31,14 @@ public enum GameTeamColor {
     GREEN(
         "Green",
         NamedTextColor.GREEN
+    ),
+    WHITE(
+        "White",
+        NamedTextColor.WHITE
+    ),
+    CYAN(
+        "Cyan",
+        NamedTextColor.AQUA
     );
 
     private final String name;
